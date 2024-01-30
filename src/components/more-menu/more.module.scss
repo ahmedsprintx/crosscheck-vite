@@ -1,0 +1,37 @@
+@import 'styles/_breakpoints.scss';
+@import 'styles/_colors.scss';
+@import 'styles/_mixin.scss';
+
+.editor {
+  padding: 10px;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 0px;
+  top: 30px;
+  z-index: 3;
+  background: var(--background-color1);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 6px;
+  width: 115px;
+  .flexFlex {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    img {
+      height: 11px;
+      width: 11px;
+    }
+    svg {
+      height: 11px;
+      width: 11px;
+    }
+    p {
+      font-weight: 400;
+      @include font13;
+      color: var(--text-color3);
+    }
+  }
+}

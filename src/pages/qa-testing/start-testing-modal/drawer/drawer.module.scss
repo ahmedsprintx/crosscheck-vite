@@ -1,0 +1,201 @@
+@import 'styles/_breakpoints.scss';
+@import 'styles/_colors.scss';
+@import 'styles/_mixin.scss';
+
+.backdropDiv {
+  position: fixed;
+  inset: 0;
+  background-color: transparent;
+  z-index: 2;
+}
+
+.main {
+  z-index: 300;
+
+  height: inherit;
+  transition: all 1.6s;
+  .header {
+    border-bottom: 1px solid #d6d6d6;
+    padding: 10px;
+    img {
+      cursor: pointer;
+    }
+  }
+  .body {
+    padding: 0 10px;
+    h6 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 700;
+      @include font22;
+      color: var(--text-color3);
+    }
+    .grid {
+      @include gridTwo(15, 15);
+      margin-top: 30px;
+      p {
+        font-weight: 500;
+        @include font15;
+        color: var(--text-color3);
+      }
+      .p {
+        font-weight: 400 !important;
+        color: var(--placeholder) !important;
+      }
+    }
+
+    .testCasesDiv {
+      margin-top: 20px;
+      background: var(--table-row);
+      border-radius: 7px;
+      padding: 20px;
+      position: relative;
+      margin-left: 11px;
+
+      .moreFlex {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        h6 {
+          font-weight: 700;
+          @include font13;
+          color: var(--text-color3);
+        }
+        p {
+          padding: 1px 3px;
+          background: #f96e6e;
+          font-weight: 400;
+          @include font13;
+          text-align: center;
+          color: #ffffff;
+          border-radius: 3px;
+        }
+      }
+      .moreMore {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 15px;
+        width: 100%;
+        .h6 {
+          width: 100px;
+          font-weight: 500;
+          @include font13;
+          color: var(--text-color3);
+          word-wrap: break-word;
+        }
+        .text {
+          width: 80%;
+          font-weight: 400;
+          @include font13;
+          color: var(--text-color3);
+          border-left: 1px solid var(--text-color3);
+          padding-left: 10px;
+        }
+      }
+      .imgImg {
+        position: absolute;
+        top: 20px;
+        left: -10px;
+        cursor: pointer;
+      }
+      p {
+        font-weight: 400;
+        @include font13;
+        color: var(--text-color3);
+      }
+      .flexInner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 20px;
+
+        .circle {
+          width: 30px;
+          height: 30px;
+          border: 1px solid var(--text-color3);
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          p {
+            font-weight: 700;
+            @include font15;
+            color: var(--text-color3);
+          }
+        }
+        .btns {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+
+          img {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+.height {
+  height: calc(100vh - 264px);
+  overflow-y: auto;
+}
+
+.mainMain {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+  .testCases {
+    font-weight: 500;
+    @include font15;
+    color: var(--text-color3);
+    width: max-content;
+  }
+  .div {
+    border: 1px solid #d6d6d6;
+    flex: 1;
+  }
+  .passFail {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    p {
+      font-weight: 400;
+      @include font15;
+      color: var(--text-color3);
+    }
+    h6 {
+      padding: 2px 5px;
+      height: 22px;
+      border: 1px solid var(--text-color3);
+      border-radius: 9px;
+      font-weight: 400;
+      @include font15;
+      text-align: center;
+      color: #34c369;
+    }
+  }
+}
+
+.moreInner {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+  width: 100%;
+  .text {
+    width: 80%;
+    font-weight: 400;
+    @include font13;
+    color: var(--text-color3);
+  }
+  span {
+    font-weight: 600;
+  }
+  .moreInnerImages {
+    display: flex;
+    gap: 10px;
+  }
+}

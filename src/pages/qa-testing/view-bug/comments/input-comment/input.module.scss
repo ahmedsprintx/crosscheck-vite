@@ -1,0 +1,69 @@
+@import 'styles/_breakpoints.scss';
+@import 'styles/_colors.scss';
+@import 'styles/_mixin.scss';
+
+.main {
+  display: flex;
+  z-index: 5;
+  width: 100%;
+  align-items: center;
+  margin-top: 5px;
+  .inputComment {
+    border: 1px solid var(--border);
+    background-color: var(--background);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-right: 0px;
+    padding: 5px;
+    .attachmentContainer {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      padding-bottom: 5px;
+      .file {
+        display: flex;
+        padding: 5px;
+        border-radius: 3px;
+        width: fit-content;
+        gap: 5px;
+        margin-top: 5px;
+        background: var(--Shadow-B, rgba(7, 25, 82, 0.1));
+        span {
+          @include font13;
+          font-style: normal;
+          font-weight: 400;
+          color: var(--text-color1);
+        }
+      }
+    }
+    .commentInput {
+      display: flex;
+      align-items: center;
+      width: 100%;
+
+      .attachment {
+        position: absolute;
+        z-index: 1;
+        left: 15px;
+        margin-bottom: 2px;
+      }
+      .commentField {
+        width: 100%;
+        input {
+          width: 100%;
+          padding-left: 30px;
+          padding-bottom: 15px;
+          border: none;
+          color: var(--text-color1) !important;
+        }
+      }
+    }
+  }
+  .sendBtn {
+    width: 10%;
+    border: none;
+    background-color: transparent;
+  }
+}

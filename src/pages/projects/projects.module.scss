@@ -1,0 +1,54 @@
+@import 'styles/_breakpoints.scss';
+@import 'styles/_colors.scss';
+@import 'styles/_mixin.scss';
+
+.menuDiv {
+  @media (max-width: 490px) {
+    display: none;
+  }
+  position: absolute;
+  right: 0;
+  top: 40px;
+  z-index: 3;
+}
+.menuDivMobile {
+  display: none;
+  @media (max-width: 490px) {
+    display: block;
+  }
+  .innerDiv {
+    margin-bottom: 16px;
+    p {
+      color: var(--Font-C, #071952);
+      font-family: Public Sans;
+      @include font13;
+
+      font-style: normal;
+      font-weight: 300;
+      line-height: normal;
+    }
+  }
+}
+.backdropDiv {
+  position: fixed;
+  inset: 0;
+  background-color: transparent;
+  z-index: 2;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #d6d6d6;
+  padding: 13px 0 4px;
+  position: relative;
+  margin-bottom: 10px;
+  p {
+    color: var(--text-color3);
+    @include font22;
+    font-weight: 700;
+  }
+  img {
+    cursor: pointer;
+  }
+}

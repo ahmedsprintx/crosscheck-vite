@@ -1,0 +1,67 @@
+@import 'styles/_breakpoints.scss';
+@import 'styles/_colors.scss';
+@import 'styles/_mixin.scss';
+
+.mainClass {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  height: 42px;
+  @media (max-width: 490px) {
+    height: 16px;
+  }
+
+  h6 {
+    font-weight: 700;
+    @include font22;
+    line-height: 28px;
+    color: var(--text-color3);
+  }
+}
+.flexDiv {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  .imgClass {
+    cursor: pointer;
+  }
+  h2 {
+    color: var(--text-color3);
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Public Sans;
+    @include font24;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+}
+.exportDiv {
+  display: flex;
+  gap: 10px;
+  width: 50%;
+  justify-content: end;
+  @media (max-width: 550px) {
+    display: none;
+  }
+}
+.filterBtn {
+  border: 1px solid var(--text-color3);
+  background-color: transparent;
+  max-width: 100px;
+  span {
+    color: var(--text-color3) !important;
+  }
+}
+.filterBtnActive {
+  border: 1px solid #e25e3e;
+  background-color: transparent;
+  max-width: 110px;
+  span {
+    color: #e25e3e !important;
+  }
+}
+.contentGrid {
+  margin-top: 31px;
+  @include gridFive(20, 20);
+}

@@ -1,0 +1,60 @@
+@import 'styles/_breakpoints.scss';
+@import 'styles/_colors.scss';
+@import 'styles/_mixin.scss';
+
+.editor {
+  border: 1px solid #d0d5dd;
+  border-radius: 10px;
+  margin-top: calc(5px + (7 - 5) * (100vw - 280px) / (2560 - 280));
+  min-height: 111px;
+}
+.edit {
+  border: none !important;
+  background-color: transparent;
+  border-bottom: 1px solid #d8d8d8 !important;
+  margin-bottom: 0px !important;
+  justify-content: space-between !important;
+}
+.editorStyle {
+  margin: 0px !important;
+  font-weight: 400 !important;
+  @include font13;
+  color: var(--text-color3) !important;
+  padding: 0px 10px;
+  resize: both;
+  overflow: auto;
+  &::placeholder {
+    color: red !important;
+  }
+}
+
+.borderLess {
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0px !important;
+  img {
+    height: 24px !important;
+    width: 24px !important;
+  }
+}
+
+.linkDecorator {
+  left: unset !important;
+  right: -15px !important;
+  border: none !important;
+  &:hover {
+    border: none !important;
+    box-shadow: none !important;
+  }
+}
+.label {
+  color: var(--text-color3);
+  @include font13;
+  font-weight: 500;
+  margin-left: 7px;
+}
+
+.errorMessage {
+  color: #ff5050;
+  @include font13;
+}

@@ -1,0 +1,53 @@
+.tabsContainer {
+  width: 100%;
+}
+
+.tabs {
+  display: flex;
+  border-bottom: 1px solid rgba(214, 214, 214, 1);
+}
+
+.tabTitle {
+  padding: 10px 20px;
+  @media (max-width: 550px) {
+    padding: 10px 5px;
+  }
+  color: #8b909a;
+  text-align: center;
+  font-feature-settings: "clig" off, "liga" off;
+  font-family: Public Sans;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  cursor: pointer;
+  transition: border-bottom 0.3s, color 0.3s;
+}
+
+.tabTitle.active {
+  border-bottom: 2px solid #2a2c33;
+  color: #2a2c33;
+}
+
+.tab-content {
+  margin-top: 20px;
+  overflow: auto;
+  white-space: nowrap;
+  transition: transform 0.3s ease;
+}
+
+.tab-pane {
+  display: inline-block;
+  width: 100%;
+  white-space: normal;
+  box-sizing: border-box;
+  font-size: 18px;
+}
+
+#tab1:target {
+  transform: translateX(0%);
+}
+
+#tab2:target {
+  transform: translateX(-100%);
+}

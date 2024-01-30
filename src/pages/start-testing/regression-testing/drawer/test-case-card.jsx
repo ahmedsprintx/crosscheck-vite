@@ -1,0 +1,144 @@
+import { useMemo, useState } from 'react';
+import PropTypes from 'prop-types';
+import tick from 'assets/tick.svg';
+import cross from 'assets/cross-red.svg';
+import tickActive from 'assets/tick-active.svg';
+import crossActive from 'assets/cross-active.svg';
+import blocked from 'assets/blocked.svg';
+import blockedActive from 'assets/blocked-active.svg';
+import ReportBugModal from 'components/report-bug-modal';
+import style from './drawer.module.scss';
+import draftToHtml from 'draftjs-to-html';
+import { formattedDate } from 'utils/date-handler';
+import ArrowDown from 'components/icon-component/arrow-down';
+
+const TestCaseCard = ({ data, index, onStatusChange, setAddBug, setEditRecord, noHeader }) => {
+  const [more, setMore] = useState(false);
+  const [bugModal, setBugModal] = useState(false);
+  const [modalDismissed, setModalDismissed] = useState(false);
+
+  const collapse = useMemo(
+    () => [
+      {
+        title: 'Test Objective',
+        para: data?.testObjective?.description && draftToHtml(JSON.parse(data?.testObjective?.description)),
+      },
+      {
+        title: 'Pre Conditions',
+        para: data?.preConditions?.description && draftToHtml(JSON.parse(data?.preConditions?.description)),
+      },
+      {
+        title: 'Test Steps',
+        para: data?.testSteps?.description && draftToHtml(JSON.parse(data?.testSteps?.description)),
+      },
+      {
+        title: 'Expected Results',
+        para: data?.expectedResults?.description && draftToHtml(JSON.parse(data?.expectedResults?.description)),
+      },
+    ],
+    [data],
+  );
+
+  return (
+    <>
+      <div className={style.testCasesDiv}>
+        <div
+          className={style.imgImg}
+          style={{
+            transform: more ? 'rotate(90deg)' : '',
+          }}
+          onClick={() => setMore(!more)}
+        >
+          <ArrowDown />
+        </div>
+        {more ? (
+          <>
+            <div className={style.moreFlex}>
+              <h6>{data.testCaseId}</h6>
+              <p>{data?.testType}</p>
+            </div>
+            {collapse?.map((ele, index) => (
+              <div className={style.moreMore} key={index}>
+                <h6 className={style.h6}>{ele.title}</h6>
+                <p
+                  className={style.text}
+                  dangerouslySetInnerHTML={{
+                    __html: ele.para,
+                  }}
+                />
+              </div>
+            ))}
+          </>
+        ) : (
+          <>
+            <div className={style.moreFlex}>
+              <h6>{data.testCaseId}</h6>
+            </div>
+            <p
+              dangerouslySetInnerHTML={{
+                __html: data?.testObjective?.description && draftToHtml(JSON.parse(data?.testObjective?.description)),
+              }}
+            ></p>
+          </>
+        )}
+        <div className={style.flexInner}>
+          <div className={style.moreInner}>
+            <div className={style.text}>
+              <p>
+                <span>Last Tested by : </span>{' '}
+                {data?.lastTestedAt &&
+                  `${data?.lastTestedBy?.name} on ${formattedDate(data?.lastTestedAt, 'dd MMM, yyyy')}`}
+              </p>
+            </div>
+            <div className={style.moreInnerImages}>
+              <div className={style.circle}>
+                <p>{data.weightage}</p>
+              </div>
+              <div className={style.btns}>
+                <img
+                  src={data?.status === 'Passed' ? tickActive : tick}
+                  alt=""
+                  onClick={() => data?.status !== 'Passed' && onStatusChange(data?._id, 'Passed')}
+                />
+                <img
+                  src={data?.status === 'Failed' ? crossActive : cross}
+                  alt=""
+                  onClick={async () => {
+                    data?.status !== 'Failed' && modalDismissed && (await onStatusChange(data?._id, 'Failed'));
+                    data?.status !== 'Failed' && setBugModal(true);
+                  }}
+                />
+                <img
+                  src={data?.status === 'Blocked' ? blockedActive : blocked}
+                  alt=""
+                  onClick={() => data?.status !== 'Blocked' && onStatusChange(data?._id, 'Blocked')}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        {!modalDismissed && (
+          <ReportBugModal
+            openDelModal={bugModal}
+            setOpenDelModal={setBugModal}
+            setModalDismissed={setModalDismissed}
+            clickHandler={() => {
+              setAddBug(true);
+              setEditRecord(data);
+            }}
+          />
+        )}
+      </div>
+    </>
+  );
+};
+TestCaseCard.propTypes = {
+  data: PropTypes.any.isRequired,
+  index: PropTypes.number.isRequired,
+  onStatusChange: PropTypes.func.isRequired,
+  setAddBug: PropTypes.func.isRequired,
+  setEditRecord: PropTypes.func.isRequired,
+  noHeader: PropTypes.bool,
+};
+
+export default TestCaseCard;

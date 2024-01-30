@@ -1,0 +1,25 @@
+.modalChild {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+.tabsDiv {
+  margin-top: 10px;
+}
+.strokeBtn {
+  border: 1px solid var(--Secondary, #e25e3e) !important;
+  background-color: transparent !important;
+  span {
+    color: #e25e3e !important;
+  }
+}
+.btnDiv {
+  padding: 0px 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  img {
+    cursor: pointer;
+  }
+}

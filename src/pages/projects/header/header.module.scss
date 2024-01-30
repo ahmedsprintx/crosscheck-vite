@@ -1,0 +1,119 @@
+@import 'styles/_breakpoints.scss';
+@import 'styles/_colors.scss';
+@import 'styles/_mixin.scss';
+
+.main {
+  margin-top: 20px;
+
+  .flex {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid #d6d6d6;
+    padding-bottom: 5px;
+
+    svg {
+      height: 16px;
+      width: 16px;
+    }
+
+    p {
+      @include font22;
+      font-weight: 700;
+      line-height: 26px;
+      color: var(--text-color3);
+    }
+  }
+
+  .innerFlex {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-top: 10px;
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      display: none;
+    }
+
+    .moreInner {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+
+      @media (max-width: 600px) {
+        flex-wrap: unset;
+        overflow-x: auto;
+      }
+
+      .project {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        position: relative;
+
+        span {
+          border-radius: 5px;
+          padding: 3px 5px;
+          border: 1px solid var(--text-color3);
+          text-transform: uppercase;
+          color: var(--text-color3);
+        }
+
+        p {
+          color: var(--text-color3);
+          font-size: 18px;
+          font-weight: 300;
+          width: max-content;
+        }
+
+        .img {
+          position: relative;
+
+          &:hover {
+            & > div {
+              display: block;
+            }
+          }
+        }
+
+        img {
+          cursor: pointer;
+        }
+
+        .tooltip {
+          display: none;
+          border-radius: 6px;
+          background: var(--background-color1);
+          padding: 10px;
+          box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+          position: absolute;
+          top: 25px;
+          right: -10px;
+          @include font10;
+          z-index: 200;
+
+          & > div {
+            color: var(--text-color3);
+          }
+
+          svg {
+            height: 11px;
+            width: 11px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.backdropDiv {
+  position: fixed;
+
+  inset: 0;
+  z-index: 100;
+}

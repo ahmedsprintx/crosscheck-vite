@@ -1,0 +1,56 @@
+.tabsContainer {
+  width: 100%;
+}
+.tagDiv {
+  display: flex;
+  margin-bottom: 10px;
+  align-items: center;
+  gap: 10px;
+  padding: 5px;
+  overflow-x: scroll;
+  /* Hide scrollbar for webkit-based browsers (Chrome, Safari) */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  .innerDiv {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+  }
+}
+
+.tag {
+  width: auto;
+  height: 25px;
+  display: flex;
+  padding: 5px;
+  align-items: flex-start;
+  gap: 5px;
+  border-radius: 5px;
+  background: var(--Table-Row-Background, #f3f3f3);
+
+  .tagText {
+    color: var(--Font-A, #2d2d32);
+    text-align: right;
+    font-family: Public Sans;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}
+.withLine {
+  border-right: 1px solid #d6d6d6;
+  height: 25px;
+}
+.tag.active {
+  box-shadow: 2px 2px 2px 0px rgba(5, 4, 4, 0.158);
+}
+.tag.multiActive {
+  .tagText {
+    color: var(--Font-A, white);
+  }
+  background: var(--Table-Row-Background, #e25e3e);
+  box-shadow: 2px 2px 2px 0px rgba(226, 94, 62, 0.25);
+}

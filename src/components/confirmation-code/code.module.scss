@@ -1,0 +1,61 @@
+@import 'styles/_breakpoints.scss';
+@import 'styles/_colors.scss';
+@import 'styles/_mixin.scss';
+
+.inputContainer {
+  margin-top: 40px;
+  font-family: Poppins;
+
+  label {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    color: #071952;
+    text-transform: capitalize;
+
+    @media (max-width: $sm) {
+      font-size: 15px;
+    }
+  }
+
+  input {
+    border-radius: 5px;
+    border: 1px solid #d6d6d6;
+    font-family: Poppins;
+    margin-top: 10px;
+    padding: 10px;
+    width: 50px;
+    height: 50px;
+    color: $primary;
+    @include font18;
+    text-align: center;
+
+    &:focus {
+      outline: $primary;
+      border: 1px solid $primary !important;
+    }
+  }
+}
+
+.inputs {
+  display: flex;
+  gap: 10px;
+}
+
+.p {
+  color: #2d2d32;
+  @include font18;
+  font-weight: 300;
+  margin-top: 10px;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield !important; /* Firefox */
+}
+
+/* Hide the number increase/decrease buttons in WebKit browsers (Chrome, Safari) */
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none !important;
+  margin: 0 !important;
+}

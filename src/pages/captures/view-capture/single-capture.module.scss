@@ -1,0 +1,36 @@
+.captureNav {
+  border-bottom: 1px solid #d6d6d6;
+  padding: 30px 0px 10px 0px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.mainWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: calc(100vh - 120px);
+}
+.leftDiv {
+  width: 75%;
+  border: 1px solid #d6d6d6;
+  border-radius: 10px;
+  height: 100%;
+}
+.centerBorder {
+  border-left: 1px solid #d6d6d6;
+  height: 100%;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+.rightDiv {
+  width: 25%;
+}
+.strokeBtn {
+  border: 1px solid var(--Secondary, #e25e3e) !important;
+  background-color: transparent !important;
+  span {
+    color: #e25e3e !important;
+  }
+}

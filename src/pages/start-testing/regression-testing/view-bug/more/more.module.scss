@@ -1,0 +1,39 @@
+@import 'styles/_breakpoints.scss';
+@import 'styles/_colors.scss';
+@import 'styles/_mixin.scss';
+
+.main {
+  margin-top: 21px;
+  display: flex;
+  align-items: center;
+  .innerLeft {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    span {
+      color: var(--text-color1);
+      /* Body Font */
+      font-family: Public Sans;
+      @include font13;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+  }
+  .innerRight {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    span {
+      color: var(--text-color3);
+      /* Heading 4 */
+      font-family: Public Sans;
+      @include font13;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+    }
+  }
+}

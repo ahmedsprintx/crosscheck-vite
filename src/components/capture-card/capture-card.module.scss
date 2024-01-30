@@ -1,0 +1,86 @@
+@import 'styles/_breakpoints.scss';
+@import 'styles/_colors.scss';
+@import 'styles/_mixin.scss';
+
+.main {
+  width: 100%;
+  max-width: 300px;
+  transform: scale(1);
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.01);
+    transition: transform 0.2s ease-in-out;
+  }
+  .image {
+    position: relative;
+    border-radius: 5px;
+    border: 1px solid #d6d6d6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .mainImage {
+      width: 100%;
+      border-radius: 5px;
+      max-width: 300px;
+      max-height: fit-content;
+    }
+    .moreIcon {
+      position: absolute;
+      top: 3px;
+      right: 11px;
+    }
+
+    .duration {
+      display: flex;
+      padding: 10px;
+      align-items: center;
+      gap: 10px;
+      border-radius: 10px;
+      background: var(--Tooltip, #1f1f1f);
+      position: absolute;
+      right: 6px;
+      bottom: 5px;
+      color: white;
+    }
+  }
+  .lowerSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10px;
+    .userInfo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      .initial {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 24px;
+        width: 24px;
+        border-radius: 50%;
+        background-color: #11103d;
+        color: white;
+      }
+      img {
+        max-width: 24px;
+        max-height: 24px;
+        border-radius: 50%;
+      }
+    }
+    .text {
+      color: var(--text-color3);
+      font-family: Public Sans;
+      @include font13;
+      font-style: normal;
+      font-weight: 300;
+      line-height: normal;
+    }
+  }
+}
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: transparent;
+  z-index: 2;
+}

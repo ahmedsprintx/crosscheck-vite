@@ -1,0 +1,104 @@
+@import 'styles/_breakpoints.scss';
+@import 'styles/_colors.scss';
+@import 'styles/_mixin.scss';
+.cardWrapper {
+  display: flex;
+  padding: 10px;
+  justify-items: center;
+  flex-direction: column;
+  gap: 10px;
+  border-radius: var(--modal-corner, 10px);
+  border: 1px solid var(--stroke, #d6d6d6);
+  background: rgba(17, 16, 61, 0.04);
+  margin-bottom: 10px;
+  p {
+    color: var(--text-color1);
+    /* Body Font */
+    font-family: Public Sans;
+    @include font13;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  .invertedComma {
+    color: var(--text-color3);
+    /* Heading 4 */
+    font-family: Public Sans;
+    @include font13;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+  .changes {
+    color: var(--text-color3);
+    /* Heading 4 */
+    font-family: Public Sans;
+    @include font13;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+  .singleLine {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .multiLine {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+    .infoHeader {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+  }
+}
+
+.cardWrapper2 {
+  p {
+    @media (max-width: 490px) {
+      @include font13;
+    }
+    @media (max-width: 320px) {
+      @include font10;
+    }
+  }
+  span {
+    @media (max-width: 490px) {
+      @include font13;
+    }
+    @media (max-width: 320px) {
+      @include font10;
+    }
+  }
+}
+.infoContent {
+  text-align: start;
+  margin-top: 5px;
+  width: 100%;
+  padding-left: 37px;
+  p {
+    @media (max-width: 490px) {
+      @include font10;
+    }
+    @media (max-width: 320px) {
+      @include font10;
+    }
+  }
+}
+.time {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  color: var(--placeholder);
+  /* Body Font */
+  font-family: Public Sans;
+  @include font13;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}

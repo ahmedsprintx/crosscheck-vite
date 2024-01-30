@@ -1,0 +1,64 @@
+@import 'styles/_breakpoints.scss';
+@import 'styles/_colors.scss';
+@import 'styles/_mixin.scss';
+
+
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  background-image: url(../../assets/Banner.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: top;
+  height: 100vh;
+
+  @media (max-width: $sm) {
+    background-image: url(../../assets/banner-small.png);
+    justify-content: flex-start;
+    padding-top: 127px;
+    background-size: 100% 100%;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  h2 {
+    color: #FFF;
+    text-align: center;
+    @include font50;
+    font-weight: 600;
+    padding-bottom: 60px;
+  }
+
+  p {
+    color: var(--Fonts-Fonts-D, #FFF);
+    font-family: Public Sans;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    text-align: center;
+  }
+
+  button {
+    border: 1px solid #fff;
+    max-width: max-content;
+    margin-top: 30px;
+    height: 41px;
+    padding: 10px;
+    background-color: transparent;
+
+    @media (max-width: $sm) {
+      height: 31px;
+      max-width: 100px;
+    }
+
+    span {
+      color: #fff !important;
+      font-size: calc(14px + (18 - 14) * (100vw - 320px) / (1440 - 320)) !important;
+    }
+  }
+}

@@ -1,0 +1,88 @@
+@import 'styles/_breakpoints.scss';
+@import 'styles/_colors.scss';
+@import 'styles/_mixin.scss'; // Tabs.scss
+.tabsContainer {
+  width: 100%;
+}
+
+.tabs {
+  display: flex;
+  border-bottom: 1px solid rgba(214, 214, 214, 1);
+  .tabTitle {
+    padding: 10px 10px;
+    color: var(--placeholder);
+    text-align: center;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Public Sans;
+    @include font15;
+    @media (max-width: 450px) {
+      @include font13;
+    }
+
+    @media (max-width: 362px) {
+      @include font10;
+    }
+
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    cursor: pointer;
+  }
+  .active {
+    border-bottom: 2px solid var(--text-color3);
+    color: var(--text-color3);
+  }
+  .tabTitleMenu {
+    color: var(--Font-C, #071952);
+    font-family: Public Sans;
+    @include font13;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    padding: 10px 0px;
+  }
+}
+
+.tab-content {
+  margin-top: 20px;
+}
+.menuDiv {
+  display: block;
+  @media (max-width: 768px) {
+    display: none;
+  }
+  position: absolute;
+  top: 30px;
+  right: 0px;
+  z-index: 6;
+}
+
+.mainDiv {
+  border-radius: 5px;
+  border: 1px solid #d6d6d6;
+  background: var(--background-color1);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  .innerDiv {
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    border-bottom: 1px solid #d6d6d6;
+    height: 39px;
+    cursor: pointer;
+    &:last-child {
+      border-bottom: none;
+    }
+    p {
+      color: var(--text-color3);
+      @include font13;
+      font-weight: 400 !important;
+    }
+  }
+}
+.backdropDiv {
+  position: fixed;
+  inset: 0;
+  background-color: transparent;
+  z-index: 2;
+}

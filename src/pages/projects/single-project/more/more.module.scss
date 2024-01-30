@@ -1,0 +1,322 @@
+@import 'styles/_breakpoints.scss';
+@import 'styles/_colors.scss';
+@import 'styles/_mixin.scss';
+.wrapper {
+  display: block;
+  @media (max-width: 760px) {
+    display: none;
+  }
+  gap: 10px;
+  margin-top: 10px;
+  .headings {
+    min-width: 150px;
+    .dataDetails {
+      margin: 10px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+      .headingsDiv {
+        min-width: 150px;
+        padding: 10px 0px;
+        color: var(--text-color1);
+        font-feature-settings: 'clig' off, 'liga' off;
+        font-family: Public Sans;
+        @include font15;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+      }
+      .content {
+        width: 100%;
+        .contentDiv {
+          max-width: max-content;
+          padding: 10px 0px;
+          color: var(--text-color1);
+          /* Subtitle 1 */
+          font-family: Public Sans;
+          @include font15;
+          font-style: normal;
+          font-weight: 300;
+          line-height: normal;
+          img {
+            cursor: pointer;
+          }
+        }
+        .contentLast {
+          width: 100%;
+          @media (max-width: 490px) {
+            display: none;
+          }
+          .rowContainer {
+            margin-top: 10px;
+            max-height: 500px;
+            overflow-y: scroll;
+          }
+        }
+        .selectDiv {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          .buttonClass {
+            width: 118px;
+          }
+        }
+      }
+      .contentLast {
+        width: 100%;
+        .contentDiv {
+          max-width: 100%;
+          padding: 10px 0px;
+          color: var(--text-color1);
+          /* Subtitle 1 */
+          font-family: Public Sans;
+          @include font15;
+          font-style: normal;
+          font-weight: 300;
+          line-height: normal;
+          img {
+            cursor: pointer;
+          }
+        }
+        .contentLast {
+          width: 100%;
+          @media (max-width: 490px) {
+            display: none;
+          }
+          .rowContainer {
+            margin-top: 10px;
+            max-height: 500px;
+            overflow-y: scroll;
+          }
+        }
+        .selectDiv {
+          display: flex;
+          align-items: flex-end;
+          gap: 10px;
+          .buttonClass {
+            width: 118px;
+          }
+        }
+      }
+    }
+    .lastDataDetails {
+      align-items: flex-start !important;
+    }
+  }
+}
+.contentLastMobile {
+  @media (max-width: 490px) {
+    display: block;
+  }
+  .selectDiv {
+    display: flex;
+    align-items: flex-end;
+    gap: 5px;
+  }
+  display: none;
+  .rowContainer {
+    margin-top: 10px;
+    max-height: 500px;
+    overflow-y: scroll;
+  }
+}
+.btnClass {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.viewAll {
+  margin-top: 10px;
+  display: flex;
+  justify-content: end;
+  text-align: end;
+  p {
+    /* Subtitle 1 */
+    color: var(--text-color1);
+    font-family: Public Sans;
+    @include font15;
+    @media (max-width: 490px) {
+      @include font10;
+    }
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+.dynamicWrapper {
+  min-width: 245px !important;
+  max-width: 245px !important;
+
+  label {
+    display: none;
+  }
+}
+.noLabel {
+  label {
+    display: none;
+  }
+}
+.inputClass {
+  width: 245px;
+}
+.editMode {
+  position: relative;
+  width: 300px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 6px 0px;
+}
+.saveBtn {
+  padding-bottom: 5px;
+  height: 100%;
+  position: absolute;
+  margin-top: 5px;
+  right: 0;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.count {
+  margin-top: -55px;
+  margin-right: 55px;
+  right: 0;
+  position: absolute;
+  font-weight: 600;
+  @include font13;
+  color: var(--text-color1);
+  cursor: pointer;
+}
+
+.membersRow {
+  display: flex;
+  padding: 10px 0px;
+  align-items: center;
+  gap: 20px;
+  @media (max-width: 490px) {
+    gap: 15px;
+  }
+  align-self: stretch;
+  border-bottom: 1px solid var(--stroke, #d6d6d6);
+  .imgDiv {
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    img {
+      margin-right: -10px;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+    }
+    .initialSpan {
+      margin-right: -10px;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--text-color3);
+      color: #fff;
+      border-radius: 50%;
+      @include font10;
+      font-weight: 400;
+      border: 1px solid #fff;
+    }
+  }
+  img {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+  }
+  p {
+    /* Subtitle 1 */
+    color: var(--text-color1);
+    font-family: Public Sans;
+    @include font15;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    @media (max-width: 490px) {
+      @include font10;
+    }
+  }
+  .name {
+    color: var(--Font-A, #2d2d32);
+    /* Mobile/H4 */
+    font-family: Public Sans;
+    @include font10;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+}
+.btnRemove {
+  background-color: var(--grey-icon);
+  display: flex;
+  padding: 1px 3px;
+  justify-content: center;
+  align-items: center;
+  height: 20px;
+}
+
+.wrapperMobile {
+  display: none;
+  @media (max-width: 760px) {
+    display: block;
+  }
+  margin: 8px 0px;
+  .headings {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    .headingsDiv {
+      color: var(--Font-A, #2d2d32);
+      font-family: Public Sans;
+      @include font10;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      margin-bottom: 5px;
+    }
+    .editMode {
+      .inputClass {
+        height: 29px;
+      }
+      .saveBtn {
+        display: flex;
+        align-items: center;
+      }
+    }
+    .contentDiv {
+      position: relative;
+      color: var(--text-color1);
+      font-family: Public Sans;
+      @include font10;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      svg {
+        top: -15px !important;
+        right: 10px !important;
+        position: absolute;
+        top: 0;
+        height: 12px;
+        width: 12px;
+      }
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+}
+.contentDiv {
+  color: var(--text-color1);
+}

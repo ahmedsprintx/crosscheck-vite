@@ -1,0 +1,173 @@
+@import './_breakpoints.scss';
+
+@mixin gridOne($gap_y: 0, $gap_x: 0) {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: $gap_y + px $gap_x + px;
+  grid-auto-rows: auto;
+}
+
+@mixin gridTwo($gap_y: 0, $gap_x: 0) {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: $gap_y + px $gap_x + px;
+  grid-auto-rows: auto;
+}
+
+@mixin gridThree($gap_y: 0, $gap_x: 0) {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: $gap_y + px $gap_x + px;
+  grid-auto-rows: auto;
+
+  @media (max-width: $md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: $xs) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@mixin gridFour($gap_y: 0, $gap_x: 0) {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: $gap_y + px $gap_x + px;
+  grid-auto-rows: auto;
+
+  @media (max-width: $lg) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (max-width: $md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: $xs) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@mixin gridFive($gap_y: 0, $gap_x: 0) {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: $gap_y + px $gap_x + px;
+  grid-auto-rows: auto;
+
+  @media (max-width: 1207px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media (max-width: $sm) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: $xs) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@mixin gridSix($gap_y: 0, $gap_x: 0) {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: $gap_y + px $gap_x + px;
+  grid-auto-rows: auto;
+
+  @media (max-width: 1207px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media (max-width: $sm) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: $xs) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@mixin gridEight($gap_y: 0, $gap_x: 0) {
+  display: grid;
+  width: auto;
+  grid-template-columns: 0.3fr repeat(6, 1fr);
+  grid-gap: $gap_y + px $gap_x + px;
+  grid-auto-rows: auto;
+
+  @media (max-width: $lg) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media (max-width: $md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: $sm) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@mixin font70 {
+  font-size: calc(26px + (70 - 26) * (100vw - 320px) / (1440 - 320));
+}
+
+@mixin font50 {
+  font-size: calc(35px + (50 - 35) * (100vw - 320px) / (1440 - 320));
+}
+
+@mixin font40 {
+  font-size: calc(20px + (40 - 20) * (100vw - 320px) / (1440 - 320));
+}
+
+@mixin font32 {
+  font-size: calc(22px + (32 - 22) * (100vw - 320px) / (1440 - 320));
+}
+
+@mixin font13 {
+  font-size: calc(11px + (13 - 11) * (100vw - 320px) / (1440 - 320));
+}
+
+@mixin font15 {
+  font-size: calc(13px + (15 - 13) * (100vw - 320px) / (1440 - 320));
+}
+
+@mixin font1511 {
+  font-size: calc(11px + (15 - 11) * (100vw - 320px) / (1440 - 320));
+}
+
+@mixin font22 {
+  font-size: calc(14px + (22 - 14) * (100vw - 320px) / (1440 - 320));
+}
+
+@mixin font26 {
+  font-size: calc(16px + (26 - 16) * (100vw - 320px) / (1440 - 320));
+}
+
+@mixin font24 {
+  font-size: calc(12px + (24 - 12) * (100vw - 320px) / (1440 - 320));
+}
+
+@mixin font30 {
+  font-size: calc(18px + (29 - 18) * (100vw - 320px) / (1440 - 320));
+}
+
+@mixin font18 {
+  font-size: calc(14px + (18 - 14) * (100vw - 320px) / (1440 - 320));
+}
+
+@mixin font16 {
+  font-size: calc(12px + (16 - 12) * (100vw - 320px) / (1440 - 320));
+}
+
+@mixin font14 {
+  font-size: calc(11px + (14 - 11) * (100vw - 320px) / (1440 - 320));
+}
+
+@mixin font10 {
+  font-size: calc(8px + (10 - 8) * (100vw - 320px) / (1440 - 320));
+}

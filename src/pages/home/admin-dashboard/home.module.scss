@@ -1,0 +1,389 @@
+@import 'styles/_breakpoints.scss';
+@import 'styles/_colors.scss';
+@import 'styles/_mixin.scss';
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  .wrapperUpper {
+    display: flex;
+    gap: 10px;
+    @media (max-width: $sm) {
+      display: flex;
+      flex-direction: column;
+    }
+    .left {
+      width: 65%;
+      @media (max-width: $sm) {
+        width: 100%;
+      }
+      .welcomeDiv {
+        position: relative;
+        display: flex;
+        width: 100%;
+        align-items: center;
+        gap: var(--numbers-modal-corner, 10px);
+        @media (max-width: 540px) {
+          @include gridSix(10, 10);
+        }
+
+        .boxWidth {
+          height: 100px;
+        }
+      }
+      .bugsSection {
+        @media (max-width: $sm) {
+          width: 100%;
+        }
+        margin-top: 10px;
+        width: 100%;
+        display: inline-flex;
+        padding: var(--numbers-modal-corner, 10px);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--numbers-modal-corner, 10px);
+        border-radius: var(--numbers-modal-corner, 10px);
+        border: 1px solid var(--border);
+        background: var(--background-color1);
+        .bugHeader {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          img {
+            cursor: pointer;
+          }
+          span {
+            color: var(--text-color3);
+            @include font22;
+            font-feature-settings: 'clig' off, 'liga' off;
+            /* Desktop/Headings/Heading 2 */
+            font-family: Public Sans;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+          }
+        }
+        .lowerSection {
+          display: flex;
+          gap: 10px;
+          align-items: center;
+          width: 100%;
+          @media (max-width: 490px) {
+            flex-direction: column;
+          }
+          .innerBug {
+            width: 25%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            border-right: 1px solid #d6d6d6;
+            @media (max-width: 490px) {
+              border-right: none;
+              flex-direction: row;
+              border-bottom: 1px solid #d6d6d6;
+              justify-content: space-between;
+              width: 100%;
+              align-items: center;
+            }
+            .count {
+              color: var(--text-color3);
+              @include font26;
+              font-feature-settings: 'clig' off, 'liga' off;
+              font-family: Public Sans;
+              font-style: normal;
+              font-weight: 700;
+              line-height: normal;
+            }
+
+            .status {
+              color: var(--text-color3);
+              @include font18;
+              margin-top: 5px;
+              font-family: Public Sans;
+              font-style: normal;
+              font-weight: 300;
+              line-height: normal;
+            }
+          }
+        }
+      }
+      .midSection {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        @media (max-width: $sm) {
+          flex-direction: column;
+        }
+        .testCaseSection {
+          @media (max-width: $sm) {
+            width: 100%;
+          }
+          margin-top: 10px;
+          width: 70%;
+          display: inline-flex;
+          padding: var(--numbers-modal-corner, 10px);
+          flex-direction: column;
+          align-items: flex-start;
+          gap: var(--numbers-modal-corner, 10px);
+          border-radius: var(--numbers-modal-corner, 10px);
+          border: 1px solid var(--border);
+          background: var(--background-color1);
+          .bugHeader {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            img {
+              cursor: pointer;
+            }
+            span {
+              color: var(--text-color3);
+              @include font22;
+              font-feature-settings: 'clig' off, 'liga' off;
+              /* Desktop/Headings/Heading 2 */
+              font-family: Public Sans;
+              font-style: normal;
+              font-weight: 700;
+              line-height: normal;
+            }
+          }
+          .lowerSection {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            width: 100%;
+            @media (max-width: 490px) {
+              flex-direction: column;
+            }
+            .innerBug {
+              width: 25%;
+              display: flex;
+              flex-direction: column;
+              gap: 20px;
+              border-right: 1px solid #d6d6d6;
+              @media (max-width: 490px) {
+                border-right: none;
+                flex-direction: row;
+                justify-content: space-between;
+                border-bottom: 1px solid #d6d6d6;
+                width: 100%;
+                align-items: center;
+              }
+              .count {
+                color: var(--text-color3);
+                @include font26;
+                font-feature-settings: 'clig' off, 'liga' off;
+                font-family: Public Sans;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+              }
+
+              .status {
+                color: var(--text-color3);
+                @include font18;
+                margin-top: 5px;
+                font-family: Public Sans;
+                font-style: normal;
+                font-weight: 300;
+                line-height: normal;
+              }
+            }
+          }
+        }
+        .testRunsSection {
+          @media (max-width: $sm) {
+            width: 100%;
+          }
+          margin-top: 10px;
+          width: 30%;
+          display: inline-flex;
+          padding: var(--numbers-modal-corner, 10px);
+          flex-direction: column;
+          align-items: flex-start;
+          gap: var(--numbers-modal-corner, 10px);
+          border-radius: var(--numbers-modal-corner, 10px);
+          border: 1px solid var(--border);
+          background: var(--background-color1);
+          .bugHeader {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            img {
+              cursor: pointer;
+            }
+            span {
+              color: var(--text-color3);
+              @include font22;
+              font-feature-settings: 'clig' off, 'liga' off;
+              /* Desktop/Headings/Heading 2 */
+              font-family: Public Sans;
+              font-style: normal;
+              font-weight: 700;
+              line-height: normal;
+            }
+          }
+          .lowerSection {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            width: 100%;
+            @media (max-width: 490px) {
+              flex-direction: column;
+            }
+            .innerBug {
+              width: 50%;
+              display: flex;
+              flex-direction: column;
+              gap: 20px;
+              border-right: 1px solid #d6d6d6;
+              @media (max-width: 490px) {
+                border-right: none;
+                flex-direction: row;
+                justify-content: space-between;
+
+                border-bottom: 1px solid #d6d6d6;
+                width: 100%;
+                align-items: center;
+              }
+              .count {
+                color: var(--text-color3);
+                @include font26;
+                font-feature-settings: 'clig' off, 'liga' off;
+                font-family: Public Sans;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+              }
+
+              .status {
+                color: var(--text-color3);
+                @include font18;
+                margin-top: 5px;
+                font-family: Public Sans;
+                font-style: normal;
+                font-weight: 300;
+                line-height: normal;
+              }
+            }
+          }
+        }
+      }
+    }
+    .right {
+      width: 35%;
+      @media (max-width: $sm) {
+        width: 100%;
+      }
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      .upcomingDiv {
+        display: flex;
+        width: 100%;
+        height: 373px;
+        padding: var(--numbers-modal-corner, 10px);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--numbers-modal-corner, 10px);
+        flex-shrink: 0;
+        border-radius: var(--numbers-modal-corner, 10px);
+        border: 1px solid var(--border);
+        background: var(--background-color1);
+        .upcomingHeader {
+          img {
+            cursor: pointer;
+          }
+          span {
+            color: var(--text-color3);
+            font-feature-settings: 'clig' off, 'liga' off;
+            font-family: Public Sans;
+            @include font22;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+          }
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+        .upcomingInner {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          overflow-x: scroll;
+          &::-webkit-scrollbar {
+            width: 0px !important; /* Remove scrollbar space */
+            background: #e6e7e8; /* Optional: just make scrollbar invisible */
+            height: 0px !important;
+            border-radius: 8px;
+          }
+        }
+        .activitiesInner {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+          overflow-x: scroll;
+          &::-webkit-scrollbar {
+            width: 0px !important; /* Remove scrollbar space */
+            background: #e6e7e8; /* Optional: just make scrollbar invisible */
+            height: 0px !important;
+            border-radius: 8px;
+          }
+          .activities {
+            position: relative;
+            align-items: center;
+            display: flex;
+            gap: 10px;
+            .greyLine {
+              position: absolute;
+              border-left: 1px solid #d6d6d6;
+              height: 15px;
+              bottom: -15px;
+              left: 14px;
+            }
+            .line {
+              color: var(--text-color3);
+              /* Body Font */
+              font-family: Public Sans;
+              @include font13;
+              font-style: normal;
+              font-weight: 400;
+            }
+            span {
+              color: var(--text-color3);
+              font-feature-settings: 'cv11' on, 'cv01' on, 'ss01' on;
+              /* Small Font */
+              font-family: Public Sans;
+              @include font10;
+              font-style: normal;
+              font-weight: 400;
+            }
+          }
+        }
+      }
+    }
+  }
+  .wrapperLower {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    @media (max-width: $sm) {
+      flex-direction: column;
+    }
+    .reportSection {
+      height: 320px;
+      width: 50%;
+      @media (max-width: $sm) {
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+@import 'styles/_breakpoints.scss';
+@import 'styles/_colors.scss';
+@import 'styles/_mixin.scss';
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: max-content;
+  height: 35px;
+  width: 100%;
+  background-color: var(--text-color3);
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  box-shadow: none;
+  padding: 10px;
+  color: $white;
+  &:disabled {
+    background-color: #9da1aa;
+    span {
+      color: #363636 !important;
+    }
+  }
+
+  .img {
+    margin-right: 10px;
+    width: 12px;
+    height: 13px;
+  }
+  svg {
+    margin-right: 10px;
+    width: 12px;
+    height: 13px;
+  }
+
+  .btnTitle {
+    color: var(--text-color2);
+    font-weight: 600;
+    @include font13;
+    line-height: 22px;
+    @media (max-width: 490px) {
+      @include font10;
+    }
+  }
+}

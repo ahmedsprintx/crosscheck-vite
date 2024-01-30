@@ -1,0 +1,100 @@
+@import 'styles/_breakpoints.scss';
+@import 'styles/_colors.scss';
+@import 'styles/_mixin.scss';
+
+.inputContainer {
+  position: relative;
+
+  label {
+    font-weight: 500;
+    @include font13;
+    line-height: 27px;
+    color: var(--text-color3);
+    text-transform: capitalize;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    div {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background-color: red;
+    }
+  }
+
+  input[type='range'] {
+    padding: 0 !important;
+  }
+
+  input {
+    height: 35px;
+    background-color: var(--background-color1);
+    border: 1px solid #d6d6d6;
+    border-radius: 5.06897px;
+    padding: 10px 35px 10px 10px;
+    @include font13;
+    color: var(--text-color3);
+    font-weight: 500;
+    width: 100%;
+
+    &::-webkit-credentials-auto-fill-button {
+      visibility: hidden !important;
+      position: absolute !important;
+      right: 0 !important;
+    }
+
+    &:focus {
+      outline: none;
+      border: 1px solid var(--text-color3);
+    }
+
+    &:active {
+      border: 1px solid var(--text-color3);
+    }
+
+    &::placeholder {
+      font-weight: 300;
+      @include font13;
+      color: #8b909a;
+    }
+  }
+
+  .icon {
+    position: absolute;
+    right: 13px;
+    top: 8px;
+    width: 18px;
+    height: 18px;
+    svg {
+      height: 18px;
+      width: 18px;
+    }
+    cursor: pointer;
+  }
+
+  .crossIcon {
+    position: absolute;
+    right: 38px;
+    top: 12px;
+    width: 12px;
+    height: 12px;
+    cursor: pointer;
+  }
+
+  .errorMessage {
+    display: block;
+    @include font13;
+    margin-left: 5px;
+    color: #ff5050;
+  }
+}
+
+input[type='password'] {
+  &::placeholder {
+    position: relative;
+    top: 0px !important;
+  }
+}

@@ -1,0 +1,178 @@
+@import 'styles/_breakpoints.scss';
+@import 'styles/_colors.scss';
+@import 'styles/_mixin.scss';
+.planPeriod {
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  .packages {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #071952;
+    border-radius: 20px;
+    .btn {
+      cursor: pointer;
+      padding: 5px 10px;
+      border-radius: 20px;
+      background-color: #ffffff;
+      color: #071952;
+      transition: all 0.5s ease-in;
+      font-family: Public Sans;
+      @include font15;
+      font-weight: 400;
+      line-height: 16px;
+      letter-spacing: 0em;
+      text-align: left;
+    }
+    .btnColor {
+      background-color: #071952;
+      color: #ffffff;
+      transition: all 0.5s ease-in;
+    }
+  }
+  .cancelBtn {
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+    color: var(--text-color3);
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.planWrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  .card {
+    width: 100%;
+    padding: 20px;
+    border-radius: 20px;
+    border: 1px solid #d6d6d6;
+    background: #d6d6d620;
+    .cardTitle {
+      font-family: Public Sans;
+      @include font22;
+      font-weight: 700;
+      line-height: 23px;
+      letter-spacing: 0em;
+      text-align: left;
+      color: #fd71af;
+      margin-bottom: 5px;
+    }
+    .cardTitleColor2 {
+      color: #49ccf9;
+    }
+
+    span {
+      font-family: Public Sans;
+      @include font18;
+      font-weight: 400;
+      line-height: 16px;
+      letter-spacing: 0em;
+      text-align: left;
+      color: var(--placeholder);
+    }
+    .pricing {
+      margin: 10px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      h2 {
+        font-family: Public Sans;
+        @include font30;
+        font-weight: 700;
+        line-height: 41px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: var(--text-color1);
+      }
+      span {
+        font-family: Public Sans;
+        @include font18;
+        font-weight: 400;
+        line-height: 21px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: var(--text-color1);
+      }
+      hr {
+        margin: 10px 10px;
+        height: 2px;
+        background-color: #d6d6d6;
+        border: 0;
+      }
+    }
+    .features {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      h5 {
+        font-family: Public Sans;
+        @include font15;
+        font-weight: 500;
+        line-height: 14px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: var(--placeholder);
+      }
+      p {
+        font-family: Public Sans;
+        @include font13;
+        font-weight: 300;
+        line-height: 14px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: var(--placeholder);
+      }
+    }
+    .submit {
+      margin: 10px 0;
+      .btn {
+        padding: 10px;
+        border-radius: 5px;
+        max-width: 100%;
+      }
+      .btn2 {
+        background-color: #49ccf9;
+      }
+      .btn1 {
+        background-color: #fd71af;
+      }
+      .btnActive {
+        background-color: #071952;
+        color: #ffffff;
+      }
+      .title {
+        font-family: Public Sans;
+        @include font13;
+        font-weight: 600;
+        line-height: 15px;
+        letter-spacing: 0em;
+        text-align: center;
+        color: #ffffff;
+      }
+    }
+  }
+}
+
+.extra {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  margin-top: 15px;
+  font-family: Public Sans;
+  @include font13;
+  font-weight: 300;
+  line-height: 15px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: var(--text-color3);
+  text-decoration: underline;
+}

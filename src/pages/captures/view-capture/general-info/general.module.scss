@@ -1,0 +1,42 @@
+.generalDiv {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  h6 {
+    color: var(--Font-A, #2d2d32);
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Public Sans;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+  .generalInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    .infoFlex {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .innerP {
+      color: var(--Font-A, #2d2d32);
+      font-family: Public Sans;
+      font-size: 13px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+  }
+}
+
+.textSm {
+  font-family: Public Sans;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0em;
+  text-align: left;
+}

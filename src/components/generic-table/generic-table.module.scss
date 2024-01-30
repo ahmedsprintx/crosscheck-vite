@@ -1,0 +1,81 @@
+.rowHoverClass {
+  background-color: transparent !important;
+  border-bottom: 1px solid var(--Strokes-Stroke-A, #d6d6d6) !important;
+  border-radius: 0px !important;
+  border-spacing: 0px 0px !important;
+  &:hover {
+    background: var(--Table-Row-Background, #f3f3f3) !important;
+    td {
+      p {
+        color: var(--text-color3-hover);
+      }
+    }
+  }
+}
+
+.tableRow {
+  border-bottom: 1px solid var(--Strokes-Stroke-A, #d6d6d6) !important;
+  border-radius: 0px !important;
+  cursor: pointer;
+
+  div {
+    text-overflow: ellipsis !important;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+    transition: all 0.3s ease; /* Add smooth transition */
+  }
+
+  p {
+    text-overflow: ellipsis !important;
+    overflow: hidden !important;
+    max-width: 140px !important;
+    white-space: nowrap !important;
+    transition: all 0.3s ease; /* Add smooth transition */
+  }
+
+  :hover {
+    p {
+      cursor: pointer;
+    }
+  }
+}
+
+.tableRowClicked {
+  border-bottom: 1px solid var(--Strokes-Stroke-A, #d6d6d6) !important;
+  border-radius: 0px !important;
+
+  div {
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: unset !important;
+  }
+  p {
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: unset !important;
+    max-width: 200px !important;
+  }
+  :hover {
+    p {
+      cursor: pointer;
+    }
+  }
+}
+.selectedItemClass {
+  background-color: var(--Table-Row-Background, #f3f3f3) !important;
+}
+
+.rightClickMenu {
+  width: 100%;
+  position: absolute;
+  cursor: pointer;
+  z-index: 100;
+  right: 30px;
+}
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: transparent !important;
+  z-index: 4;
+  backdrop-filter: blur(1px); /* Adjust the blur radius as needed */
+}

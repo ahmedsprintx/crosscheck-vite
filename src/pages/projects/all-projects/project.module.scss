@@ -1,0 +1,129 @@
+@import 'styles/_breakpoints.scss';
+@import 'styles/_colors.scss';
+@import 'styles/_mixin.scss';
+
+.grid {
+  margin-top: 10px;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
+}
+
+.btn {
+  max-width: 97px !important;
+  padding: 0px;
+  height: 35px;
+
+  span {
+    @include font13;
+  }
+}
+
+.modalDiv {
+  @media (max-width: 490px) {
+    display: none;
+  }
+
+  display: block;
+}
+
+.modalDivMobile {
+  @media (max-width: 490px) {
+    display: block;
+  }
+
+  display: none;
+}
+
+.membersRow {
+  display: flex;
+  padding: 10px 0px;
+  align-items: center;
+  gap: 20px;
+  align-self: stretch;
+  border-bottom: 1px solid var(--stroke, #d6d6d6);
+
+  .imgDiv {
+    display: flex;
+    align-items: center;
+
+    img {
+      margin-right: -10px;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+    }
+
+    span {
+      margin-right: -10px;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--text-color3);
+      color: #fff;
+      border-radius: 50%;
+      @include font10;
+      font-weight: 400;
+      border: 1px solid #fff;
+    }
+
+    p {
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--text-color3);
+      color: #fff;
+      border-radius: 50%;
+      @include font10;
+      font-weight: 400;
+      border: 1px solid #fff;
+    }
+  }
+
+  img {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+  }
+
+  p {
+    /* Subtitle 1 */
+    color: var(--text-color1);
+    font-family: Public Sans;
+    @include font15;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+  }
+
+  .name {
+    width: 150px;
+  }
+}
+
+.btnRemove {
+  background: var(--placeholder);
+  display: flex;
+  padding: 1px 3px;
+  justify-content: center;
+  align-items: center;
+  height: 20px;
+}
+
+.addModal {
+  @media (max-width: 760px) {
+    display: none;
+  }
+}
+
+.addModalMobile {
+  display: none;
+
+  @media (max-width: 760px) {
+    display: block;
+  }
+}

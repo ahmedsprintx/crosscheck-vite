@@ -1,0 +1,55 @@
+@import 'styles/_breakpoints.scss';
+@import 'styles/_colors.scss';
+@import 'styles/_mixin.scss';
+
+.mainDiv {
+  max-width: 620px !important;
+
+  .crossImg {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    img {
+      cursor: pointer;
+    }
+    .modalTitle {
+      font-weight: 700;
+      @include font18;
+      color: var(--text-color3);
+    }
+  }
+  label {
+    color: var(--text-color3);
+    @include font15;
+    font-weight: 600;
+  }
+  .p {
+    color: var(--text-color3);
+    @include font13;
+    font-weight: 400;
+    margin-top: 10px;
+    span {
+      font-weight: 600;
+      color: var(--text-color3) !important;
+    }
+  }
+  .mainBtnDiv {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 10px;
+    button {
+      max-width: 100%;
+    }
+  }
+
+  .btnClassUncheckModal {
+    background-color: var(--background-color1);
+    span {
+      color: var(--text-color3) !important;
+    }
+  }
+}

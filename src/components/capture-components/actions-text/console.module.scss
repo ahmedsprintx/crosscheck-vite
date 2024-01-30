@@ -1,0 +1,40 @@
+.mainWrapper {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 5px;
+  padding: 0px 10px;
+  .time {
+    width: 25px;
+    color: var(--Font-A, #2d2d32);
+    font-feature-settings: 'cv11' on, 'cv01' on, 'ss01' on;
+    font-family: Public Sans;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    .icon {
+      width: 20px;
+    }
+  }
+  .desc {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    span {
+      font-feature-settings: 'cv11' on, 'cv01' on, 'ss01' on;
+      font-family: Public Sans;
+      font-size: 10px;
+      font-style: normal;
+      font-weight: 400;
+    }
+    .iconDiv {
+      width: 5%;
+      cursor: pointer;
+    }
+  }
+}
+.descExpanded {
+  padding: 0px 10px;
+}

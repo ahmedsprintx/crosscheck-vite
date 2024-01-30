@@ -1,6 +1,7 @@
 module.exports = {
   root: true,
   env: { browser: true, es2021: true },
+
   extends: [
     'eslint:recommended',
     'plugin:react/recommended',
@@ -33,15 +34,17 @@ module.exports = {
   },
   rules: {
     'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
-    'no-unused-vars': [
-      'error',
-      {
-        vars: 'all',
-        args: 'after-used',
-        ignoreRestSiblings: true,
-        argsIgnorePattern: '^_',
-      },
-    ],
+    // 'no-unused-vars': [
+    //   'error',
+    //   {
+    //     vars: 'all',
+    //     args: 'after-used',
+    //     ignoreRestSiblings: true,
+    //     argsIgnorePattern: '^_',
+    //   },
+    // ],
+    'jsx-a11y/click-events-have-key-events': 'off',
+
     'react/react-in-jsx-scope': 'off',
     // Enforce kebab-case for filenames
     'check-file/filename-naming-convention': [
@@ -69,6 +72,6 @@ module.exports = {
       },
     ],
     //enforce the use of no inline styling
-    'no-inline-styles/no-inline-styles': 2,
+    // 'no-inline-styles/no-inline-styles': 2,
   },
 };

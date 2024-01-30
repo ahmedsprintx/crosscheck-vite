@@ -1,0 +1,223 @@
+@import 'styles/_breakpoints.scss';
+@import 'styles/_colors.scss';
+@import 'styles/_mixin.scss';
+
+.main {
+  margin-top: 10px;
+
+  .grid {
+    @include gridTwo(10, 10);
+    margin-top: 10px;
+    @media (max-width: 550px) {
+      grid-template-columns: 1fr;
+    }
+    .milestoneDiv {
+      @media (max-width: 550px) {
+        display: none;
+      }
+    }
+  }
+  .grid1 {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+.left {
+  padding: 10px;
+  border: 1px solid #d6d6d6;
+  border-radius: 10px;
+  height: calc(100vh - 160px);
+  overflow-y: auto;
+
+  .flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    h6 {
+      font-weight: 600;
+      @include font18;
+      color: (var(--text-color3));
+    }
+    .innerFlex {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      p {
+        font-weight: 500;
+        @include font13;
+        color: var(--text-color3);
+      }
+    }
+    .p {
+      font-weight: 400;
+      @include font15;
+      color: $primary;
+    }
+  }
+  .height {
+    height: calc(100vh - 217px);
+    overflow-y: auto;
+    margin-top: 10px;
+    &::-webkit-scrollbar:vertical {
+      width: 5px; /* Remove scrollbar space */
+      background: #e6e7e8; /* Optional: just make scrollbar invisible */
+      height: 5px;
+      border-radius: 8px;
+      display: block !important;
+    }
+
+    .flex1 {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px;
+      border-bottom: 1px solid #d6d6d6;
+      position: relative;
+      cursor: pointer !important;
+
+      &:hover {
+        background-color: var(--sidebar);
+
+        .img {
+          visibility: visible;
+        }
+        .p {
+          color: #ffffff;
+        }
+        svg {
+          path {
+            fill: #ffffff !important;
+          }
+        }
+      }
+
+      .p {
+        font-weight: 400;
+        @include font15;
+        color: var(--text-color3);
+      }
+      img {
+        cursor: pointer;
+      }
+    }
+  }
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.popUp {
+  @media (max-width: 550px) {
+    display: none;
+  }
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  gap: 10px;
+  position: absolute;
+  width: 100px;
+  background: var(--background-color1);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 6px;
+  right: 10px;
+  top: 100%;
+  z-index: 4;
+
+  p {
+    font-weight: 400;
+    @include font13;
+    color: var(--text-color3);
+    cursor: pointer;
+  }
+}
+.popUpMenu {
+  @media (max-width: 550px) {
+    display: flex;
+  }
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1 0 0;
+  gap: 16px;
+  align-self: stretch;
+  p {
+    color: var(--Font-C, #071952);
+    font-family: Public Sans;
+    @include font13;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+  }
+}
+
+.img {
+  visibility: hidden;
+}
+
+.renameField {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid $primary;
+  input {
+    width: 80%;
+    height: 100%;
+    color: $primary;
+    margin-left: 24px;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    font-weight: 400;
+    @include font15;
+    background-color: transparent;
+  }
+  .moreInner {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    img {
+      cursor: pointer;
+    }
+  }
+}
+
+.draggableItem {
+  padding: 10px 15px;
+  max-width: 180px;
+  margin: auto;
+  background: rgb(71, 119, 214);
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.draggableItem:hover {
+  background: $primary;
+}
+
+.draggableItem:not(:last-child) {
+  margin-bottom: 8px;
+}
+
+.selected {
+  background: $primary;
+  .img {
+    visibility: visible;
+  }
+  .p {
+    color: #ffffff !important;
+  }
+}
+
+.backdropDiv {
+  position: fixed;
+  inset: 0;
+  background-color: transparent;
+  z-index: 2;
+}
+.animatedGrid {
+  transition: width 0.5s ease-in-out;
+}

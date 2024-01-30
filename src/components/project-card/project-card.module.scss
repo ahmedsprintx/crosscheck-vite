@@ -1,0 +1,220 @@
+@import 'styles/_breakpoints.scss';
+@import 'styles/_colors.scss';
+@import 'styles/_mixin.scss';
+
+.mainDiv {
+  padding: 20px;
+  border-radius: 12px;
+  background: var(--table-row);
+  position: relative;
+
+  &:hover {
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #d6d6d6;
+    padding-bottom: 10px;
+    position: relative;
+
+    .p {
+      color: var(--text-color3);
+      margin: 0 auto;
+      overflow: hidden;
+      @include font26;
+      width: 350px;
+      text-align: center;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+
+      &:hover {
+        & span {
+          opacity: 1;
+          transition-delay: 0.3s;
+        }
+      }
+
+      .tooltip {
+        transition: 0s;
+        opacity: 0;
+        position: absolute;
+        background: $white;
+        border: 1px solid #e2e2ea;
+        box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 2px 2px 2px 0px;
+        padding: 3px 9px;
+        z-index: 20;
+        top: 25px;
+        left: 30px;
+        font-weight: 400;
+        @include font13;
+        color: $primary;
+        text-transform: capitalize;
+        overflow-wrap: anywhere;
+      }
+    }
+
+    img {
+      cursor: pointer;
+    }
+  }
+
+  .info {
+    margin: 10px 0;
+
+    .line {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 5px;
+
+      p {
+        color: var(--text-color3);
+        @include font15;
+        font-weight: 300;
+      }
+
+      span {
+        color: var(--text-color3);
+        @include font15;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .shared {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    p {
+      color: var(--text-color3);
+      @include font15;
+      font-weight: 300;
+    }
+
+    .imgDiv {
+      display: flex;
+      align-items: center;
+
+      img {
+        margin-right: -10px;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        border: 1px solid #fff;
+        cursor: pointer;
+      }
+
+      span {
+        margin-right: -10px;
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--text-color3);
+        color: #fff;
+        border-radius: 50%;
+        @include font10;
+        font-weight: 400;
+        border: 2px solid #fff;
+        cursor: pointer;
+      }
+
+      p {
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--text-color3);
+        color: #fff;
+        border-radius: 50%;
+        @include font10;
+        font-weight: 400;
+        border: 1px solid #fff;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  background-color: transparent;
+}
+
+.modalDiv {
+  @media (max-width: 490px) {
+    display: none;
+  }
+
+  position: relative;
+  z-index: 5;
+
+  display: block;
+}
+
+.modalDivMobile {
+  @media (max-width: 490px) {
+    display: block;
+  }
+
+  display: none;
+}
+
+.flexMain {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+
+  svg {
+    width: 12.444px;
+    height: 14px;
+  }
+
+  p {
+    color: var(--Fonts-Font-C, #071952);
+
+    /* Mobile/Subtitle */
+    font-family: Public Sans;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+  }
+}
+
+.imgDel {
+  height: 15px;
+  width: 15px;
+
+  svg {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.editColor {
+  stroke: var(--grey-icon, #8b909a) !important;
+}
+
+.editColor1 {
+  stroke: #f80101 !important;
+}
+.rightClickMenu {
+  width: 100%;
+  position: absolute;
+  cursor: pointer;
+  z-index: 100;
+  right: 30px;
+}

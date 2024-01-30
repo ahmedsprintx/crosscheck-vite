@@ -1,0 +1,27 @@
+import React from 'react';
+
+import style from './icons.module.scss';
+
+const ActivityIcon = () => {
+  return (
+    <>
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <g clip-path="url(#clip0_6757_80091)">
+          <path
+            d="M2 7.99996H4.66667L6.66667 13.3333L9.33333 2.66663L11.3333 7.99996H14"
+            stroke="#8B909A"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </g>
+        <defs>
+          <clipPath id="clip0_6757_80091">
+            <rect width="16" height="16" fill="white" />
+          </clipPath>
+        </defs>
+      </svg>
+    </>
+  );
+};
+
+export default ActivityIcon;

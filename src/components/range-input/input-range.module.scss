@@ -1,0 +1,89 @@
+@import 'styles/_breakpoints.scss';
+@import 'styles/_colors.scss';
+@import 'styles/_mixin.scss';
+.label {
+  color: var(--text-color3);
+  @include font13;
+  font-weight: 500;
+  margin-left: 4px;
+}
+.rangeContainer {
+  margin-top: 15px;
+  position: relative;
+  width: 100%;
+  cursor: pointer;
+  input[type='range'] {
+    background-image: none;
+    cursor: pointer;
+  }
+  input {
+    width: 100%;
+    cursor: pointer;
+  }
+  &:hover {
+    .tooltip {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+
+.tooltip {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  text-align: center;
+  bottom: calc(100% + 8px);
+  transform: translateX(-18%);
+  background-color: var(--text-color3);
+  color: var(--text-color2);
+  padding: 5px 10px;
+  border-radius: 5px;
+  @include font10;
+}
+
+.tooltip::after {
+  content: '';
+  position: absolute;
+  bottom: -9px;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  cursor: pointer;
+  border-color: var(--text-color3) transparent transparent transparent;
+}
+
+.pointsContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+
+.point {
+  width: 1px;
+  height: 5px;
+  background-color: #33333353;
+  &:hover {
+    .tooltip2 {
+      display: block;
+    }
+  }
+}
+.tooltip2 {
+  position: absolute;
+  display: none;
+  text-align: center;
+  bottom: calc(100% + 8px);
+  transform: translateX(-18%);
+  background-color: var(--text-color3);
+  color: var(--text-color2);
+  padding: 5px 10px;
+  border-radius: 5px;
+  @include font10;
+}
+
+.errorMessage {
+  color: #ff5050;
+  @include font13;
+}

@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&display=swap');
+@import 'react-datepicker/dist/react-datepicker.css';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,800;0,900;1,700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  outline: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: 'Public Sans', sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.light-mode {
+  --background-color: #fff;
+  --info-card-orange: rgba(226, 94, 62, 0.08);
+  --background-color1: #fff;
+  --nav-background-color1: #fff;
+  --text-color1: #2d2d32;
+  --text-color2: #fff;
+  --text-color3: #11103d;
+  --text-color3-hover: #11103d;
+  --placeholder: #8b909a;
+  --green: #34c369;
+  --table-row: #f3f3f3;
+  --icon: #fff;
+  --active: rgba(255, 255, 255, 0.1);
+  --sidebar: #11103d;
+  --grey-icon: #8b909a;
+  --avatar: #e8e8ec;
+  --border: #d6d6d6;
+  --hover: #11103d1a;
+}
+
+.dark-mode {
+  --background-color: #1f1f1f;
+  --info-card-orange: rgba(226, 94, 62, 0.08);
+  --background-color1: #2d2d2d;
+  --nav-background-color1: #353535;
+  --text-color1: #fff;
+  --text-color2: #2d2d32;
+  --text-color3: #fff;
+  --text-color3-hover: #11103d;
+  --placeholder: #5e5e5e;
+  --green: #34c369;
+  --table-row: #292929;
+  --icon: #11103d;
+  --active: #222222;
+  --sidebar: #0a0a0a;
+  --grey-icon: #fff;
+  --avatar: #353535;
+  --border: #2d2d2d;
+  --hover: #0a0a0a;
+}
+
+html,
+body {
+  font-family: 'Public Sans', sans-serif;
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  outline: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  transition: background-color 0.3s, color 0.3s;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  /* Remove scrollbar space */
+  background: #e6e7e8;
+  /* Optional: just make scrollbar invisible */
+  height: 5px;
+  border-radius: 8px;
+}
+
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  background: #c7c8ca;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar:vertical {
+  width: 5px;
+  /* Remove scrollbar space */
+  background: #e6e7e8;
+  /* Optional: just make scrollbar invisible */
+  height: 5px;
+  border-radius: 8px;
+  display: none;
+}
+
+input[type='range'] {
+  -webkit-appearance: none;
+  margin-right: 15px;
+  width: 200px;
+  height: 7px;
+  background: #cfcfd8;
+  border-radius: 5px;
+  background-image: linear-gradient(#11103d, #11103d);
+  background-size: 70% 100%;
+  background-repeat: no-repeat;
+}
+
+/* Input Thumb */
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: #fff;
+  cursor: ew-resize;
+  box-shadow: 0 0 2px 0 #11103d;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+/* Input Track */
+input[type='range']::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  box-shadow: none;
+  border: none;
+  background: transparent;
+}
+
+input[type='range']::-moz-range-track {
+  -webkit-appearance: none;
+  box-shadow: none;
+  border: none;
+  background: transparent;
+}
+
+input[type='range']::-ms-track {
+  -webkit-appearance: none;
+  box-shadow: none;
+  border: none;
+  background: transparent;
+}
+
+.DraftEditor-editorContainer,
+.DraftEditor-root,
+.public-DraftEditor-content {
+  height: 64px !important;
+}
+
+.rdw-image-modal,
+.rdw-emoji-modal,
+.rdw-link-modal {
+  right: 5px !important;
+  display: flex;
+  flex-direction: column;
+  width: 235px;
+  left: -179px !important;
+  border: 1px solid #f1f1f1;
+  z-index: 20000 !important;
+  padding: 5px !important;
+  border-radius: 2px;
+  z-index: 20000;
+  background: white;
+  box-shadow: 3px 3px 5px #bfbdbd;
+}
+
+.rdw-image-modal-header {
+  margin: 0px 0px 5px 0px !important;
+}
+
+.rdw-link-modal-target-option {
+  display: flex;
+  align-items: center;
+}
+
+.react-datepicker__header {
+  background-color: transparent !important;
+  padding: 8px 12px !important;
+  border-bottom: 1px solid #d6d6d6 !important;
+}
+
+.react-split__pane {
+  z-index: 300 !important;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+  height: 525px !important;
+  @media (max-width: 768px) {
+    height: 455px !important;
+  }
+}
+
+.slick-initialized .slick-slide {
+  margin-right: 10px !important;
+}
+
+.slick-dots li.slick-active button:before {
+  opacity: 0.75;
+  color: #e24872 !important;
+  padding: 0px !important;
+  font-size: 14px !important;
+  height: 12px !important;
+  width: 12px !important;
+  line-height: normal;
+}
+
+.slick-dots li button:before {
+  color: #d6d6d6 !important;
+  padding: 0px !important;
+  font-size: 14px !important;
+  height: 12px !important;
+  width: 12px !important;
+  line-height: normal !important;
+}
+
+.slick-dots li {
+  margin: 0px !important;
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: auto !important;
+  opacity: 1 !important;
+}

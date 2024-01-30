@@ -1,0 +1,57 @@
+@import 'styles/_breakpoints.scss';
+@import 'styles/_colors.scss';
+@import 'styles/_mixin.scss';
+
+.activityWrapper {
+  margin-top: 10px;
+  .dayText {
+    color: var(--text-color3);
+    background-color: var(--text-color2);
+    font-feature-settings: 'clig' off, 'liga' off;
+    /* Heading 2 */
+    font-family: Public Sans;
+    @include font22;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  .activitiesSection {
+    padding: 10px 50px;
+    @media (max-width: $sm) {
+      padding: 10px 10px;
+    }
+  }
+}
+.headerDiv {
+  @media (max-width: 550px) {
+    display: none;
+  }
+}
+.headerDivMobile {
+  display: none;
+  @media (max-width: 550px) {
+    display: block;
+  }
+}
+.menuIcon {
+  display: none;
+  @media (max-width: 550px) {
+    display: block;
+  }
+}
+.filterBtn {
+  border: 1px solid var(--text-color3);
+  background-color: transparent;
+  max-width: 100px;
+  span {
+    color: var(--text-color3) !important;
+  }
+}
+.filterBtnActive {
+  border: 1px solid #e25e3e;
+  background-color: transparent;
+  max-width: 110px;
+  span {
+    color: #e25e3e !important;
+  }
+}
