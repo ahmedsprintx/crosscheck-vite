@@ -19,9 +19,7 @@ const ErrorUI = () => {
 
         <div className={style.textWrapper}>
           <div className={style.title}>Oops. Something Went Wrong!</div>
-          <div className={style.description}>
-            The page you’re looking for does not seem to exist
-          </div>
+          <div className={style.description}>The page you’re looking for does not seem to exist</div>
         </div>
         <a className={style.btn} href={BASE_URL}>
           <span>Back to Home</span>

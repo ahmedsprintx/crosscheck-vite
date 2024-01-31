@@ -2,15 +2,26 @@ import { changeWorkspace } from 'api/v1/settings/user-management';
 import { initializeApp } from 'firebase/app';
 import { getToken, getMessaging, onMessage } from 'firebase/messaging';
 import { toastNotification } from 'hooks/use-toaster';
+import { envObject } from '../constants/environmental';
+
+const {
+  FIREBASE_APIKEY,
+  FIREBASE_APPID,
+  FIREBASE_AUTHDOMAIN,
+  FIREBASE_MESSAGINGSENDERID,
+  FIREBASE_MEASUREMENTID,
+  FIREBASE_STORAGEBUCKET,
+  FIREBASE_PROJECTID,
+} = envObject;
 
 const firebaseConfig = {
-  apiKey: process.env.REACT_APP_FIREBASE_APIKEY,
-  authDomain: process.env.REACT_APP_FIREBASE_AUTHDOMAIN,
-  projectId: process.env.REACT_APP_FIREBASE_PROJECTID,
-  storageBucket: process.env.REACT_APP_FIREBASE_STORAGEBUCKET,
-  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGINGSENDERID,
-  appId: process.env.REACT_APP_FIREBASE_APPID,
-  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENTID,
+  apiKey: FIREBASE_APIKEY,
+  authDomain: FIREBASE_AUTHDOMAIN,
+  projectId: FIREBASE_PROJECTID,
+  storageBucket: FIREBASE_STORAGEBUCKET,
+  messagingSenderId: FIREBASE_MESSAGINGSENDERID,
+  appId: FIREBASE_APPID,
+  measurementId: FIREBASE_MEASUREMENTID,
 };
 
 const firebaseApp = initializeApp(firebaseConfig);
@@ -35,7 +46,7 @@ export const getOrRegisterServiceWorker = () => {
 export const getFirebaseToken = () =>
   getOrRegisterServiceWorker().then((serviceWorkerRegistration) =>
     getToken(messaging, {
-      vapidKey: process.env.REACT_APP_FIREBASE_VAPIDKEY,
+      vapidKey: import.meta.env.VITE_REACT_APP_FIREBASE_VAPIDKEY,
       serviceWorkerRegistration,
     }),
   );

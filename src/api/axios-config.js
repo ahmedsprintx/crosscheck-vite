@@ -1,13 +1,16 @@
 import axios from 'axios';
 import isBrowser from 'utils/is-browser';
-// NOTE: import messages from '@/messages';
-
+import { envObject } from '../constants/environmental';
 import _ from 'lodash';
 import { getToken, removeToken, getLastWorkspace } from 'utils/token';
+// NOTE: import messages from '@/messages';
+
+const { API_URL } = envObject;
 
 const client = axios.create({
-  baseURL: process.env.REACT_APP_API_URL || 'http://localhost:8080',
+  baseURL: API_URL || 'http://localhost:8080',
 });
+
 export const setAuthHeader = (token) => {
   if (token) {
     client.defaults.headers.common['Authorization'] = `Bearer ${token}`;
@@ -54,9 +57,7 @@ const onError = function (error) {
   return Promise.reject({
     msg: !error?.response
       ? 'Network Issue!'
-      : error?.response?.data?.msg || 
-        _.values(error?.response?.data?.error)[0] || 
-        error?.response?.data?.message, 
+      : error?.response?.data?.msg || _.values(error?.response?.data?.error)[0] || error?.response?.data?.message,
     validations: error?.response?.data?.error ? error?.response?.data?.error : null,
     status: error?.response?.status || 'not status',
   });

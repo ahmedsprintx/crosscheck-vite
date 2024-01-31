@@ -5,7 +5,7 @@ import { Controller } from 'react-hook-form';
 import { Editor } from 'react-draft-wysiwyg';
 import { EditorState, RichUtils, convertToRaw } from 'draft-js';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
-import 'index.scss';
+import '../../index.scss';
 
 import num from 'assets/editor-icons/numbers.svg';
 import boldIcon from 'assets/editor-icons/bold.svg';

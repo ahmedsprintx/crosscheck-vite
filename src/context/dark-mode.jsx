@@ -1,12 +1,11 @@
 import { useDarkMoodToggle } from 'hooks/api-hooks/settings/user-management.hook';
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import React, { createContext, useContext } from 'react';
 import { useAppContext } from './app.context';
 import { useToaster } from 'hooks/use-toaster';
 
 const ModeContext = createContext();
 
 export const ModeProvider = ({ children }) => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
   const { toastSuccess, toastError } = useToaster();
 
   const { userDetails, setUserDetails } = useAppContext();

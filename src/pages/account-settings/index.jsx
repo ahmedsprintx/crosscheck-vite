@@ -45,13 +45,7 @@ const AccountSetting = () => {
 
   React.useEffect(() => {
     if (_userDataById?.user && Object.keys(_userDataById?.user).length) {
-      let values = _.pick(_userDataById?.user, [
-        'name',
-        'email',
-        'profilePicture',
-        'clickUpUserId',
-        'timeZone',
-      ]);
+      let values = _.pick(_userDataById?.user, ['name', 'email', 'profilePicture', 'clickUpUserId', 'timeZone']);
       values = {
         ...values,
       };
@@ -214,12 +208,7 @@ const AccountSetting = () => {
           />
           <div className={style.toggleDiv}>
             <span>Dark Mode</span>
-            <Switch
-              checked={isDarkMode}
-              control={control}
-              name={'switch'}
-              handleSwitchChange={toggleMode}
-            />
+            <Switch checked={isDarkMode} control={control} name={'switch'} handleSwitchChange={toggleMode} />
           </div>
 
           {isFormDirty && (
@@ -232,12 +221,7 @@ const AccountSetting = () => {
                   setIsFormDirty(false);
                 }}
               />
-              <Button
-                text={'Save Changes'}
-                btnClass={style.btnClass}
-                disabled={false}
-                type={'submit'}
-              />
+              <Button text={'Save Changes'} btnClass={style.btnClass} disabled={false} type={'submit'} />
             </div>
           )}
         </form>

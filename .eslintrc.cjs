@@ -1,7 +1,6 @@
 module.exports = {
   root: true,
   env: { browser: true, es2021: true },
-
   extends: [
     'eslint:recommended',
     'plugin:react/recommended',
@@ -55,7 +54,7 @@ module.exports = {
     'jsx-a11y/no-autofocus': 'off',
     'no-unsafe-optional-chaining': 'off',
     'jsx-a11y/alt-text': 'off',
-
+    'import/no-unresolved': 'off',
     'react/react-in-jsx-scope': 'off',
     // Enforce kebab-case for filenames
     'check-file/filename-naming-convention': [
