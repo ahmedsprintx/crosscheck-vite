@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import { useProjectOptions } from '../helper';
+import { useEffect, useState } from 'react';
 import SelectBox from 'components/select-box';
 import Button from 'components/button';
 import CrossIcon from 'components/icon-component/cross';
@@ -51,7 +50,7 @@ const FiltersDrawer = ({
     }
   }, [watch('projects')]);
 
-  const [selectedDates, setSelectedDates] = useState();
+  const [setSelectedDates] = useState();
 
   const onChange = (name, dates) => {
     const [start, end] = dates;
@@ -79,10 +78,7 @@ const FiltersDrawer = ({
             </div>
           </div>
         </div>
-        <form
-          className={style.body}
-          style={{ height: noHeader ? '78vh' : '90vh', overflowY: 'auto' }}
-        >
+        <form className={style.body} style={{ height: noHeader ? '78vh' : '90vh', overflowY: 'auto' }}>
           <div className={style.bottom}>
             <div className={noHeader ? style.gridOne : style.gridTwo}>
               {!noHeader && (
@@ -221,10 +217,7 @@ const FiltersDrawer = ({
               </div>
               <div>
                 <SelectBox
-                  options={[
-                    ...assignedToOptions,
-                    { checkbox: true, label: 'Unassigned', value: 'Unassigned' },
-                  ]}
+                  options={[...assignedToOptions, { checkbox: true, label: 'Unassigned', value: 'Unassigned' }]}
                   label={'Assigned To'}
                   name={'assignedTo'}
                   placeholder="Select"

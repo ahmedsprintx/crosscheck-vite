@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useCallback, useRef, useState } from 'react';
+import { useEffect, useMemo, useCallback, useRef, useState } from 'react';
 
 import Modal from 'components/modal';
 
@@ -25,7 +25,7 @@ import Checkbox from 'components/checkbox';
 import Button from 'components/button';
 
 const StartTestingModal = ({ open, handleClose, backClass, refetch, projectId = null }) => {
-  const { control, register, watch, setValue, formState, handleSubmit, setError, reset, resetField } = useForm({
+  const { control, register, watch, setValue, formState, handleSubmit, setError, reset } = useForm({
     defaultValues: {
       bugSubType: null,
       bugType: null,
@@ -52,7 +52,7 @@ const StartTestingModal = ({ open, handleClose, backClass, refetch, projectId = 
       testingType: null,
     },
   });
-  const { isDirty, dirtyFields } = formState;
+  const { dirtyFields } = formState;
 
   const { toastError, toastSuccess } = useToaster();
 
@@ -126,7 +126,7 @@ const StartTestingModal = ({ open, handleClose, backClass, refetch, projectId = 
       setBugs((pre) => ({
         ...(pre || {}),
         count: res?.count || 0,
-        bugs: [...(pre.bugs || []), ...res?.bugs],
+        bugs: [...(pre.bugs || []), ...(res?.bugs || [])],
       }));
     } catch (error) {
       toastError(error);
@@ -141,7 +141,7 @@ const StartTestingModal = ({ open, handleClose, backClass, refetch, projectId = 
       setTestCases((pre) => ({
         ...(pre || {}),
         count: res?.count || 0,
-        testcases: [...(pre.testcases || []), ...res?.testcases],
+        testcases: [...(pre.testcases || []), ...(res?.testcases || [])],
       }));
     } catch (error) {
       toastError(error);
@@ -427,7 +427,7 @@ const StartTestingModal = ({ open, handleClose, backClass, refetch, projectId = 
           )}{' '}
         </div>
       </div>
-      {/* // NOTE: Reporting Bug */}
+      {}
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className={style.modalBody}>
           <SplitPane sizes={viewSizes} onChange={setViewSizes} allowResize={viewBug}>

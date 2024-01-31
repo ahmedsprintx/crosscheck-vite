@@ -119,6 +119,7 @@ export const columnsData = ({
                     setOpenMenu(row);
                     setopenMenuMobile(row);
                   }}
+                  role="presentation"
                 >
                   <MoreInvertIcon />
                 </div>
@@ -133,7 +134,7 @@ export const columnsData = ({
                     <div className={style.menuDivMobile}>
                       {menu?.map((ele, index) => {
                         return (
-                          <div className={style.innerDiv} onClick={ele.click} key={index}>
+                          <div className={style.innerDiv} onClick={ele.click} key={index} role="presentation">
                             {<p>{ele?.title}</p>}
                           </div>
                         );
@@ -198,6 +199,7 @@ export const columnsDataInvitees = ({
                     setOpenMenu(row);
                     setopenMenuInviteMobile(true);
                   }}
+                  role="presentation"
                 >
                   <MoreInvertIcon />
                 </div>
@@ -211,7 +213,7 @@ export const columnsDataInvitees = ({
                     <div className={style.menuDivMobile}>
                       {invitesMenu?.map((ele, index) => {
                         return (
-                          <div className={style.innerDiv} onClick={ele.click} key={index}>
+                          <div className={style.innerDiv} onClick={ele.click} key={index} role="presentation">
                             {<p>{ele?.title}</p>}
                           </div>
                         );

@@ -1,8 +1,9 @@
-import React from 'react';
+/* eslint-disable no-comments/disallowComments */
+/* eslint-disable react/no-unescaped-entities */
+import React, { useState } from 'react';
 
 import style from './boarding.module.scss';
 import WorkspaceName from './workspace-name';
-import { useState } from 'react';
 import WorkspaceAvatar from './workspace-avatar';
 import WorkspaceWorking from './people-working';
 import WorkspaceHearing from './hear-about';
@@ -42,9 +43,7 @@ const OnBoarding = () => {
         source: watch('source') || selectedSource,
         plan: activePlan,
         planPeriod: planPeriod,
-        ...(activePlan === 'Free'
-          ? { seatsCount: 1 }
-          : { seatsCount: data.seatsCount ? +data.seatsCount : 1 }),
+        ...(activePlan === 'Free' ? { seatsCount: 1 } : { seatsCount: data.seatsCount ? +data.seatsCount : 1 }),
       };
 
       const res = await _onBoardingHandler({
@@ -67,10 +66,7 @@ const OnBoarding = () => {
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className={style.main}>
         <div className={style.left}>
-          <p>
-            "Quality in a service or product is not what you put into it. It is what the customer
-            gets out of it."
-          </p>
+          <p>"Quality in a service or product is not what you put into it. It is what the customer gets out of it."</p>
         </div>
         <div className={style.right}>
           <div className={style.frame}>
@@ -107,9 +103,7 @@ const OnBoarding = () => {
               </div>
             )}
           </div>
-          {active === 0 && (
-            <WorkspaceName register={register} active={active} setActive={setActive} />
-          )}
+          {active === 0 && <WorkspaceName register={register} active={active} setActive={setActive} />}
           {active === 1 && (
             <WorkspaceAvatar
               watch={watch}

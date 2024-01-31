@@ -61,13 +61,10 @@ export const columnsData = ({
     name: (
       <Checkbox
         checked={bugs?.some((bug) => selectedRecords.includes(bug?._id))}
-        partial={
-          bugs?.some((bug) => selectedRecords.includes(bug?._id)) &&
-          bugs?.length !== selectedRecords?.length
-        }
+        partial={bugs?.some((bug) => selectedRecords.includes(bug?._id)) && bugs?.length !== selectedRecords?.length}
         handleChange={(e) => {
-          setSelectedRecords((pre) => (e.target.checked ? bugs?.map((x) => x._id) : []));
-          setSelectedBugs((pre) => (e.target.checked ? bugs?.map((x) => x) : []));
+          setSelectedRecords(() => (e.target.checked ? bugs?.map((x) => x._id) : []));
+          setSelectedBugs(() => (e.target.checked ? bugs?.map((x) => x) : []));
         }}
       />
     ),
@@ -92,9 +89,7 @@ export const columnsData = ({
               if (e.target.checked) {
                 setSelectedBugs((prev) => [...prev, row]);
               } else {
-                setSelectedBugs((prev) =>
-                  prev.filter((selectedBug) => selectedBug?._id !== row?._id),
-                );
+                setSelectedBugs((prev) => prev.filter((selectedBug) => selectedBug?._id !== row?._id));
               }
             }}
           />
@@ -285,8 +280,7 @@ export const columnsData = ({
               searchedText={searchedText}
               user={row?.developerId}
               isHovering={
-                isHoveringName?.userId === row?.developerId?._id &&
-                isHoveringName?.rowId === row?._id
+                isHoveringName?.userId === row?.developerId?._id && isHoveringName?.rowId === row?._id
                   ? isHoveringName?.userId
                   : null
               }
@@ -575,10 +569,7 @@ export const columnsData = ({
     showToolTipOnUnEditableField: false,
 
     render: ({ row }) => (
-      <div
-        className={style.imgDiv}
-        onClick={() => setRetestOpen((pre) => ({ open: true, id: row?._id }))}
-      >
+      <div className={style.imgDiv} onClick={() => setRetestOpen(() => ({ open: true, id: row?._id }))}>
         <p className={style.userName}></p>
         <div style={{ cursor: 'pointer' }}>
           <Tags
@@ -635,8 +626,7 @@ export const columnsData = ({
               searchedText={searchedText}
               user={row?.taskHistory?.[0]?.assignedTo}
               isHovering={
-                isHoveringName?.userId === row?.taskHistory?.[0]?.assignedTo?._id &&
-                isHoveringName?.rowId === row?._id
+                isHoveringName?.userId === row?.taskHistory?.[0]?.assignedTo?._id && isHoveringName?.rowId === row?._id
                   ? isHoveringName?.userId
                   : null
               }
@@ -667,6 +657,7 @@ export const columnsData = ({
               textDecoration: 'underline',
               color: 'black',
             }}
+            rel="noreferrer"
           >
             <Highlighter search={searchedText}>
               {row?.taskHistory?.[0]?.taskId?.customId || row?.taskHistory?.[0]?.taskId?.id}
@@ -735,8 +726,7 @@ export const columnsData = ({
             <UserName
               user={row?.history[_.findLastIndex(row?.history)]?.reTestBy}
               isHovering={
-                isHoveringName?.userId ===
-                  row?.history[_.findLastIndex(row?.history)]?.reTestBy?._id &&
+                isHoveringName?.userId === row?.history[_.findLastIndex(row?.history)]?.reTestBy?._id &&
                 isHoveringName?.rowId === row?._id &&
                 isHoveringName?.columnName === 'Last Retest by'
                   ? isHoveringName?.userId
@@ -852,10 +842,7 @@ export const columnsData = ({
             <div className={style.img}>
               <div
                 onClick={() =>
-                  window.open(
-                    row?.history[row?.history?.length - 1]?.reTestEvidence || row?.testEvidence,
-                    '_blank',
-                  )
+                  window.open(row?.history[row?.history?.length - 1]?.reTestEvidence || row?.testEvidence, '_blank')
                 }
               >
                 <Attach />
@@ -867,7 +854,7 @@ export const columnsData = ({
             </div>
             <div className={style.img}>
               <div
-                onClick={() => setRetestOpen((pre) => ({ open: true, id: row?._id }))}
+                onClick={() => setRetestOpen(() => ({ open: true, id: row?._id }))}
                 data-cy={`bugreporting-retest-icon${row?.index}`}
               >
                 <RetestIcon />
@@ -953,309 +940,6 @@ export const columnsData = ({
         </Permissions>
       </>
     ),
-  },
-];
-
-export const rows = [
-  {
-    bug: 'bug',
-    project: 'asdasdsad',
-    milestone: 'asdasdasdasdasd',
-    closedBy: '-',
-    closedVersion: '-',
-    closedDate: '-',
-    lastRetestBy: '-',
-    AssignedTicketId: 'XP-299',
-    assignedTo: 'John Doe',
-    status: 'open',
-    severity: 'low',
-    reportedBy: 'Ibtassam Haseeb',
-    reportedDate: '25 Nov-23',
-    testEvidence: 'bug evidence.mp4',
-    testedVersion: 'Build 292',
-    idealBehavior: 'idealBehavior',
-    stepsToReproduce: 'Click step  A -> Step B',
-    bugFeedback: 'This is the bug feedback.',
-    bugSubType: 'Fonts Sizes',
-    bugType: 'Frontend UI',
-    developerName: 'John Doe',
-    ticketID: 'XP-290',
-    issueType: 'New Bug',
-    testingType: 'Functional Testing',
-    feature: 'Access Roles',
-    milestone: 'Settings',
-    project: 'Ximplify',
-    bug: 'Bug-1090',
-  },
-  {
-    bug: 'bug',
-    project: 'asdasdsad',
-    milestone: 'asdasdasdasdasd',
-    closedBy: '-',
-    closedVersion: '-',
-    closedDate: '-',
-    lastRetestBy: '-',
-    AssignedTicketId: 'XP-299',
-    assignedTo: 'John Doe',
-    status: 'open',
-    severity: 'low',
-    reportedBy: 'Ibtassam Haseeb',
-    reportedDate: '25 Nov-23',
-    testEvidence: 'bug evidence.mp4',
-    testedVersion: 'Build 292',
-    idealBehavior: 'idealBehavior',
-    stepsToReproduce: 'Click step  A -> Step B',
-    bugFeedback: 'This is the bug feedback.',
-    bugSubType: 'Fonts Sizes',
-    bugType: 'Frontend UI',
-    developerName: 'John Doe',
-    ticketID: 'XP-290',
-    issueType: 'New Bug',
-    testingType: 'Functional Testing',
-    feature: 'Access Roles',
-    milestone: 'Settings',
-    project: 'Ximplify',
-    bug: 'Bug-1090',
-  },
-  {
-    bug: 'bug',
-    project: 'asdasdsad',
-    milestone: 'asdasdasdasdasd',
-    closedBy: '-',
-    closedVersion: '-',
-    closedDate: '-',
-    lastRetestBy: '-',
-    AssignedTicketId: 'XP-299',
-    assignedTo: 'John Doe',
-    status: 'open',
-    severity: 'low',
-    reportedBy: 'Ibtassam Haseeb',
-    reportedDate: '25 Nov-23',
-    testEvidence: 'bug evidence.mp4',
-    testedVersion: 'Build 292',
-    idealBehavior: 'idealBehavior',
-    stepsToReproduce: 'Click step  A -> Step B',
-    bugFeedback: 'This is the bug feedback.',
-    bugSubType: 'Fonts Sizes',
-    bugType: 'Frontend UI',
-    developerName: 'John Doe',
-    ticketID: 'XP-290',
-    issueType: 'New Bug',
-    testingType: 'Functional Testing',
-    feature: 'Access Roles',
-    milestone: 'Settings',
-    project: 'Ximplify',
-    bug: 'Bug-1090',
-  },
-  {
-    bug: 'bug',
-    project: 'asdasdsad',
-    milestone: 'asdasdasdasdasd',
-    closedBy: '-',
-    closedVersion: '-',
-    closedDate: '-',
-    lastRetestBy: '-',
-    AssignedTicketId: 'XP-299',
-    assignedTo: 'John Doe',
-    status: 'open',
-    severity: 'low',
-    reportedBy: 'Ibtassam Haseeb',
-    reportedDate: '25 Nov-23',
-    testEvidence: 'bug evidence.mp4',
-    testedVersion: 'Build 292',
-    idealBehavior: 'idealBehavior',
-    stepsToReproduce: 'Click step  A -> Step B',
-    bugFeedback: 'This is the bug feedback.',
-    bugSubType: 'Fonts Sizes',
-    bugType: 'Frontend UI',
-    developerName: 'John Doe',
-    ticketID: 'XP-290',
-    issueType: 'New Bug',
-    testingType: 'Functional Testing',
-    feature: 'Access Roles',
-    milestone: 'Settings',
-    project: 'Ximplify',
-    bug: 'Bug-1090',
-  },
-  {
-    bug: 'bug',
-    project: 'asdasdsad',
-    milestone: 'asdasdasdasdasd',
-    closedBy: '-',
-    closedVersion: '-',
-    closedDate: '-',
-    lastRetestBy: '-',
-    AssignedTicketId: 'XP-299',
-    assignedTo: 'John Doe',
-    status: 'open',
-    severity: 'low',
-    reportedBy: 'Ibtassam Haseeb',
-    reportedDate: '25 Nov-23',
-    testEvidence: 'bug evidence.mp4',
-    testedVersion: 'Build 292',
-    idealBehavior: 'idealBehavior',
-    stepsToReproduce: 'Click step  A -> Step B',
-    bugFeedback: 'This is the bug feedback.',
-    bugSubType: 'Fonts Sizes',
-    bugType: 'Frontend UI',
-    developerName: 'John Doe',
-    ticketID: 'XP-290',
-    issueType: 'New Bug',
-    testingType: 'Functional Testing',
-    feature: 'Access Roles',
-    milestone: 'Settings',
-    project: 'Ximplify',
-    bug: 'Bug-1090',
-  },
-  {
-    bug: 'bug',
-    project: 'asdasdsad',
-    milestone: 'asdasdasdasdasd',
-    closedBy: '-',
-    closedVersion: '-',
-    closedDate: '-',
-    lastRetestBy: '-',
-    AssignedTicketId: 'XP-299',
-    assignedTo: 'John Doe',
-    status: 'open',
-    severity: 'low',
-    reportedBy: 'Ibtassam Haseeb',
-    reportedDate: '25 Nov-23',
-    testEvidence: 'bug evidence.mp4',
-    testedVersion: 'Build 292',
-    idealBehavior: 'idealBehavior',
-    stepsToReproduce: 'Click step  A -> Step B',
-    bugFeedback: 'This is the bug feedback.',
-    bugSubType: 'Fonts Sizes',
-    bugType: 'Frontend UI',
-    developerName: 'John Doe',
-    ticketID: 'XP-290',
-    issueType: 'New Bug',
-    testingType: 'Functional Testing',
-    feature: 'Access Roles',
-    milestone: 'Settings',
-    project: 'Ximplify',
-    bug: 'Bug-1090',
-  },
-  {
-    bug: 'bug',
-    project: 'asdasdsad',
-    milestone: 'asdasdasdasdasd',
-    closedBy: '-',
-    closedVersion: '-',
-    closedDate: '-',
-    lastRetestBy: '-',
-    AssignedTicketId: 'XP-299',
-    assignedTo: 'John Doe',
-    status: 'open',
-    severity: 'low',
-    reportedBy: 'Ibtassam Haseeb',
-    reportedDate: '25 Nov-23',
-    testEvidence: 'bug evidence.mp4',
-    testedVersion: 'Build 292',
-    idealBehavior: 'idealBehavior',
-    stepsToReproduce: 'Click step  A -> Step B',
-    bugFeedback: 'This is the bug feedback.',
-    bugSubType: 'Fonts Sizes',
-    bugType: 'Frontend UI',
-    developerName: 'John Doe',
-    ticketID: 'XP-290',
-    issueType: 'New Bug',
-    testingType: 'Functional Testing',
-    feature: 'Access Roles',
-    milestone: 'Settings',
-    project: 'Ximplify',
-    bug: 'Bug-1090',
-  },
-  {
-    bug: 'bug',
-    project: 'asdasdsad',
-    milestone: 'asdasdasdasdasd',
-    closedBy: '-',
-    closedVersion: '-',
-    closedDate: '-',
-    lastRetestBy: '-',
-    AssignedTicketId: 'XP-299',
-    assignedTo: 'John Doe',
-    status: 'open',
-    severity: 'low',
-    reportedBy: 'Ibtassam Haseeb',
-    reportedDate: '25 Nov-23',
-    testEvidence: 'bug evidence.mp4',
-    testedVersion: 'Build 292',
-    idealBehavior: 'idealBehavior',
-    stepsToReproduce: 'Click step  A -> Step B',
-    bugFeedback: 'This is the bug feedback.',
-    bugSubType: 'Fonts Sizes',
-    bugType: 'Frontend UI',
-    developerName: 'John Doe',
-    ticketID: 'XP-290',
-    issueType: 'New Bug',
-    testingType: 'Functional Testing',
-    feature: 'Access Roles',
-    milestone: 'Settings',
-    project: 'Ximplify',
-    bug: 'Bug-1090',
-  },
-  {
-    bug: 'bug',
-    project: 'asdasdsad',
-    milestone: 'asdasdasdasdasd',
-    closedBy: '-',
-    closedVersion: '-',
-    closedDate: '-',
-    lastRetestBy: '-',
-    AssignedTicketId: 'XP-299',
-    assignedTo: 'John Doe',
-    status: 'open',
-    severity: 'low',
-    reportedBy: 'Ibtassam Haseeb',
-    reportedDate: '25 Nov-23',
-    testEvidence: 'bug evidence.mp4',
-    testedVersion: 'Build 292',
-    idealBehavior: 'idealBehavior',
-    stepsToReproduce: 'Click step  A -> Step B',
-    bugFeedback: 'This is the bug feedback.',
-    bugSubType: 'Fonts Sizes',
-    bugType: 'Frontend UI',
-    developerName: 'John Doe',
-    ticketID: 'XP-290',
-    issueType: 'New Bug',
-    testingType: 'Functional Testing',
-    feature: 'Access Roles',
-    milestone: 'Settings',
-    project: 'Ximplify',
-    bug: 'Bug-1090',
-  },
-  {
-    bug: 'bug',
-    project: 'asdasdsad',
-    milestone: 'asdasdasdasdasd',
-    closedBy: '-',
-    closedVersion: '-',
-    closedDate: '-',
-    lastRetestBy: '-',
-    AssignedTicketId: 'XP-299',
-    assignedTo: 'John Doe',
-    status: 'open',
-    severity: 'low',
-    reportedBy: 'Ibtassam Haseeb',
-    reportedDate: '25 Nov-23',
-    testEvidence: 'bug evidence.mp4',
-    testedVersion: 'Build 292',
-    idealBehavior: 'idealBehavior',
-    stepsToReproduce: 'Click step  A -> Step B',
-    bugFeedback: 'This is the bug feedback.',
-    bugSubType: 'Fonts Sizes',
-    bugType: 'Frontend UI',
-    developerName: 'John Doe',
-    ticketID: 'XP-290',
-    issueType: 'New Bug',
-    testingType: 'Functional Testing',
-    feature: 'Access Roles',
-    milestone: 'Settings',
-    project: 'Ximplify',
-    bug: 'Bug-1090',
   },
 ];
 

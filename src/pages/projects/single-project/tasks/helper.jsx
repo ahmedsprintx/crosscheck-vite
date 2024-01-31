@@ -26,11 +26,7 @@ export const columnsData = ({ isHoveringName, searchedText, setIsHoveringName })
 
     render: ({ row }) => (
       <div className={style.imgDiv} style={{ justifyContent: 'start' }}>
-        <p
-          className={style.userName}
-          style={{ cursor: 'pointer' }}
-          onClick={() => window.open(row?.url, '_blank')}
-        >
+        <p className={style.userName} style={{ cursor: 'pointer' }} onClick={() => window.open(row?.url, '_blank')}>
           <Highlighter search={searchedText}>{row?.id ? row?.id : '-'}</Highlighter>
         </p>
       </div>
@@ -49,11 +45,7 @@ export const columnsData = ({ isHoveringName, searchedText, setIsHoveringName })
 
     render: ({ row }) => (
       <div className={style.imgDiv}>
-        <p
-          className={style.userName}
-          style={{ cursor: 'pointer' }}
-          onClick={() => window.open(row?.url, '_blank')}
-        >
+        <p className={style.userName} style={{ cursor: 'pointer' }} onClick={() => window.open(row?.url, '_blank')}>
           {' '}
           <Highlighter search={searchedText}>{row?.customId ? row?.customId : '-'}</Highlighter>
         </p>
@@ -84,28 +76,28 @@ export const columnsData = ({ isHoveringName, searchedText, setIsHoveringName })
           }}
         >
           {row?.bugIds &&
-            row?.bugIds.map((ele) => (
-              <p>
+            row?.bugIds.map((ele, i) => (
+              <p key={i}>
                 <Highlighter search={searchedText}>{ele?.bugId},</Highlighter>{' '}
               </p>
             ))}
           {row?.testCaseIds &&
-            row?.testCaseIds.map((ele) => (
-              <p>
+            row?.testCaseIds.map((ele, i) => (
+              <p key={i}>
                 <Highlighter search={searchedText}>{ele?.testCaseId}, </Highlighter>{' '}
               </p>
             ))}
           {row?.bugIds?.length + row?.testCaseIds?.length > 8 && (
             <div className={style.tooltip}>
               {row?.bugIds &&
-                row?.bugIds.map((ele) => (
-                  <p>
+                row?.bugIds.map((ele, i) => (
+                  <p key={i}>
                     <Highlighter search={searchedText}>{ele?.bugId}</Highlighter>,{' '}
                   </p>
                 ))}
               {row?.testCaseIds &&
-                row?.testCaseIds.map((ele) => (
-                  <p>
+                row?.testCaseIds.map((ele, i) => (
+                  <p key={i}>
                     <Highlighter search={searchedText}>{ele?.testCaseId}</Highlighter>,{' '}
                   </p>
                 ))}
@@ -194,8 +186,7 @@ export const columnsData = ({ isHoveringName, searchedText, setIsHoveringName })
             <UserName
               user={row?.crossCheckAssignee}
               isHovering={
-                isHoveringName?.userId === row?.crossCheckAssignee?._id &&
-                isHoveringName?.rowId === row?._id
+                isHoveringName?.userId === row?.crossCheckAssignee?._id && isHoveringName?.rowId === row?._id
                   ? isHoveringName?.userId
                   : null
               }

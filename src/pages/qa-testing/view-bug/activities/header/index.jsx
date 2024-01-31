@@ -1,26 +1,18 @@
-import React, { useEffect, useState } from 'react';
-import { useForm } from 'react-hook-form';
-
-import _ from 'lodash';
+import { useState } from 'react';
 
 import Button from 'components/button';
 import SelectBox from 'components/select-box';
 import DateRange from 'components/date-range';
 
-import resetIcon from 'assets/reset.svg';
 import style from './header.module.scss';
-import Milestone from 'pages/projects/single-project/milestones';
-import DatePicker from 'components/date-picker';
 import { useActivityOptions } from './helper';
 import { formattedDate } from 'utils/date-handler';
 
 const FilterHeader = ({ control, setValue, watch, handleSubmit, reset, onSubmit, onReset }) => {
-  const [openFilter, setOpenFilter] = useState(false);
-
   const { data = {} } = useActivityOptions();
   const { activityBy = [], activityType = [] } = data;
 
-  const [selectedDates, setSelectedDates] = useState();
+  const [setSelectedDates] = useState();
 
   const onChange = (name, dates) => {
     const [start, end] = dates;

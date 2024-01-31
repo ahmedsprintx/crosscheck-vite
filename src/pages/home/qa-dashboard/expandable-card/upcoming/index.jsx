@@ -1,10 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import style from './upcoming.module.scss';
 import MultiColorProgressBar from 'components/progress-bar';
 import _ from 'lodash';
 import { useNavigate } from 'react-router-dom';
 import { useToaster } from 'hooks/use-toaster';
-import { useState } from 'react';
 
 const Upcoming = ({ id, testedCount, testCases, notTestedCount, title, subTitle, date, data }) => {
   const navigate = useNavigate();

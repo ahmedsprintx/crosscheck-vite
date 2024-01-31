@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import _ from 'lodash';
 import { formatDistanceToNow } from 'date-fns';
 
@@ -12,7 +12,7 @@ import { useGetActivities } from 'hooks/api-hooks/settings/activities.hook';
 import noData from 'assets/no-found.svg';
 // NOTE: styles
 import style from './activity.module.scss';
-const Activities = ({ noHeader, bugId }) => {
+const Activities = ({ bugId }) => {
   const containerRef = useRef(null);
 
   const [activities, setActivities] = useState([]);
@@ -48,7 +48,7 @@ const Activities = ({ noHeader, bugId }) => {
           {activities?.length ? (
             activities?.map((e, i) => {
               return (
-                <div className={style.activities}>
+                <div className={style.activities} key={i}>
                   <div
                     className={style.greyLine}
                     style={{
@@ -58,6 +58,7 @@ const Activities = ({ noHeader, bugId }) => {
 
                   {e?.activityBy?.profilePicture ? (
                     <img
+                      alt=""
                       src={e?.activityBy?.profilePicture}
                       style={{
                         width: '24px',
@@ -120,51 +121,3 @@ const Activities = ({ noHeader, bugId }) => {
 };
 
 export default Activities;
-
-const data = [
-  {
-    user: 'faizan',
-    activity: 'logged in',
-    time: '1 hour ago',
-  },
-  {
-    user: 'faizan',
-    time: '1 hour ago',
-    otherUser: 'Ali',
-    newRole: 'Developer',
-    added: true,
-  },
-  {
-    user: 'faizan',
-    time: '1 hour ago',
-    otherUser: 'Ali',
-    deleted: true,
-  },
-  {
-    userInfo: true,
-    user: 'faizan',
-    otherUser: 'Ali',
-    oldName: 'Imran',
-    newName: 'Hamza',
-    oldEmail: ' john.mac@example.com',
-    newEmail: ' alex.mac@example.com',
-    time: '1 hour ago',
-    role: 'Intern',
-    newRole: 'Developer',
-  },
-  {
-    user: 'faizan',
-    oldTestType: 'Functionality Testing',
-    newTestType: 'Security Testing',
-    oldTestCase: 'ERP-T-125',
-    newTestCase: 'ERP-T-222',
-    oldTicketId: 'ERP-333',
-    newTicketId: 'ERP-300',
-    oldObjective: 'Verify that the user can change the columns displayed',
-    newObjective: 'Verify that the user can change the columns displayed in the Test Runs table.',
-    time: '1 hour ago',
-    oldTestStep: 'Open the Test Runs module. “Click on the "Change Columns" button.',
-    newTestStep: 'Open the Test Runs module. Click on the "Change Columns',
-    info: true,
-  },
-];

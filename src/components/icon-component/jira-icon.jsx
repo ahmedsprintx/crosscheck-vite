@@ -3,7 +3,7 @@ import React from 'react';
 const JiraIcon = () => {
   return (
     <svg width="76" height="100" viewBox="0 0 76 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <g id="Jira 1" clip-path="url(#clip0_8945_158844)">
+      <g id="Jira 1" clipPath="url(#clip0_8945_158844)">
         <path
           id="Vector"
           d="M74.8273 37.7873L40.8116 3.77164L37.5156 0.475586L11.9094 26.0818L0.200294 37.7873C-0.38457 38.3752 -0.712891 39.1708 -0.712891 40C-0.712891 40.8293 -0.38457 41.6248 0.200294 42.2127L23.5938 65.6062L37.5156 79.5244L63.1182 53.9183L63.517 53.523L74.8273 42.2303C75.1204 41.9394 75.3531 41.5933 75.5118 41.212C75.6706 40.8307 75.7523 40.4218 75.7523 40.0088C75.7523 39.5958 75.6706 39.1869 75.5118 38.8057C75.3531 38.4244 75.1204 38.0783 74.8273 37.7873ZM37.5156 51.6879L25.8276 40L37.5156 28.3121L49.2 40L37.5156 51.6879Z"
@@ -29,8 +29,8 @@ const JiraIcon = () => {
           y2="32.8044"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.18" stop-color="#0052CC" />
-          <stop offset="1" stop-color="#2684FF" />
+          <stop offset="0.18" stopColor="#0052CC" />
+          <stop offset="1" stopColor="#2684FF" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_8945_158844"
@@ -40,8 +40,8 @@ const JiraIcon = () => {
           y2="47.0862"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.18" stop-color="#0052CC" />
-          <stop offset="1" stop-color="#2684FF" />
+          <stop offset="0.18" stopColor="#0052CC" />
+          <stop offset="1" stopColor="#2684FF" />
         </linearGradient>
         <clipPath id="clip0_8945_158844">
           <rect width="75.552" height="80" fill="white" transform="translate(0.200195)" />

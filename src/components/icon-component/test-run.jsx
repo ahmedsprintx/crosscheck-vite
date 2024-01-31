@@ -9,9 +9,9 @@ const TestRunIcon = ({ backClass }) => {
         <path
           d="M7.00146 12.1424L12.1443 6.99957M12.1443 6.99957H8.28718M12.1443 6.99957V10.8567"
           stroke="white"
-          stroke-width="1"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1"
+          strokeLinecap="round"
+          strokeLinejoin="round"
           className={`${style.fill2} ${backClass}`}
         />
         <circle
@@ -19,7 +19,7 @@ const TestRunIcon = ({ backClass }) => {
           cy="9.57143"
           r="8.57143"
           stroke="white"
-          stroke-width="1"
+          strokeWidth="1"
           className={`${style.fill2} ${backClass}`}
         />
       </svg>

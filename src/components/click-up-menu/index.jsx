@@ -156,7 +156,7 @@ const ClickUpMenu = ({
             key={index}
           >
             {ele?.bodyData?.map((el, ind) => (
-              <div className={`${style.hover}`}>
+              <div className={`${style.hover}`} key={ind}>
                 <div
                   className={style.inner}
                   key={ind}
@@ -192,7 +192,7 @@ const ClickUpMenu = ({
                     >
                       {el.text === 'Change Status' &&
                         el?.moreOptions?.map((options, ind) => (
-                          <div onClick={() => handleClose()}>
+                          <div onClick={() => handleClose()} key={ind}>
                             <p
                               className={style.p}
                               style={{

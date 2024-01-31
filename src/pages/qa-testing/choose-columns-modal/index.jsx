@@ -1,11 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 import Modal from 'components/modal';
 import Checkbox from 'components/checkbox';
 import Button from 'components/button';
-
-import cross from 'assets/cross.svg';
-import dotIcon from 'assets/Drag.svg';
 
 import style from './columns-modal.module.scss';
 import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd';

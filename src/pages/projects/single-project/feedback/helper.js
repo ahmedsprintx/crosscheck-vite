@@ -143,7 +143,6 @@ export function useProjectOptions() {
           ...(!x?.profilePicture && { imagAlt: _.first(x?.name) }),
           value: x._id,
           checkbox: true,
-          value: x._id,
         })),
       };
     },
@@ -244,9 +243,7 @@ export const columnsData = ({
           }}
         >
           <p className={style.userName}>
-            <Highlighter search={searchedText}>
-              {row?.description ? row?.description : '-'}
-            </Highlighter>
+            <Highlighter search={searchedText}>{row?.description ? row?.description : '-'}</Highlighter>
           </p>
         </div>
       );

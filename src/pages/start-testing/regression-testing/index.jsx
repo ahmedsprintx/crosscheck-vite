@@ -271,7 +271,7 @@ const RegressionTesting = ({ type, noHeader = false, projectId }) => {
       });
       toastSuccess(res.msg);
       refetchHandler(bulk ? selectedRecords : [openDel?.id], 'delete');
-      setOpenDel((pre) => ({ open: false }));
+      setOpenDel(() => ({ open: false }));
       bulk && setSelectedRecords([]);
     } catch (error) {
       toastError(error);
@@ -466,7 +466,7 @@ const RegressionTesting = ({ type, noHeader = false, projectId }) => {
                     onChange={_.debounce((e) => {
                       setValue('search', e.target.value);
                     }, 1000)}
-                    onClear={_.debounce((e) => {
+                    onClear={_.debounce(() => {
                       setValue('search', '');
                     }, 1000)}
                     clearIcon={clearIcon}
@@ -923,7 +923,7 @@ const RegressionTesting = ({ type, noHeader = false, projectId }) => {
               <div
                 id="splitpane"
                 style={{ display: 'none' }}
-                onClick={(e) => {
+                onClick={() => {
                   setAllowResize(false);
                   setReportBug(false);
                   setAddBug(false);

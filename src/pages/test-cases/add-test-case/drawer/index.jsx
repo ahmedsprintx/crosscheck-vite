@@ -379,7 +379,7 @@ Drawer.propTypes = {
   setDrawerOpen: PropTypes.func.isRequired,
   resetHandler: PropTypes.func.isRequired,
   setEditRecord: PropTypes.func.isRequired,
-  editRecord: PropTypes.object, // Adjust the PropTypes based on the actual type
+  editRecord: PropTypes.object, 
   _createUpdateIsLoading: PropTypes.bool,
   addMore: PropTypes.bool,
   noHeader: PropTypes.bool,

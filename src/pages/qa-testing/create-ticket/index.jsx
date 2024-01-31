@@ -1,16 +1,11 @@
-import React, { useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 
 import Modal from 'components/modal';
 import Button from 'components/button';
 import SelectBox from 'components/select-box';
-import TextField from 'components/text-field';
-import TextArea from 'components/text-area';
 import GenericTable from 'components/generic-table';
-import { columnsData, rows } from './helper';
-import { locationOptions } from './helper';
+import { columnsData, rows, locationOptions } from './helper';
 
-import cross from 'assets/cross.svg';
-import icon from 'assets/retest-icon.svg';
 import style from './retest.module.scss';
 import TaskCreated from './task-created';
 import CrossIcon from 'components/icon-component/cross';

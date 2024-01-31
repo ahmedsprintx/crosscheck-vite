@@ -1,22 +1,9 @@
-import React, { useState } from 'react';
 import style from './reset.module.scss';
 import SelectBox from 'components/select-box';
-import { locationOptions } from '../helper';
-import DatePicker from 'components/date-picker';
-import TextField from 'components/text-field';
 import DateRange from 'components/date-range';
 
-const ResetPopup = ({
-  control,
-  setValue,
-  watch,
-  options,
-  selectedDates,
-  setSelectedDates,
-  onChange,
-}) => {
-  const { severityOptions, bugByOptions, testTypeOptions, reportedByOptions, assignedToOptions } =
-    options;
+const ResetPopup = ({ control, watch, options, onChange }) => {
+  const { severityOptions, bugByOptions, testTypeOptions, reportedByOptions, assignedToOptions } = options;
 
   return (
     <>
@@ -77,10 +64,7 @@ const ResetPopup = ({
       <div className={style.statusBar} style={{ zIndex: '90' }}>
         <div className={style.datePicker}>
           <SelectBox
-            options={[
-              ...assignedToOptions,
-              { checkbox: true, label: 'Unassigned', value: 'Unassigned' },
-            ]}
+            options={[...assignedToOptions, { checkbox: true, label: 'Unassigned', value: 'Unassigned' }]}
             label={'Assigned To'}
             name={'assignedTo'}
             placeholder="Select"

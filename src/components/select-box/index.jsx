@@ -3,7 +3,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import chroma from 'chroma-js';
 import Select from 'react-select';
 import { Controller } from 'react-hook-form';
-import _, { indexOf } from 'lodash';
+import _ from 'lodash';
 
 import Tags from 'components/tags';
 

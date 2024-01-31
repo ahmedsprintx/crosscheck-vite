@@ -7,15 +7,15 @@ const ClickUpSvg = () => {
         <g id="Group 1000004704">
           <path
             id="Vector"
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             d="M24 69.7637L35.6285 61C41.8036 68.9324 48.3613 72.5879 55.6686 72.5879C62.9355 72.5879 69.313 68.9746 75.2113 61.1049L87 69.6588C78.4957 81.0054 67.9151 87 55.6686 87C43.4626 87 32.7841 81.0475 24 69.7637Z"
             fill="url(#paint0_linear_8182_95830)"
           />
           <path
             id="Vector_2"
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             d="M54.5774 32.7435L33.6623 50L24 39.2631L54.619 14L85 39.2827L75.29 49.9803L54.5774 32.7435Z"
             fill="url(#paint1_linear_8182_95830)"
           />
@@ -30,8 +30,8 @@ const ClickUpSvg = () => {
           y2="91.6815"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#8930FD" />
-          <stop offset="1" stop-color="#49CCF9" />
+          <stop stopColor="#8930FD" />
+          <stop offset="1" stopColor="#49CCF9" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_8182_95830"
@@ -41,8 +41,8 @@ const ClickUpSvg = () => {
           y2="56.4821"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#FF02F0" />
-          <stop offset="1" stop-color="#FFC800" />
+          <stop stopColor="#FF02F0" />
+          <stop offset="1" stopColor="#FFC800" />
         </linearGradient>
       </defs>
     </svg>

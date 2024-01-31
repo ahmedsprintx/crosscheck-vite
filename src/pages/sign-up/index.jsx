@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 import crosscheckLogo from 'assets/cross-check-logo.svg';
 
@@ -9,7 +9,7 @@ import { useForm } from 'react-hook-form';
 import icon1 from 'assets/sign-extension.png';
 import icon2 from 'assets/sign-app.png';
 import Checkbox from 'components/checkbox';
-import { Link, useLocation, useNavigate, useParams, useSearchParams } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useToaster } from 'hooks/use-toaster';
 import { useSignup } from 'hooks/api-hooks/auth.hook';
 import { emailValidate } from 'utils/validations';
@@ -20,13 +20,11 @@ const SignUp = () => {
     handleSubmit,
     formState: { errors },
     setError,
-    control,
     watch,
   } = useForm();
 
   const [password, setPassword] = useState(false);
   const [agreed, setAgreed] = useState(false);
-  const [searchParams] = useSearchParams();
   const { toastSuccess, toastError } = useToaster();
   const navigate = useNavigate();
   const location = useLocation();

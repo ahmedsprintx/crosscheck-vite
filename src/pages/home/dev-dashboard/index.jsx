@@ -86,9 +86,9 @@ const DevDashboard = () => {
             <div className={style.left}>
               <div className={style.activeProjects}>
                 <h2>Active Projects</h2>
-                {devAnalytics?.activeProjects?.map((item) => {
+                {devAnalytics?.activeProjects?.map((item, i) => {
                   return (
-                    <div className={style.projectsBar}>
+                    <div className={style.projectsBar} key={i}>
                       <span>{item?.name}</span>
                       <span style={{ fontSize: '15px' }}>{item?.notClosedBugs}</span>
                     </div>

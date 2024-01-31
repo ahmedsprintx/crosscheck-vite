@@ -13,14 +13,15 @@ const ExpandableCard = ({ title, expanded, maxHeight, reportedBy, lastTestedBy, 
     <div className={style.upcomingDiv} style={{ maxHeight: maxHeight && maxHeight }}>
       <div className={style.upcomingHeader}>
         <span>{title}</span>
-        {!expanded && <img src={expandIcon} onClick={() => setExpandModal(true)} />}
+        {!expanded && <img alt="" src={expandIcon} onClick={() => setExpandModal(true)} />}
       </div>
       <div className={style.upcomingInner}>
         {data && data?.length > 0 ? (
           <>
-            {data?.map((item) => {
+            {data?.map((item, i) => {
               return (
                 <Upcoming
+                  key={i}
                   title={item?.bugId}
                   subTitle={item?.feedback?.text}
                   date={item?.reportedAt}

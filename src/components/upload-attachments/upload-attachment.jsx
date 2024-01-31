@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Controller } from 'react-hook-form';
 import style from './style.module.scss';
 
-import RecordIcon from 'components// NOTE: icon-component/record';
+import RecordIcon from 'components/icon-component/record';
 import { useReactMediaRecorder } from 'react-media-recorder';
 import { convertBase64Image, convertBlobToBase64 } from 'utils/file-handler';
 import { useToaster } from 'hooks/use-toaster';

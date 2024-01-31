@@ -1,7 +1,6 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { pickBy } from 'utils/lodash';
 import { useSearchParams } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import SplitPane from 'components/split-pane/split-pane';
 import _ from 'lodash';
@@ -62,11 +61,10 @@ import EditIcon from 'components/icon-component/edit-icon';
 const QaTesting = ({ noHeader = false, projectId }) => {
   const { data = {} } = useBugsFiltersOptions();
 
-  const navigate = useNavigate();
   const ref = useRef();
   const containerRef = useRef(null);
 
-  const { control, register, watch, setValue, name, reset, handleSubmit } = useForm();
+  const { control, register, watch, setValue, reset } = useForm();
 
   const { toastError, toastSuccess } = useToaster();
   const [searchParams, setSearchParams] = useSearchParams();
@@ -83,7 +81,6 @@ const QaTesting = ({ noHeader = false, projectId }) => {
   const [selectedBugs, setSelectedBugs] = useState([]);
   const [bulkEdit, setBulkEdit] = useState(false);
 
-  const [choseColModal, setChoseColModal] = useState(false);
   const [retestOpen, setRetestOpen] = useState({ open: false });
   const [openRetestModal, setOpenRetestModal] = useState(false);
   const [openDelModal, setOpenDelModal] = useState(false);
@@ -117,7 +114,6 @@ const QaTesting = ({ noHeader = false, projectId }) => {
     watch: watch2,
     register: register2,
     formState: { errors },
-    reset: reset2,
     setError: setError2,
     handleSubmit: handleSubmit2,
     setValue: setValue2,
@@ -224,11 +220,11 @@ const QaTesting = ({ noHeader = false, projectId }) => {
     setBugs((pre) => ({
       ...(pre || {}),
       count: response?.count || 0,
-      bugs: filters.page === 1 ? response?.bugs : [...(pre.bugs || []), ...response?.bugs],
+      bugs: filters.page === 1 ? response?.bugs : [...(pre.bugs || []), ...(response?.bugs || [])],
     }));
   };
 
-  const { mutateAsync: _exportBugs, isLoading: _isExporting } = useExportBugs();
+  const { mutateAsync: _exportBugs } = useExportBugs();
 
   const exportHandler = async () => {
     try {
@@ -355,7 +351,7 @@ const QaTesting = ({ noHeader = false, projectId }) => {
       });
       toastSuccess(res.msg);
       refetchHandler(bulk ? selectedRecords : [openDelModal?.id], 'delete');
-      setOpenDelModal((pre) => ({ open: false }));
+      setOpenDelModal(() => ({ open: false }));
       bulk && setSelectedRecords([]);
     } catch (error) {
       toastError(error);
@@ -603,7 +599,7 @@ const QaTesting = ({ noHeader = false, projectId }) => {
     {
       bodyData: [
         {
-          click: () => setRetestOpen((pre) => ({ open: true, id: rightClickedRecord?._id })),
+          click: () => setRetestOpen(() => ({ open: true, id: rightClickedRecord?._id })),
           icon: <RetestIcon backClass={style.editColor} />,
           text: 'Retest',
         },
@@ -712,7 +708,7 @@ const QaTesting = ({ noHeader = false, projectId }) => {
                 search: e.target.value,
               }));
             }, 1000)}
-            onClear={_.debounce((e) => {
+            onClear={_.debounce(() => {
               setBugs({
                 count: 0,
                 bugs: [],
@@ -776,7 +772,7 @@ const QaTesting = ({ noHeader = false, projectId }) => {
                   {filtersCount > 0 && <div className={style.filterCountDot}>{filtersCount}</div>}
                 </div>
                 <div onClick={() => setIsOpen2(true)}>
-                  <img src={threeDots} />
+                  <img src={threeDots} alt="" />
                 </div>
               </div>
             </div>
@@ -957,7 +953,6 @@ const QaTesting = ({ noHeader = false, projectId }) => {
                           setOpenDelModal,
                           openDelModal,
                           openCreateTicket,
-                          setOpenCreateTicket,
                           setAddTestCase,
                           setViewBug,
                           setViewBugId,
@@ -1095,12 +1090,12 @@ const QaTesting = ({ noHeader = false, projectId }) => {
               />
             )}
 
-            {/* {===============DoNot remove this div this belongs to hotkeys =================} */}
+            {}
             {viewBug && (
               <div
                 id="splitpane"
                 style={{ display: 'none' }}
-                onClick={(e) => {
+                onClick={() => {
                   setViewBug(false);
                   setViewBugId('');
                   setEditRecord(null);

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import home from 'assets/homeBlue.svg';
 import bag from 'assets/bagBlue.svg';
@@ -8,7 +8,6 @@ import test from 'assets/test-case-blue.svg';
 import notification from 'assets/notification.svg';
 
 import style from './navbar.module.scss';
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
 const Navbar = ({ pathname }) => {
   const [open, setOpen] = useState(false);

@@ -1,4 +1,3 @@
-import React from 'react';
 import style from './retest.module.scss';
 import Tags from 'components/tags';
 import { formattedDate } from 'utils/date-handler';

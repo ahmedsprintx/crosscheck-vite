@@ -251,7 +251,7 @@ const BugsReporter = ({
               gap: '10px',
             }}
           >
-            <img src={dots} onClick={() => setMore((pre) => ({ ...pre, open: true }))} />
+            <img alt="" src={dots} onClick={() => setMore((pre) => ({ ...pre, open: true }))} />
 
             {more?.open && (
               <div className={style.menuDiv}>

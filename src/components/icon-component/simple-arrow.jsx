@@ -10,8 +10,8 @@ const Arrow = ({ backClass, click }) => {
           d="M6 12L10 8L6 4"
           stroke="#8B909A"
           className={`${style.fill2} ${backClass}`}
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </svg>
     </>

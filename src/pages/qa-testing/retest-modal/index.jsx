@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 
 import Modal from 'components/modal';
 import Button from 'components/button';
@@ -6,22 +6,14 @@ import SelectBox from 'components/select-box';
 import TextField from 'components/text-field';
 import TextArea from 'components/text-area';
 import GenericTable from 'components/generic-table';
-import { columnsData, rows } from './helper';
-import { attornyStatusOptions } from './helper';
+import { columnsData } from './helper';
 
-import cross from 'assets/cross.svg';
-import saveIcon from 'assets/save.svg';
-import videoIcon from 'assets/video.svg';
-import icon from 'assets/retest-icon.svg';
 import style from './retest.module.scss';
 import { useForm } from 'react-hook-form';
 import { useGetBugById, useRetestBug } from 'hooks/api-hooks/bugs/bugs.hook';
-import TextEditor from 'components/editor/text-editor';
 import UploadAttachment from 'components/upload-attachments/upload-attachment';
-import { validateDescription } from 'utils/validations';
 import { useToaster } from 'hooks/use-toaster';
 import CrossIcon from 'components/icon-component/cross';
-import RetestIcon from 'components/icon-component/retest-icon';
 import RetestRevert from 'components/icon-component/retest-revert';
 
 const RetestModal = ({ openRetestModal, setOpenRetestModal, options, refetch }) => {
@@ -30,7 +22,6 @@ const RetestModal = ({ openRetestModal, setOpenRetestModal, options, refetch }) 
   const { toastError, toastSuccess } = useToaster();
 
   const {
-    watch,
     control,
     register,
     formState: { errors },

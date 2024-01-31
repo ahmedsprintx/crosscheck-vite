@@ -69,7 +69,13 @@ const MembersModal = ({ data, openAllMembers, setOpenAllMembers, refetch }) => {
         </div>
         <div>
           {allMembers?.map((profile, index) => (
-            <Row data={profile} role={userDetails?.role} handleClick={onDelete} backClass={style.backClass} />
+            <Row
+              key={index}
+              data={profile}
+              role={userDetails?.role}
+              handleClick={onDelete}
+              backClass={style.backClass}
+            />
           ))}
         </div>
       </Modal>

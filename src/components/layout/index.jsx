@@ -189,11 +189,11 @@ const Layout = ({ children, allowedRoles, currentRole, locked = false }) => {
                     <div className={style.allWorkspaces}>
                       <div className={style.addDiv}>
                         <span onClick={() => setIsOpen2(false)}>
-                          <img src={arrow} style={{ rotate: '180deg' }} height={12} width={12} />
+                          <img alt="" src={arrow} style={{ rotate: '180deg' }} height={12} width={12} />
                           Back
                         </span>
                         <span onClick={handleAddWorkSpaceClick}>
-                          <img src={plus} />
+                          <img src={plus} alt="" />
                           Workspace
                         </span>
                       </div>
@@ -201,8 +201,9 @@ const Layout = ({ children, allowedRoles, currentRole, locked = false }) => {
                       {_getAllWorkspaces?.workspaces?.length &&
                         _getAllWorkspaces?.workspaces
                           ?.filter((ele) => ele.workSpaceId !== userDetails?.lastAccessedWorkspace)
-                          ?.map((ele) => (
+                          ?.map((ele, i) => (
                             <div
+                              key={i}
                               className={style.userInfo}
                               onClick={() => {
                                 changeWorkspace(ele?.workSpaceId);

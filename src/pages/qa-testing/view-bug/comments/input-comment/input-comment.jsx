@@ -1,4 +1,3 @@
-import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useAddComment } from 'hooks/api-hooks/bugs/bugs.hook';
 import { useToaster } from 'hooks/use-toaster';
@@ -21,13 +20,10 @@ const InputComment = ({ bugId, commentsRefetch }) => {
 
   const { mutateAsync: _addCommentHandler, isLoading: isAdding } = useAddComment();
   const { toastSuccess, toastError } = useToaster();
-  const { register, control, handleSubmit, setValue, formState, reset, watch } = form;
+  const { register, control, handleSubmit, setValue, reset, watch } = form;
 
   const onSubmit = async (data) => {
-    if (
-      (Object.keys(data?.attachment).length > 0 || data?.commentText.trim() !== '') &&
-      !isAdding
-    ) {
+    if ((Object.keys(data?.attachment).length > 0 || data?.commentText.trim() !== '') && !isAdding) {
       try {
         const body = {
           bugId: bugId,
@@ -65,12 +61,7 @@ const InputComment = ({ bugId, commentsRefetch }) => {
               );
             })}
         </div>
-        <form
-          className={style.commentInput}
-          onSubmit={handleSubmit(onSubmit)}
-          noValidate
-          id="addComment"
-        >
+        <form className={style.commentInput} onSubmit={handleSubmit(onSubmit)} noValidate id="addComment">
           <CommentAttachment
             icon={<AttachFile />}
             control={control}

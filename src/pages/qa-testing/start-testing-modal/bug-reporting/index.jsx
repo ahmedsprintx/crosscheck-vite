@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import SelectBox from 'components/select-box';
 import TextField from 'components/text-field';
@@ -13,13 +13,7 @@ import UploadAttachment from 'components/upload-attachments/upload-attachment';
 import { useBugsFiltersOptions } from 'pages/qa-testing/header/helper';
 import FormCloseModal from 'components/form-close-modal';
 
-const ReportBug = ({
-  formHook,
-  projectId,
-  closeForm,
-  openFormCloseModal,
-  setOpenFormCloseModal,
-}) => {
+const ReportBug = ({ formHook, projectId, closeForm, openFormCloseModal, setOpenFormCloseModal }) => {
   const { data = {} } = useBugsFiltersOptions();
   const {
     projectOptions = [],

@@ -9,9 +9,9 @@ const TickIcon = () => {
         <path
           d="M1.5 5.25L5 8.75L12 1.25"
           stroke="#11103D"
-          stroke-width="1.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
           className={style.fill2}
         />
       </svg>

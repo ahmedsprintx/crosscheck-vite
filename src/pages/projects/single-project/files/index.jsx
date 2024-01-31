@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState , useMemo } from 'react';
 
 import GenericTable from 'components/generic-table';
 
@@ -14,7 +14,6 @@ import {
   useRenameProjectFile,
   useUploadProjectFiles,
 } from 'hooks/api-hooks/projects/files.hook';
-import { useMemo } from 'react';
 import { useForm } from 'react-hook-form';
 import Button from 'components/button';
 import { useToaster } from 'hooks/use-toaster';

@@ -1,6 +1,5 @@
 import MainWrapper from 'components/layout/main-wrapper';
-import React, { useState } from 'react';
-import { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { formattedDate } from 'utils/date-handler';
 
 import clickup from 'assets/clickup.svg';
@@ -185,7 +184,7 @@ const IntegrationPage = () => {
         <div className={style.box}>
           <div className={style.flexDiv}>
             <div className={style.iconSide}>
-              <img src={clickup} />
+              <img alt="" src={clickup} />
               <p>Clickup</p>
             </div>
             <div className={style.btnSide}>
@@ -199,7 +198,7 @@ const IntegrationPage = () => {
               />
               {currentWS?.clickUpUserId && (
                 <span className={style.clickupId}>
-                  <img src={reconnect} onClick={() => handleClickUpConnect()} />({currentWS?.clickUpUserId})
+                  <img alt="" src={reconnect} onClick={() => handleClickUpConnect()} />({currentWS?.clickUpUserId})
                 </span>
               )}
             </div>
@@ -209,7 +208,7 @@ const IntegrationPage = () => {
         <div className={style.box}>
           <div className={style.flexDiv}>
             <div className={style.iconSide}>
-              <img src={jira} />
+              <img alt="" src={jira} />
               <p>Jira</p>
             </div>
             <div className={style.btnSide}>
@@ -222,7 +221,7 @@ const IntegrationPage = () => {
               />
               {currentWS?.jiraUserId && (
                 <span className={style.clickupId}>
-                  <img src={reconnect} onClick={() => handleJiraConnect()} />({currentWS?.jiraUserId})
+                  <img alt="" src={reconnect} onClick={() => handleJiraConnect()} />({currentWS?.jiraUserId})
                 </span>
               )}
             </div>
@@ -232,11 +231,12 @@ const IntegrationPage = () => {
         <div className={style.box}>
           <div className={style.flexDiv}>
             <div className={style.iconSide}>
-              <img src={oneDrive} />
+              <img alt="" src={oneDrive} />
               <p>One Drive</p>
             </div>
             {matchingWorkspace?.oneDriveAccessToken && (
               <img
+                alt=""
                 src={reconnect}
                 onClick={() => userDetails?.superAdmin && handleOneDriveConnect()}
                 className={style.reconnectIcon}
@@ -259,11 +259,12 @@ const IntegrationPage = () => {
         <div className={style.box}>
           <div className={style.flexDiv}>
             <div className={style.iconSide}>
-              <img src={googleDrive} />
+              <img alt="" src={googleDrive} />
               <p>Google Drive</p>
             </div>
             {matchingWorkspace?.googleDriveAccessToken && (
               <img
+                alt=""
                 src={reconnect}
                 onClick={() => userDetails?.superAdmin && handleGoogleDriveConnect()}
                 className={style.reconnectIcon}
@@ -288,7 +289,7 @@ const IntegrationPage = () => {
         <div className={style.box}>
           <div className={style.flexDiv}>
             <div className={style.iconSide}>
-              <img src={github} />
+              <img alt="" src={github} />
               <p>Github</p>
             </div>
             <div className={style.btnSide}>
@@ -300,7 +301,7 @@ const IntegrationPage = () => {
         <div className={style.box}>
           <div className={style.flexDiv}>
             <div className={style.iconSide}>
-              <img src={teams} />
+              <img alt="" src={teams} />
               <p>Teams</p>
             </div>
             <div className={style.btnSide}>
@@ -312,7 +313,7 @@ const IntegrationPage = () => {
         <div className={style.box}>
           <div className={style.flexDiv}>
             <div className={style.iconSide}>
-              <img src={googleCalender} />
+              <img alt="" src={googleCalender} />
               <p>Google Calendar</p>
             </div>
             <div className={style.btnSide}>

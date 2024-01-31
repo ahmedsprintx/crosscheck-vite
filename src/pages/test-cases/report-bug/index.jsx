@@ -36,7 +36,6 @@ const ReportBug = ({
     featuresOptions,
     bugSubtypeOptions = [],
     severityOptions,
-    testTypeOptions,
     testingTypeOptions,
     bugTypeOptions,
     assignedToOptions,

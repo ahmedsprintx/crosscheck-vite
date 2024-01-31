@@ -150,7 +150,7 @@ const Index = ({
                     isClearable={false}
                   />
                 </div>
-                <div class={style.rangeContainer}>
+                <div className={style.rangeContainer}>
                   <RangeInput
                     label={'Weightage'}
                     watch={watch}

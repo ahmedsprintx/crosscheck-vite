@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState , useEffect } from 'react';
 
 import Button from 'components/button';
 
@@ -10,7 +10,6 @@ import ArrowRight from 'components/icon-component/arrow-right';
 import TextField from 'components/text-field';
 import { useGetIssuesType, useGetJiraSites, useGetJiraUsers, useJiraProjects } from 'hooks/api-hooks/task/task.hook';
 import { useToaster } from 'hooks/use-toaster';
-import { useEffect } from 'react';
 import TextArea from 'components/text-area';
 import _ from 'lodash';
 import { getUsers } from 'api/v1/settings/user-management';
@@ -282,7 +281,7 @@ const JiraTask = ({
           disabled={issueType?.length > 0 ? false : true}
         />
         <div className={style.selectDiv}>
-          {/* insert nestedSelectbox here */}
+          {}
           <div
             style={{
               display: 'flex',

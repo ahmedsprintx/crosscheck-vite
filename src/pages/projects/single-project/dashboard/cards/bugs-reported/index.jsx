@@ -149,7 +149,6 @@ const TestCaseSummary = ({ downloadHandler, componentRef, expanded, handleClose,
           }));
         },
       },
-    ,
   ];
 
   const { data: _bugsReportedData, isLoading: _isLoading } = useBugsReported({
@@ -234,7 +233,7 @@ const TestCaseSummary = ({ downloadHandler, componentRef, expanded, handleClose,
               gap: '10px',
             }}
           >
-            <img src={dots} onClick={() => setMore((pre) => ({ ...pre, open: true }))} />
+            <img alt="" src={dots} onClick={() => setMore((pre) => ({ ...pre, open: true }))} />
 
             {more?.open && (
               <div className={style.menuDiv}>

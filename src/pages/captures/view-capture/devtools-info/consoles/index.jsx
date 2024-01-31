@@ -57,7 +57,7 @@ const ConsolesTab = ({ consoles }) => {
                     key={index}
                     type={ele.type}
                     data={{
-                      time: formattedToSecond(ele.createdAt),
+                      // FIXME:  time: formattedToSecond(ele.createdAt),
                       text: ele.data,
                       desc: ele.data,
                     }}
@@ -92,7 +92,7 @@ const ConsolesTab = ({ consoles }) => {
                     key={index}
                     type={ele.type}
                     data={{
-                      time: formattedToSecond(ele.createdAt),
+                      // FIXME:    time: formattedToSecond(ele.createdAt),
                       text: ele.data,
                       desc: ele.data,
                     }}
@@ -119,13 +119,7 @@ const ConsolesTab = ({ consoles }) => {
   return (
     <div>
       <div style={{ marginTop: '10px' }}>
-        <FilterTag
-          icons
-          pages={tagsPages}
-          activeTab={activeTag}
-          setActiveTab={setActiveTag}
-          multiMode={undefined}
-        />
+        <FilterTag icons pages={tagsPages} activeTab={activeTag} setActiveTab={setActiveTag} multiMode={undefined} />
       </div>
     </div>
   );

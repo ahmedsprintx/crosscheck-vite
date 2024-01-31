@@ -1,10 +1,8 @@
-import React, { useRef } from 'react';
-import { useForm } from 'react-hook-form';
+import { useRef, useState } from 'react';
 
 import style from './history.module.scss';
-import { columnsData, rows } from './helper';
+import { columnsData } from './helper';
 import GenericTable from 'components/generic-table';
-import { useState } from 'react';
 
 const History = ({ history }) => {
   const ref = useRef();

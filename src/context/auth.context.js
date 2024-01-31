@@ -1,7 +1,7 @@
 import React from 'react';
 
 // NOTE: third party
-import jwtDecode from 'jwt-decode';
+import { jwtDecode } from 'jwt-decode';
 
 // NOTE: utils
 import { setToken, getToken, removeToken } from 'utils/token';

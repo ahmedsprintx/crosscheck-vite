@@ -1,12 +1,6 @@
-/* eslint-disable no-unused-vars */
-
-import React, { memo, useRef } from 'react';
+import React, { memo, useRef, useMemo, useEffect, useCallback, useState } from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
-import { useMemo } from 'react';
-import { useEffect } from 'react';
-import { useCallback } from 'react';
-import { useState } from 'react';
 import cross from 'assets/cross.svg';
 import arrow from 'assets/arrow-down.svg';
 import style from './hierarchy-selectbox.module.scss';
@@ -152,6 +146,7 @@ const HierarchicalDropdown = ({
           <div className={style.operators}>
             {selectedValue && (
               <img
+                alt=""
                 src={cross}
                 width={'13px'}
                 height={'10px'}
@@ -162,12 +157,7 @@ const HierarchicalDropdown = ({
                 }}
               />
             )}
-            <img
-              src={arrow}
-              width={'13px'}
-              height={'15px'}
-              style={{ rotate: menuIsOpen ? '180deg' : '' }}
-            />
+            <img src={arrow} width={'13px'} height={'15px'} style={{ rotate: menuIsOpen ? '180deg' : '' }} />
           </div>
         </div>
 
@@ -245,19 +235,13 @@ const DropdownOption = ({
             }
           }}
           style={{
-            background:
-              parentKeys?.includes(option.key) && option?.child?.length == 0 ? '#2f80ed' : '#fff',
+            background: parentKeys?.includes(option.key) && option?.child?.length == 0 ? '#2f80ed' : '#fff',
 
             color: parentKeys?.includes(option.key) && option?.child?.length == 0 ? 'white' : '',
           }}
         >
           {option?.child?.length > 0 ? (
-            <img
-              src={arrow}
-              width={'10px'}
-              height={'10px'}
-              style={{ rotate: open ? '' : '-90deg' }}
-            />
+            <img src={arrow} width={'10px'} height={'10px'} style={{ rotate: open ? '' : '-90deg' }} />
           ) : (
             <div style={{ marginRight: '24px' }}></div>
           )}
@@ -286,10 +270,7 @@ const filterOptionsBySearch = (options, searchQuery) => {
   return options?.reduce((filtered, option) => {
     const matchingChildOptions = filterOptionsBySearch(option.child, searchQuery);
 
-    if (
-      option.value.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      matchingChildOptions?.length > 0
-    ) {
+    if (option.value.toLowerCase().includes(searchQuery.toLowerCase()) || matchingChildOptions?.length > 0) {
       filtered.push({
         ...option,
 

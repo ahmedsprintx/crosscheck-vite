@@ -11,7 +11,7 @@ import Loader from 'components/loader';
 import MultiColorProgressBar from 'components/progress-bar';
 
 // NOTE: utils
-import { columnsData } from './helper';
+import { columnsData, useProjectOptions } from './helper';
 import { debounce as _debounce, isEmpty as _isEmpty, pick as _pick } from 'utils/lodash';
 
 import right from 'assets/arrow-right.svg';
@@ -25,7 +25,6 @@ import { formattedDate } from 'utils/date-handler';
 import { useToaster } from 'hooks/use-toaster';
 import ViewTestCase from './view-test-cases';
 import ReportBug from './report-bug';
-import { useProjectOptions } from './helper';
 import Permissions from 'components/permissions';
 import { useAppContext } from 'context/app.context';
 import WarningTestRun from './warning-test-run';

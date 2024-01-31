@@ -20,10 +20,7 @@ const Switch = ({
     <div>
       {label && <p className={style.titleClass}>{label}</p>}
 
-      <div
-        className={`${style.mainClass} ${className}`}
-        onClick={handleClick && handleClick}
-      >
+      <div className={`${style.mainClass} ${className}`} onClick={handleClick && handleClick}>
         <label className={`${style.switch}  ${switchContainer} `}>
           <Controller
             name={name}
@@ -51,11 +48,7 @@ const Switch = ({
         {title && <h6>{title}</h6>}
       </div>
 
-      {errorMessage ? (
-        <span className={style.errorMessage}>{errorMessage}</span>
-      ) : (
-        ''
-      )}
+      {errorMessage ? <span className={style.errorMessage}>{errorMessage}</span> : ''}
     </div>
   );
 };

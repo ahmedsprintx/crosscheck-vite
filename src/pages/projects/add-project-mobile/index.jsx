@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 
 import _ from 'lodash';
@@ -11,7 +11,6 @@ import style from './modal.module.scss';
 import { useGetProjectById } from 'hooks/api-hooks/projects/projects.hook';
 import { statusOptions } from 'utils/drop-down-options';
 import { useAppContext } from 'context/app.context';
-import { useEffect } from 'react';
 import { useProjectOptions } from './helper';
 
 const AddProjectMMobile = ({ openAddModal, setOpenAddModalMobile, addProject }) => {

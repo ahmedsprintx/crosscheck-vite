@@ -1,12 +1,10 @@
-import React, { useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import tick from 'assets/tick.svg';
 import cross from 'assets/cross-red.svg';
-import drawer from 'assets/drawer-arrow.svg';
 import tickActive from 'assets/tick-active.svg';
 import crossActive from 'assets/cross-active.svg';
 import blocked from 'assets/blocked.svg';
 import blockedActive from 'assets/blocked-active.svg';
-import ReportBugModal from 'components/report-bug-modal';
 import style from './drawer.module.scss';
 import draftToHtml from 'draftjs-to-html';
 import { formattedDate } from 'utils/date-handler';

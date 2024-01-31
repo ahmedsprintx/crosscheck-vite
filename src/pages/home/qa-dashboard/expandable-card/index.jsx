@@ -46,6 +46,7 @@ const ExpandableCard = ({ title, expanded, maxHeight, data }) => {
                   })
                   .map((item, i) => (
                     <Upcoming
+                      key={i}
                       id={item?._id}
                       testedCount={item?.testedCount}
                       testCases={item?.testCases}
@@ -136,6 +137,7 @@ const ExpandableCard = ({ title, expanded, maxHeight, data }) => {
                   })
                   .map((item, i) => (
                     <Upcoming
+                      key={i}
                       id={item?._id}
                       testedCount={item?.testedCount}
                       testCases={item?.testCases}
@@ -165,7 +167,7 @@ const ExpandableCard = ({ title, expanded, maxHeight, data }) => {
     <div className={style.upcomingDiv} style={{ maxHeight: maxHeight && maxHeight }}>
       <div className={style.upcomingHeader}>
         <span>{title}</span>
-        {!expanded && <img src={expandIcon} onClick={() => setExpandModal(true)} />}
+        {!expanded && <img alt="" src={expandIcon} onClick={() => setExpandModal(true)} />}
       </div>
       <div className={style.tabDiv}>
         <Tabs pages={pages?.filter((x) => x.tabTitle)} activeTab={activeTab} setActiveTab={setActiveTab} />

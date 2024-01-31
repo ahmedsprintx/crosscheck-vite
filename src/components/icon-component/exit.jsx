@@ -9,25 +9,25 @@ const ExitIcon = () => {
         <path
           d="M20 12L9 12"
           stroke="#8B909A"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
           className={style.greyStroke}
         />
         <path
           d="M16 17L21 12L16 7"
           stroke="#8B909A"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
           className={style.greyStroke}
         />
         <path
           d="M3 21L3 3"
           stroke="#8B909A"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
           className={style.greyStroke}
         />
       </svg>

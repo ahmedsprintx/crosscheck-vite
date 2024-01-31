@@ -1,27 +1,13 @@
-import React, { useState } from 'react';
-import { useForm } from 'react-hook-form';
+import { useState } from 'react';
 
 import Button from 'components/button';
 import SelectBox from 'components/select-box';
-import DateRange from 'components/date-range';
 
-import resetIcon from 'assets/reset.svg';
 import style from './header.module.scss';
-import { attornyStatusOptions, locationOptions, useBugsFiltersOptions } from './helper';
 import ResetPopup from './reset-popup';
 import MoreFilter from 'components/icon-component/more-filter';
 
-const FilterHeader = ({
-  mobileView,
-  projectSpecific,
-  control,
-  register,
-  watch,
-  setValue,
-  reset,
-  onFilterApply,
-  data,
-}) => {
+const FilterHeader = ({ mobileView, projectSpecific, control, watch, setValue, reset, onFilterApply, data }) => {
   const [openFilter, setOpenFilter] = useState(false);
 
   const {

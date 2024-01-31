@@ -157,14 +157,10 @@ const ExpandableTable = ({
     <div className={style.upcomingDiv} style={{ maxHeight: maxHeight && maxHeight }}>
       <div className={style.upcomingHeader}>
         <span>{title}</span>
-        {!expanded && <img src={expandIcon} onClick={() => setExpandModal(true)} />}
+        {!expanded && <img alt="" src={expandIcon} onClick={() => setExpandModal(true)} />}
       </div>
       <div className={style.tabDiv}>
-        <Tabs
-          pages={pages?.filter((x) => x.tabTitle)}
-          activeTab={activeTabIndex}
-          setActiveTab={setActiveTabIndex}
-        />
+        <Tabs pages={pages?.filter((x) => x.tabTitle)} activeTab={activeTabIndex} setActiveTab={setActiveTabIndex} />
       </div>
 
       {expandModal && (

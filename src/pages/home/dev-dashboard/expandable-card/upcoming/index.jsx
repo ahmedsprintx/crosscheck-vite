@@ -1,24 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import style from './upcoming.module.scss';
 import _ from 'lodash';
 import { useNavigate } from 'react-router-dom';
 
 import { useToaster } from 'hooks/use-toaster';
-import { useState } from 'react';
 import Tags from 'components/tags';
 import { formattedDate } from 'utils/date-handler';
 
-const Upcoming = ({
-  reportedBy,
-  lastTestedBy,
-  title,
-  subTitle,
-  date,
-  tagText,
-  data,
-  img,
-  name,
-}) => {
+const Upcoming = ({ reportedBy, lastTestedBy, title, subTitle, date, tagText, data, img, name }) => {
   const navigate = useNavigate();
   const { toastSuccess } = useToaster();
   const [setIsHoveringName] = useState(false);
@@ -89,7 +78,7 @@ const Upcoming = ({
               style={{ display: 'flex', position: 'relative', alignItems: 'center', gap: '5px' }}
             >
               {img ? (
-                <img src={img} style={{ width: '24px', height: '24px', borderRadius: '80%' }} />
+                <img alt="" src={img} style={{ width: '24px', height: '24px', borderRadius: '80%' }} />
               ) : (
                 <div
                   style={{
@@ -111,10 +100,7 @@ const Upcoming = ({
             </div>
           </div>
           <div>
-            <span>{`${formattedDate(date, 'dd MMM, yyyy')} at ${formattedDate(
-              date,
-              'h:mm a',
-            )}`}</span>
+            <span>{`${formattedDate(date, 'dd MMM, yyyy')} at ${formattedDate(date, 'h:mm a')}`}</span>
           </div>
         </div>
       </div>

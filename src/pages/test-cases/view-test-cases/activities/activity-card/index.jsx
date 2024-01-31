@@ -33,6 +33,6 @@ const ActivityCard = ({ title, description, createdAt }) => {
 ActivityCard.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  createdAt: PropTypes.string.isRequired, // Adjust the PropTypes based on the actual type
+  createdAt: PropTypes.string.isRequired, 
 };
 export default ActivityCard;

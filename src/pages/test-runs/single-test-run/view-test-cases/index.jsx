@@ -272,7 +272,7 @@ const ViewTestCase = ({
                           height: '29px',
                         }}
                         type="submit"
-                        disabled={_isLoadingTestRunStatus || _isLoadingTestCase}
+                        disabled={_isLoadingTestCase}
                       >
                         <img
                           src={saveIcon}

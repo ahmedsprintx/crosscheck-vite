@@ -398,6 +398,7 @@ export const columnsData = ({
               textDecoration: 'underline',
               color: 'black',
             }}
+            rel="noreferrer"
           >
             <Highlighter search={searchedText}>{row?.testEvidenceKey}</Highlighter>
           </a>
@@ -825,7 +826,7 @@ export const columnsData = ({
                 </div>
               </div>
             </a>
-            <div className={style.img} onClick={() => setRetestOpen((x) => ({ open: true, id: row?._id }))}>
+            <div className={style.img} onClick={() => setRetestOpen(() => ({ open: true, id: row?._id }))}>
               <div>
                 <RetestIcon />
               </div>

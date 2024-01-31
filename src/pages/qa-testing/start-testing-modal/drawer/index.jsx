@@ -1,5 +1,3 @@
-import React, { useState } from 'react';
-
 import noData from 'assets/no-found.svg';
 
 import style from './drawer.module.scss';
@@ -8,16 +6,7 @@ import { useToaster } from 'hooks/use-toaster';
 import TestCaseCard from './test-case-card';
 import Loader from 'components/loader';
 
-const Drawer = ({
-  testCasesRef,
-  noHeader,
-  setAddBug,
-  setEditRecord,
-  testCases,
-  refetch,
-  page,
-  isLoading,
-}) => {
+const Drawer = ({ testCasesRef, setAddBug, setEditRecord, testCases, refetch, page, isLoading }) => {
   const { toastError, toastSuccess } = useToaster();
 
   const { mutateAsync: _updateStatusHandler } = useUpdateStatusTestCase();

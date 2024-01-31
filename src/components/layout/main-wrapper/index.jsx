@@ -30,10 +30,7 @@ const MainWrapper = ({
   const [isOpen, setIsOpen] = useState(false);
   const [isSearch, setIsSearch] = useState(false);
 
-  const { data: _allProjects } = useGetProjectsForMainWrapper(
-    barIcon ? { search: '' } : {},
-    barIcon,
-  );
+  const { data: _allProjects } = useGetProjectsForMainWrapper(barIcon ? { search: '' } : {}, barIcon);
 
   const navigate = useNavigate();
 
@@ -141,15 +138,16 @@ const MainWrapper = ({
                               setOpen(true);
                             }}
                           >
-                            <img src={arrow} />
+                            <img src={arrow} alt="" />
                           </div>
                         )}
                       </h6>
                       {open && (
                         <div className={style.allProjects}>
-                          {_allProjects?.allProjects.map((x) => {
+                          {_allProjects?.allProjects.map((x, i) => {
                             return (
                               <div
+                                key={i}
                                 className={style.innerFlex}
                                 style={{ cursor: 'pointer' }}
                                 onClick={() => {
@@ -172,9 +170,10 @@ const MainWrapper = ({
                       {open && (
                         <MobileMenu isOpen={isOpen} setIsOpen={setIsOpen}>
                           <div className={style.allProjectsMobile}>
-                            {_allProjects?.allProjects.map((x) => {
+                            {_allProjects?.allProjects.map((x, i) => {
                               return (
                                 <div
+                                  key={i}
                                   className={style.innerFlex}
                                   style={{ cursor: 'pointer' }}
                                   onClick={() => {
@@ -196,11 +195,9 @@ const MainWrapper = ({
                         </MobileMenu>
                       )}
 
-                      {open && (
-                        <div className={style.backdrop} onClick={() => setOpen(false)}></div>
-                      )}
+                      {open && <div className={style.backdrop} onClick={() => setOpen(false)}></div>}
                     </div>
-                    {searchField && <img src={search} onClick={() => setIsSearch(true)} />}
+                    {searchField && <img alt="" src={search} onClick={() => setIsSearch(true)} />}
                   </>
                 )}
               </div>

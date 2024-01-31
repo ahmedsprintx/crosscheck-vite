@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import style from './upcoming.module.scss';
 import MultiColorProgressBar from 'components/progress-bar';
 import _ from 'lodash';
@@ -9,7 +9,6 @@ import CopyIcon from 'components/icon-component/copy-icon';
 import TickIcon from 'components/icon-component/tick';
 import ActivityIcon from 'components/icon-component/activity-icon';
 import { useToaster } from 'hooks/use-toaster';
-import { useState } from 'react';
 import avatar from 'assets/avatar.svg';
 
 const Upcoming = ({
@@ -63,11 +62,7 @@ const Upcoming = ({
     }
   };
   return (
-    <div
-      className={style.wrapper}
-      style={{ cursor: 'pointer' }}
-      onClick={() => navigate(`/test-run/${id}`)}
-    >
+    <div className={style.wrapper} style={{ cursor: 'pointer' }} onClick={() => navigate(`/test-run/${id}`)}>
       <div
         style={{
           background: '#E25E3E',
@@ -119,8 +114,7 @@ const Upcoming = ({
         </div>
         <div className={style.imgSection}>
           <span>
-            {date && `Due Date: ${date}`}{' '}
-            <span className={style.daysPassed}>{daysPassed} Days</span>
+            {date && `Due Date: ${date}`} <span className={style.daysPassed}>{daysPassed} Days</span>
           </span>
           <div
             onMouseEnter={handleMouseEnter}
@@ -128,7 +122,7 @@ const Upcoming = ({
             style={{ display: 'flex', position: 'relative', alignItems: 'center', gap: '5px' }}
           >
             {img ? (
-              <img src={img} style={{ width: '24px', height: '24px', borderRadius: '80%' }} />
+              <img alt="" src={img} style={{ width: '24px', height: '24px', borderRadius: '80%' }} />
             ) : (
               <div
                 style={{
@@ -149,7 +143,7 @@ const Upcoming = ({
               {isHoveringName && (
                 <div className={style.main}>
                   <div className={style.profileDiv}>
-                    <img src={img || avatar} height={60} width={60} />
+                    <img alt="" src={img || avatar} height={60} width={60} />
                     <span className={style.statusOnline}>Online</span>
                   </div>
                   <div>

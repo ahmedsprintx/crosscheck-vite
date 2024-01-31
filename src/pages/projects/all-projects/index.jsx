@@ -102,6 +102,7 @@ const AllProjects = ({
           {projects?.map((ele, index) => {
             return (
               <ProjectCard
+                key={index}
                 searchedText={searchedText}
                 index={index}
                 title={ele.title}
@@ -143,7 +144,7 @@ const AllProjects = ({
           </div>
           <div>
             {allMembers?.map((profile, index) => (
-              <div className={style.membersRow}>
+              <div className={style.membersRow} key={index}>
                 <div className={style.imgDiv}>
                   {profile?.profilePicture ? (
                     <img src={profile?.profilePicture} alt="" height={35} width={35} />

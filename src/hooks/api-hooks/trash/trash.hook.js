@@ -1,10 +1,4 @@
-import {
-  allTrash,
-  deleteAllTrash,
-  deleteTrash,
-  restoreAllTrash,
-  restoreTrash,
-} from 'api/v1/trash/trash';
+import { allTrash, deleteAllTrash, deleteTrash, restoreAllTrash, restoreTrash } from 'api/v1/trash/trash';
 import { useMutation } from 'react-query';
 
 export const useGetAllTrash = () => {

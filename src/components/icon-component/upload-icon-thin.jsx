@@ -13,29 +13,29 @@ const UploadIconThin = () => {
         fill="none"
         data-cy="uploadfile-bugreport"
       >
-        <g clip-path="url(#clip0_6757_80156)">
+        <g clipPath="url(#clip0_6757_80156)">
           <path
             d="M5.16663 19.8333V22.1667C5.16663 22.7855 5.41246 23.379 5.85004 23.8166C6.28763 24.2542 6.88112 24.5 7.49996 24.5H21.5C22.1188 24.5 22.7123 24.2542 23.1499 23.8166C23.5875 23.379 23.8333 22.7855 23.8333 22.1667V19.8333"
             stroke="#071952"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
             className={style.fill2}
           />
           <path
             d="M8.66663 10.5L14.5 4.66666L20.3333 10.5"
             stroke="#071952"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
             className={style.fill2}
           />
           <path
             d="M14.5 4.66666V18.6667"
             stroke="#071952"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
             className={style.fill2}
           />
         </g>

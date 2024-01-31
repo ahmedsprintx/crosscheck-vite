@@ -1,8 +1,7 @@
 import Loader from 'components/loader';
 import { useAppContext } from 'context/app.context';
 import { useGetMyWorkspaces } from 'hooks/api-hooks/settings/user-management.hook';
-import React from 'react';
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 
 const Index = () => {
   const { userDetails, setUserDetails } = useAppContext();

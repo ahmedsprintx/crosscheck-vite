@@ -239,7 +239,7 @@ const Index = () => {
                 gap: '10px',
               }}
             >
-              <img src={dots} onClick={() => setMore((pre) => ({ ...pre, open: true }))} />
+              <img src={dots} onClick={() => setMore((pre) => ({ ...pre, open: true }))} alt="" />
 
               {more?.open && (
                 <div className={style.menuDiv}>

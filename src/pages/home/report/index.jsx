@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useGetQaReport } from 'hooks/api-hooks/dashboard/dashboard.hook';
 import { useToaster } from 'hooks/use-toaster';
-import { useEffect } from 'react';
 import { formattedDate } from 'utils/date-handler';
 
 import dots from 'assets/threeDots.svg';
@@ -274,8 +273,8 @@ const Report = ({ control, userDetails }) => {
                 setIsOpen(true);
               }}
             >
-              <img src={ArrowUp} width={10} height={6} />
-              <img src={ArrowUp} width={10} height={6} style={{ rotate: '180deg' }} />
+              <img alt="" src={ArrowUp} width={10} height={6} />
+              <img alt="" src={ArrowUp} width={10} height={6} style={{ rotate: '180deg' }} />
               {user && (
                 <div className={style.userMenuDiv}>
                   <Menu menu={userMenu} />
@@ -290,7 +289,7 @@ const Report = ({ control, userDetails }) => {
                       {ele?.img ||
                         (ele?.compo && (
                           <div style={{ width: '15px' }}>
-                            {ele?.img ? <img src={ele?.img} alt="" /> : ele?.compo ? ele?.compo : ''}
+                            {ele?.img ? <img alt="" src={ele?.img} /> : ele?.compo ? ele?.compo : ''}
                           </div>
                         ))}
                       {<p>{ele?.title}</p>}
@@ -345,7 +344,7 @@ const Report = ({ control, userDetails }) => {
                 }-${formattedDate(selectedDates?.range?.end && selectedDates?.range?.end, 'yyyy/MM/dd')}`
               : selectedDay}
           </div>
-          <img src={dots} />
+          <img alt="" src={dots} />
           {days && (
             <div className={style.menuDiv}>
               <Menu menu={menu} />

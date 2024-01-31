@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useAppContext } from 'context/app.context';
 import { useDeleteComment, useGetComments } from 'hooks/api-hooks/bugs/bugs.hook';
 import { useToaster } from 'hooks/use-toaster';
@@ -9,14 +9,10 @@ import Comment from './comment-container';
 import InputComment from './input-comment/input-comment';
 
 const Comments = ({ bugId }) => {
-  const {
-    data: _commentsData,
-    isLoading: isCommentsLoading,
-    refetch: commentsRefetch,
-  } = useGetComments(bugId);
+  const { data: _commentsData, refetch: commentsRefetch } = useGetComments(bugId);
   const { userDetails } = useAppContext();
   const { toastSuccess, toastError } = useToaster();
-  const { mutateAsync: _deleteCommentHandler, isLoading: deletingComment } = useDeleteComment();
+  const { mutateAsync: _deleteCommentHandler } = useDeleteComment();
   const [openDelModal, setOpenDelModal] = useState(false);
   const [commentId, setCommentId] = useState('');
   const [editComment, setEditComment] = useState('');

@@ -12,7 +12,7 @@ import draftToHtml from 'draftjs-to-html';
 import { formattedDate } from 'utils/date-handler';
 import ArrowDown from 'components/icon-component/arrow-down';
 
-const TestCaseCard = ({ data, index, onStatusChange, setAddBug, setEditRecord, noHeader }) => {
+const TestCaseCard = ({ data, onStatusChange, setAddBug, setEditRecord }) => {
   const [more, setMore] = useState(false);
   const [bugModal, setBugModal] = useState(false);
   const [modalDismissed, setModalDismissed] = useState(false);

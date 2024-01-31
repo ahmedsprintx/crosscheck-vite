@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 import Button from 'components/button';
@@ -10,15 +9,10 @@ import { Link, useNavigate, useParams, useSearchParams } from 'react-router-dom'
 import { useActivate, useResendOtp } from 'hooks/api-hooks/auth.hook';
 import { useToaster } from 'hooks/use-toaster';
 import { useAuthContext } from 'context/auth.context';
-import { useAppContext } from 'context/app.context';
+import { useEffect, useState } from 'react';
 
 const VerifySignUpEmail = () => {
-  const {
-    handleSubmit,
-    formState: { errors },
-    setError,
-    control,
-  } = useForm();
+  const { handleSubmit, setError, control } = useForm();
   const { email } = useParams();
   const [searchParams, setSearchParams] = useSearchParams();
   const active = searchParams.get('active');

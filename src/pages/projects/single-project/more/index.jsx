@@ -5,7 +5,6 @@ import { useForm } from 'react-hook-form';
 
 import _ from 'lodash';
 import Button from 'components/button';
-import Input from 'components/text-field';
 import Row from 'components/members-row';
 import {
   useAddMembers,
@@ -109,9 +108,7 @@ const More = () => {
     setShowAllProfiles(!showAllProfiles);
   };
 
-  const visibleProfiles = showAllProfiles
-    ? _projectDetails?.shareWith
-    : _projectDetails?.shareWith.slice(0, 5);
+  const visibleProfiles = showAllProfiles ? _projectDetails?.shareWith : _projectDetails?.shareWith.slice(0, 5);
 
   return (
     <>
@@ -126,7 +123,7 @@ const More = () => {
                 <div className={style.content}>
                   {edit ? (
                     <div className={style.editMode}>
-                      <Input
+                      <TextField
                         className={style.inputClass}
                         register={() =>
                           register('name', {
@@ -163,10 +160,7 @@ const More = () => {
                   ) : (
                     <div className={style.contentDiv} style={{ display: 'flex', gap: '10px' }}>
                       {_projectDetails?.name}
-                      <Permissions
-                        allowedRoles={['Admin', 'Project Manager']}
-                        currentRole={userDetails.role}
-                      >
+                      <Permissions allowedRoles={['Admin', 'Project Manager']} currentRole={userDetails.role}>
                         <div onClick={() => setEdit(true)}>
                           <EditIconGrey />
                         </div>
@@ -222,10 +216,7 @@ const More = () => {
                   ) : (
                     <div className={style.contentDiv} style={{ display: 'flex', gap: '10px' }}>
                       {_projectDetails?.status}
-                      <Permissions
-                        allowedRoles={['Admin', 'Project Manager']}
-                        currentRole={userDetails.role}
-                      >
+                      <Permissions allowedRoles={['Admin', 'Project Manager']} currentRole={userDetails.role}>
                         <div onClick={() => setEdit2(true)}>
                           <EditIconGrey />
                         </div>
@@ -244,10 +235,7 @@ const More = () => {
                         position: 'relative',
                       }}
                     >
-                      <div
-                        className={style.count}
-                        style={{ marginTop: errors.idSeries && '-65px' }}
-                      >
+                      <div className={style.count} style={{ marginTop: errors.idSeries && '-65px' }}>
                         {watch('idSeries') ? watch('idSeries')?.length || 3 : 0}/3
                       </div>
                       <TextField
@@ -291,10 +279,7 @@ const More = () => {
                   ) : (
                     <div className={style.contentDiv} style={{ display: 'flex', gap: '10px' }}>
                       {_projectDetails?.idSeries}
-                      <Permissions
-                        allowedRoles={['Admin', 'Project Manager']}
-                        currentRole={userDetails.role}
-                      >
+                      <Permissions allowedRoles={['Admin', 'Project Manager']} currentRole={userDetails.role}>
                         <div onClick={() => setEdit3(true)}>
                           <EditIconGrey />
                         </div>
@@ -306,9 +291,7 @@ const More = () => {
               <div className={style.dataDetails}>
                 <div className={style.headingsDiv}>Created By</div>
                 <div className={style.contentDiv}>
-                  {`${_projectDetails?.createdBy?.name || ''} (${
-                    _projectDetails?.createdBy?.email || ''
-                  })`}
+                  {`${_projectDetails?.createdBy?.name || ''} (${_projectDetails?.createdBy?.email || ''})`}
                 </div>
               </div>
               <div className={style.dataDetails}>
@@ -321,10 +304,7 @@ const More = () => {
                 <div className={style.headingsDiv}>Members</div>
                 <div className={style.contentLast}>
                   <div className={style.contentLast}>
-                    <Permissions
-                      allowedRoles={['Admin', 'Project Manager', 'QA']}
-                      currentRole={userDetails?.role}
-                    >
+                    <Permissions allowedRoles={['Admin', 'Project Manager', 'QA']} currentRole={userDetails?.role}>
                       <div className={style.selectDiv}>
                         <SelectBox
                           dynamicWrapper={style.noLabel}
@@ -336,9 +316,7 @@ const More = () => {
                           badge
                           options={
                             usersOptions?.filter((x, index) => {
-                              return !_projectDetails?.shareWith.some(
-                                (profile) => profile._id === x.value,
-                              );
+                              return !_projectDetails?.shareWith.some((profile) => profile._id === x.value);
                             }) || []
                           }
                           label={'Share with'}
@@ -361,6 +339,7 @@ const More = () => {
                     <div className={style.rowContainer}>
                       {visibleProfiles?.map((profile, index) => (
                         <Row
+                          key={index}
                           role={userDetails?.role}
                           data={profile}
                           handleClick={() => removeMember(profile?._id)}
@@ -388,18 +367,12 @@ const More = () => {
           </div>
           <div className={style.wrapperMobile}>
             <div className={style.headings}>
-              <div
-                className={style.headingsDiv}
-                style={{ marginBottom: edit && edit2 ? '15px' : '' }}
-              >
+              <div className={style.headingsDiv} style={{ marginBottom: edit && edit2 ? '15px' : '' }}>
                 Project Name
               </div>
               {edit ? (
-                <div
-                  className={style.editMode}
-                  style={{ marginBottom: edit && edit2 ? '15px' : '' }}
-                >
-                  <Input
+                <div className={style.editMode} style={{ marginBottom: edit && edit2 ? '15px' : '' }}>
+                  <TextField
                     className={style.inputClass}
                     register={() =>
                       register('projectName', {
@@ -553,9 +526,7 @@ const More = () => {
               )}
               <div className={style.headingsDiv}>Created By</div>
               <div className={style.contentDiv}>
-                {`${_projectDetails?.createdBy?.name || ''} (${
-                  _projectDetails?.createdBy?.email || ''
-                })`}
+                {`${_projectDetails?.createdBy?.name || ''} (${_projectDetails?.createdBy?.email || ''})`}
               </div>
               <div className={style.headingsDiv}>Created At</div>
               <div className={style.contentDiv}>
@@ -565,10 +536,7 @@ const More = () => {
             </div>
           </div>
           <div className={style.contentLastMobile}>
-            <Permissions
-              allowedRoles={['Admin', 'Project Manager', 'QA']}
-              currentRole={userDetails?.role}
-            >
+            <Permissions allowedRoles={['Admin', 'Project Manager', 'QA']} currentRole={userDetails?.role}>
               <div className={style.selectDiv}>
                 <SelectBox
                   dynamicWrapper={style.noLabel}
@@ -605,15 +573,12 @@ const More = () => {
             ) : (
               <div className={style.rowContainer}>
                 {visibleProfiles?.map((profile, index) => (
-                  <div className={style.membersRow}>
+                  <div className={style.membersRow} key={index}>
                     <div className={style.imgDiv}>
                       {profile?.profilePicture ? (
                         <img src={profile?.profilePicture} alt="" height={35} width={35} />
                       ) : (
-                        <span
-                          className={style.initialSpan}
-                          style={{ height: '35px', width: '35px' }}
-                        >
+                        <span className={style.initialSpan} style={{ height: '35px', width: '35px' }}>
                           {_.first(profile?.name)}
                         </span>
                       )}
@@ -628,10 +593,7 @@ const More = () => {
                       <p className={style.name}>{profile?.name}</p>
                       <p>{profile?.email}</p>
                     </div>
-                    <Permissions
-                      allowedRoles={['Admin', 'Project Manager', 'QA']}
-                      currentRole={userDetails?.role}
-                    >
+                    <Permissions allowedRoles={['Admin', 'Project Manager', 'QA']} currentRole={userDetails?.role}>
                       <Button
                         text={'Remove'}
                         btnClass={style.btnRemove}

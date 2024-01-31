@@ -1,5 +1,3 @@
-import React, { useState } from 'react';
-
 import Modal from 'components/modal';
 import Button from 'components/button';
 
@@ -8,11 +6,7 @@ import style from './remove-confirm-modal.module.scss';
 
 const TaskCreated = ({ openTaskCreated, setOpenTaskCreated }) => {
   return (
-    <Modal
-      open={openTaskCreated}
-      handleClose={() => setOpenTaskCreated(false)}
-      className={style.mainDiv}
-    >
+    <Modal open={openTaskCreated} handleClose={() => setOpenTaskCreated(false)} className={style.mainDiv}>
       <div className={style.iconRefresh}>
         <img src={createIcon} alt="" />
       </div>

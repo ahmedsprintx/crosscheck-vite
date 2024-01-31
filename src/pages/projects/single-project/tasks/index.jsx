@@ -1,7 +1,7 @@
 import Button from 'components/button';
 import ExportIcon from 'components/icon-component/export-icon';
 import MainWrapper from 'components/layout/main-wrapper';
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { columnsData, initialFilter } from './helper';
 
 import style from './tasks.module.scss';
@@ -29,7 +29,7 @@ const Tasks = ({ noHeader, projectId }) => {
   const [filters, setFilters] = useState(initialFilter);
   const [filtersCount, setFiltersCount] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
-  const { control, register, watch, reset, setError, setValue } = useForm();
+  const { control, register, watch, reset, setValue } = useForm();
   const [isHoveringName, setIsHoveringName] = useState({});
   const [allowResize, setAllowResize] = useState(false);
   const [sizes, setSizes] = useState(['20%', 'auto']);
@@ -133,7 +133,7 @@ const Tasks = ({ noHeader, projectId }) => {
       setTasks((pre) => ({
         ...(pre || {}),
         tasksCount: response?.tasksCount || 0,
-        tasks: filters.page === 1 ? response?.tasks : [...(pre.tasks || []), ...response?.tasks],
+        tasks: filters.page === 1 ? response?.tasks : [...(pre.tasks || []), ...(response?.tasks || [])],
       }));
     } catch (error) {
       toastError(error);
@@ -162,7 +162,7 @@ const Tasks = ({ noHeader, projectId }) => {
               search: e.target.value,
             }));
           }, 1000)}
-          onClear={_debounce((e) => {
+          onClear={_debounce(() => {
             setTasks({
               tasksCount: 0,
               tasks: [],
@@ -210,7 +210,7 @@ const Tasks = ({ noHeader, projectId }) => {
                 {filtersCount > 0 && <div className={style.filterCountDot}>{filtersCount}</div>}
               </div>
               <div onClick={() => setIsOpen2(true)}>
-                <img src={threeDots} />
+                <img src={threeDots} alt="" />
               </div>
             </div>
           </div>

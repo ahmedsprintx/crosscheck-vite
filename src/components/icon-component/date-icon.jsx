@@ -9,33 +9,33 @@ const DateIcon = () => {
         <path
           d="M1.59998 4.19961C1.59998 3.31595 2.31632 2.59961 3.19998 2.59961H14.4C15.2837 2.59961 16 3.31595 16 4.19961V15.3996C16 16.2833 15.2837 16.9996 14.4 16.9996H3.19998C2.31632 16.9996 1.59998 16.2833 1.59998 15.3996V4.19961Z"
           stroke="#8B909A"
-          stroke-width="1.6"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1.6"
+          strokeLinecap="round"
+          strokeLinejoin="round"
           className={style.greyStroke}
         />
         <path
           d="M1.59998 7.40039H16"
           stroke="#8B909A"
-          stroke-width="1.6"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1.6"
+          strokeLinecap="round"
+          strokeLinejoin="round"
           className={style.greyStroke}
         />
         <path
           d="M12.0002 1V4.2"
           stroke="#8B909A"
-          stroke-width="1.6"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1.6"
+          strokeLinecap="round"
+          strokeLinejoin="round"
           className={style.greyStroke}
         />
         <path
           d="M5.59998 1V4.2"
           stroke="#8B909A"
-          stroke-width="1.6"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1.6"
+          strokeLinecap="round"
+          strokeLinejoin="round"
           className={style.greyStroke}
         />
         <path

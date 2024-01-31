@@ -1,5 +1,3 @@
-import React, { useMemo } from 'react';
-
 import style from './style.module.scss';
 import GenericTable from 'components/generic-table';
 import Highlighter from 'components/highlighter';
@@ -7,6 +5,7 @@ import UserName from 'components/user-name';
 import { formattedDate } from 'utils/date-handler';
 import Tags from 'components/tags';
 import Loader from 'components/loader';
+import _ from 'lodash';
 
 const BugsListing = ({ isLoading, bugs, bugsRef, page }) => {
   return isLoading && page < 2 ? (
@@ -193,8 +192,7 @@ export const columnsData = ({ isHoveringName, searchedText }) => [
             <UserName
               user={row?.developerId}
               isHovering={
-                isHoveringName?.userId === row?.developerId?._id &&
-                isHoveringName?.rowId === row?._id
+                isHoveringName?.userId === row?.developerId?._id && isHoveringName?.rowId === row?._id
                   ? isHoveringName?.userId
                   : null
               }
@@ -340,6 +338,7 @@ export const columnsData = ({ isHoveringName, searchedText }) => [
               textDecoration: 'underline',
               color: 'black',
             }}
+            rel="noreferrer"
           >
             <Highlighter search={searchedText}>{row?.testEvidenceKey}</Highlighter>
           </a>
@@ -482,8 +481,7 @@ export const columnsData = ({ isHoveringName, searchedText }) => [
             <UserName
               user={row?.taskHistory?.[0]?.assignedTo}
               isHovering={
-                isHoveringName?.userId === row?.taskHistory?.[0]?.assignedTo?._id &&
-                isHoveringName?.rowId === row?._id
+                isHoveringName?.userId === row?.taskHistory?.[0]?.assignedTo?._id && isHoveringName?.rowId === row?._id
                   ? isHoveringName?.userId
                   : null
               }
@@ -514,6 +512,7 @@ export const columnsData = ({ isHoveringName, searchedText }) => [
               textDecoration: 'underline',
               color: 'black',
             }}
+            rel="noreferrer"
           >
             <Highlighter search={searchedText}>
               {row?.taskHistory?.[0]?.taskId?.customId || row?.taskHistory?.[0]?.taskId?.id}
@@ -560,8 +559,7 @@ export const columnsData = ({ isHoveringName, searchedText }) => [
             <UserName
               user={row?.history[_.findLastIndex(row?.history)]?.reTestBy}
               isHovering={
-                isHoveringName?.userId ===
-                  row?.history[_.findLastIndex(row?.history)]?.reTestBy?._id &&
+                isHoveringName?.userId === row?.history[_.findLastIndex(row?.history)]?.reTestBy?._id &&
                 isHoveringName?.rowId === row?._id &&
                 isHoveringName?.columnName === 'Last Retest by'
                   ? isHoveringName?.userId

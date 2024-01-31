@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState , useEffect } from 'react';
 
 import style from './style.module.scss';
 import Button from 'components/button';
@@ -9,7 +9,6 @@ import { useCancelSubscription, useUpdateSubscription } from 'hooks/api-hooks/pa
 import { useNavigate } from 'react-router-dom';
 import { useGetUserById } from 'hooks/api-hooks/settings/user-management.hook';
 import { useAppContext } from 'context/app.context';
-import { useEffect } from 'react';
 
 const Index = ({ _billingInfo, refetch }) => {
   const { userDetails } = useAppContext();

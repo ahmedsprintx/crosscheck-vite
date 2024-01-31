@@ -1,4 +1,3 @@
-import React from 'react';
 import style from './detail.module.scss';
 import draftToHtml from 'draftjs-to-html';
 const Detail = ({
@@ -28,8 +27,7 @@ const Detail = ({
       <div className={style.content}>
         <p
           dangerouslySetInnerHTML={{
-            __html:
-              reproduceSteps?.description && draftToHtml(JSON.parse(reproduceSteps?.description)),
+            __html: reproduceSteps?.description && draftToHtml(JSON.parse(reproduceSteps?.description)),
           }}
         ></p>
       </div>
@@ -39,8 +37,7 @@ const Detail = ({
       <div className={style.content}>
         <p
           dangerouslySetInnerHTML={{
-            __html:
-              idealBehaviour?.description && draftToHtml(JSON.parse(idealBehaviour?.description)),
+            __html: idealBehaviour?.description && draftToHtml(JSON.parse(idealBehaviour?.description)),
           }}
         ></p>
       </div>

@@ -1,3 +1,5 @@
+/* eslint-disable no-comments/disallowComments */
+/* eslint-disable react-hooks/rules-of-hooks */
 import React, { useState, useEffect, useMemo } from 'react';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 

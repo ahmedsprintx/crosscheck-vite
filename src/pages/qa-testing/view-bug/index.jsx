@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
 import ReportBug from 'components/report-bug-modal';
@@ -63,7 +63,7 @@ const ViewBug = ({
         </div>
       ),
       click: () => {
-        setRetestOpen((pre) => ({ open: true, id: bug?._id, refetch }));
+        setRetestOpen(() => ({ open: true, id: bug?._id, refetch }));
         setOpen(false);
       },
     },
@@ -212,26 +212,19 @@ const ViewBug = ({
               <div className={style.innerLeft}>
                 <div className={style.innerLeftWrapper}>
                   <span>Project</span>{' '}
-                  <span className={style.span2}>
-                    {bug?.projectId?.name ? bug?.projectId?.name : '-'}
-                  </span>
+                  <span className={style.span2}>{bug?.projectId?.name ? bug?.projectId?.name : '-'}</span>
                 </div>
                 <div className={style.innerLeftWrapper}>
                   <span>Milestone</span>{' '}
-                  <span className={style.span2}>
-                    {bug?.milestoneId?.name ? bug?.milestoneId?.name : '-'}
-                  </span>
+                  <span className={style.span2}>{bug?.milestoneId?.name ? bug?.milestoneId?.name : '-'}</span>
                 </div>
 
                 <div className={style.innerLeftWrapper}>
                   <span>Feature</span>{' '}
-                  <span className={style.span2}>
-                    {bug?.featureId?.name ? bug?.featureId?.name : '-'}
-                  </span>
+                  <span className={style.span2}>{bug?.featureId?.name ? bug?.featureId?.name : '-'}</span>
                 </div>
                 <div className={style.innerLeftWrapper}>
-                  <span>Bug Type</span>{' '}
-                  <span className={style.span2}>{bug?.bugType ? bug?.bugType : '-'}</span>
+                  <span>Bug Type</span> <span className={style.span2}>{bug?.bugType ? bug?.bugType : '-'}</span>
                 </div>
                 <div className={style.innerLeftWrapper}>
                   <span>Bug Subtype</span>
@@ -282,21 +275,18 @@ const ViewBug = ({
                   </span>
                 </div>
                 <div className={style.innerLeftWrapper}>
-                  <span> Task ID</span>{' '}
-                  <span className={style.span2}>{bug?.taskId ? bug?.taskId : '-'}</span>
+                  <span> Task ID</span> <span className={style.span2}>{bug?.taskId ? bug?.taskId : '-'}</span>
                 </div>
                 <div className={style.innerLeftWrapper}>
                   <span>Developer Name</span>{' '}
-                  <span className={style.span2}>
-                    {bug?.developerId?.name ? bug?.developerId?.name : '-'}
-                  </span>
+                  <span className={style.span2}>{bug?.developerId?.name ? bug?.developerId?.name : '-'}</span>
                 </div>
                 <div className={style.innerLeftWrapper}>
                   <span>Status</span>{' '}
                   <span
                     className={`${style.span2} ${style.tagText}`}
                     onClick={() => {
-                      setRetestOpen((pre) => ({ open: true, id: bug?._id, refetch }));
+                      setRetestOpen(() => ({ open: true, id: bug?._id, refetch }));
                       setOpen(false);
                     }}
                   >
@@ -329,16 +319,9 @@ const ViewBug = ({
                   </div>
                 </div>
               </div>
-              <div className={style.menuDiv}>
-                {open && <Menu menu={option.filter((x) => x.title)} />}
-              </div>
+              <div className={style.menuDiv}>{open && <Menu menu={option.filter((x) => x.title)} />}</div>
 
-              <TabsMobile
-                pages={pages(bug)}
-                activeTab={activeCross}
-                setActiveTab={setActiveCross}
-                drawerMode
-              />
+              <TabsMobile pages={pages(bug)} activeTab={activeCross} setActiveTab={setActiveCross} drawerMode />
             </div>
           </div>
         ) : isLoading ? (

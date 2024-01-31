@@ -54,9 +54,9 @@ const onError = function (error) {
   return Promise.reject({
     msg: !error?.response
       ? 'Network Issue!'
-      : error?.response?.data?.msg || //not 200
-        _.values(error?.response?.data?.error)[0] || //validation error
-        error?.response?.data?.message, //controller throw error
+      : error?.response?.data?.msg || 
+        _.values(error?.response?.data?.error)[0] || 
+        error?.response?.data?.message, 
     validations: error?.response?.data?.error ? error?.response?.data?.error : null,
     status: error?.response?.status || 'not status',
   });

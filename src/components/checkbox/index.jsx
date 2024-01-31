@@ -1,6 +1,7 @@
+/* eslint-disable no-comments/disallowComments */
+/* eslint-disable react/no-unknown-property */
 import React from 'react';
 import style from './checkbox.module.scss';
-import { isDisabled } from '@testing-library/user-event/dist/utils';
 
 const Checkbox = ({
   id,

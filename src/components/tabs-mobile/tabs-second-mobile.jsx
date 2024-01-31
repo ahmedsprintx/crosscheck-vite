@@ -29,6 +29,7 @@ const TabsMobile = ({ pages, activeTab, setActiveTab, drawerMode }) => {
         {pages?.length > (drawerMode ? 2 : 4) && (
           <div style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
             <img
+              alt=""
               onClick={() => {
                 window.innerWidth >= 768 ? setIsOpen2(!isOpen2) : setIsOpen(!isOpen);
               }}
@@ -41,7 +42,7 @@ const TabsMobile = ({ pages, activeTab, setActiveTab, drawerMode }) => {
                   <div className={style.mainDiv}>
                     {pages?.slice(drawerMode ? 2 : 4).map((ele, index) => {
                       return (
-                        <div className={`${style.innerDiv} `}>
+                        <div className={`${style.innerDiv} `} key={index}>
                           <p
                             key={index + (drawerMode ? 2 : 4)}
                             onClick={() => {

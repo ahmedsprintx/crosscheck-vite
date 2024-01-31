@@ -10,7 +10,7 @@ const handleDownloadClick = (fileUrl) => {
   downloadLink.click();
 };
 
-export const columnsData = ({}) => [
+export const columnsData = () => [
   {
     name: 'Transaction ID',
     key: 'transaction_id',

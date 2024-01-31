@@ -199,8 +199,7 @@ export const columnsData = ({ isHoveringName, setIsHoveringName, noHeader }) => 
             <UserName
               user={row?.developerId}
               isHovering={
-                isHoveringName?.userId === row?.developerId?._id &&
-                isHoveringName?.rowId === row?._id
+                isHoveringName?.userId === row?.developerId?._id && isHoveringName?.rowId === row?._id
                   ? isHoveringName?.userId
                   : null
               }
@@ -493,8 +492,7 @@ export const columnsData = ({ isHoveringName, setIsHoveringName, noHeader }) => 
             <UserName
               user={row?.taskHistory?.[0]?.assignedTo}
               isHovering={
-                isHoveringName?.userId === row?.taskHistory?.[0]?.assignedTo?._id &&
-                isHoveringName?.rowId === row?._id
+                isHoveringName?.userId === row?.taskHistory?.[0]?.assignedTo?._id && isHoveringName?.rowId === row?._id
                   ? isHoveringName?.userId
                   : null
               }
@@ -525,6 +523,7 @@ export const columnsData = ({ isHoveringName, setIsHoveringName, noHeader }) => 
               textDecoration: 'underline',
               color: 'black',
             }}
+            rel="noreferrer"
           >
             {row?.taskHistory?.[0]?.taskId?.customId || row?.taskHistory?.[0]?.taskId?.id}
           </a>
@@ -591,8 +590,7 @@ export const columnsData = ({ isHoveringName, setIsHoveringName, noHeader }) => 
             <UserName
               user={row?.history[_.findLastIndex(row?.history)]?.reTestBy}
               isHovering={
-                isHoveringName?.userId ===
-                  row?.history[_.findLastIndex(row?.history)]?.reTestBy?._id &&
+                isHoveringName?.userId === row?.history[_.findLastIndex(row?.history)]?.reTestBy?._id &&
                 isHoveringName?.rowId === row?._id &&
                 isHoveringName?.columnName === 'Last Retest by'
                   ? isHoveringName?.userId
@@ -1496,6 +1494,7 @@ export const columnsDataDeleted = ({ isHoveringName, setIsHoveringName }) => [
           >
             {row?.deletedBy?.profilePicture ? (
               <img
+                alt=""
                 src={row?.deletedBy?.profilePicture}
                 style={{ width: '24px', height: '24px', borderRadius: '80%' }}
               />

@@ -5,9 +5,9 @@ import Button from 'components/button';
 import _ from 'lodash';
 import Permissions from 'components/permissions';
 
-const Row = ({ data, role, handleClick, backClass }) => {
+const Row = ({ data, role, handleClick, backClass, key }) => {
   return (
-    <div className={`${style.membersRow} ${backClass}`}>
+    <div className={`${style.membersRow} ${backClass}`} key={key}>
       <div className={style.imgDiv}>
         {data?.profilePicture ? (
           <img src={data?.profilePicture} alt="" height={35} width={35} />
@@ -37,11 +37,7 @@ const Row = ({ data, role, handleClick, backClass }) => {
         {!data.notRemove && (
           <Permissions allowedRoles={['Admin', 'Project Manager', 'QA']} currentRole={role}>
             {data?.role !== 'Admin' && (
-              <Button
-                text={'Remove'}
-                btnClass={style.btnRemove}
-                handleClick={() => handleClick(data?._id)}
-              />
+              <Button text={'Remove'} btnClass={style.btnRemove} handleClick={() => handleClick(data?._id)} />
             )}
           </Permissions>
         )}

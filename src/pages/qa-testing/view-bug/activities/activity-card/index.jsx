@@ -1,4 +1,3 @@
-import React from 'react';
 import style from './activity-card.module.scss';
 import { formatDistanceToNow } from 'date-fns';
 const ActivityCard = ({ title, description, createdAt }) => {
@@ -19,9 +18,9 @@ const ActivityCard = ({ title, description, createdAt }) => {
         </div>
 
         {description &&
-          description?.split('\n').map((x) => {
+          description?.split('\n').map((x, i) => {
             return (
-              <div className={style.infoContent}>
+              <div className={style.infoContent} key={i}>
                 <p dangerouslySetInnerHTML={{ __html: x }} />
               </div>
             );

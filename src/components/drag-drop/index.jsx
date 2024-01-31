@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useState, useEffect } from 'react';
 import { useDropzone } from 'react-dropzone';
 
 import Button from 'components/button';
@@ -9,9 +9,7 @@ import tick from 'assets/tick-blue.svg';
 import uploadIcon from 'assets/upload.svg';
 import style from './image-upload.module.scss';
 import { Controller } from 'react-hook-form';
-import { type } from '@testing-library/user-event/dist/type';
 import { useToaster } from 'hooks/use-toaster';
-import { useEffect } from 'react';
 import UploadIcon from 'components/icon-component/upload-icon';
 import Loader from 'components/loader';
 
@@ -38,10 +36,7 @@ const DragDrop = ({
   const onDrop = async (acceptedFiles, rejectedFiles) => {
     rejectedFiles.forEach((file) => {
       toastError({
-        msg:
-          file?.errors[0]?.code === 'file-too-large'
-            ? 'File is Larger than 10MB'
-            : file?.errors[0]?.message,
+        msg: file?.errors[0]?.code === 'file-too-large' ? 'File is Larger than 10MB' : file?.errors[0]?.message,
       });
     });
     acceptedFiles.forEach(async (file) => {
@@ -102,9 +97,7 @@ const DragDrop = ({
                     <div className={style.imgSection}>
                       {type === 'img' && watch(name)?.[0]?.attachment ? (
                         <img
-                          className={`${
-                            type === 'img' && watch(name)?.[0]?.attachment ? style.profileImg : ''
-                          }   `}
+                          className={`${type === 'img' && watch(name)?.[0]?.attachment ? style.profileImg : ''}   `}
                           src={`${watch(name)?.[0]?.attachment}`}
                           alt=""
                         />

@@ -1,3 +1,5 @@
+/* eslint-disable no-comments/disallowComments */
+/* eslint-disable react/no-unescaped-entities */
 import React from 'react';
 
 import Button from 'components/button';
@@ -16,11 +18,7 @@ const WorkspaceReady = () => {
         <img src={rocket} alt="" />
         <p>Your new workspace is ready to empower quality excellence!</p>
         <p>Together, we'll create a world-class product. Happy testing!</p>
-        <Button
-          type={'button'}
-          text={'Let’s Jump into App'}
-          handleClick={() => jumptoDashboard()}
-        />
+        <Button type={'button'} text={'Let’s Jump into App'} handleClick={() => jumptoDashboard()} />
       </div>
     </>
   );

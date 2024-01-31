@@ -1,4 +1,3 @@
-import React from 'react';
 import style from './more.module.scss';
 import { formattedDate } from 'utils/date-handler';
 const More = ({ data }) => {

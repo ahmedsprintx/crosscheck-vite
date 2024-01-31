@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState , useMemo } from 'react';
 import { useParams, useSearchParams } from 'react-router-dom';
 
 // NOTE: component
@@ -29,7 +29,6 @@ import style from './single-project.module.scss';
 import FeedBack from './feedback';
 import TabsMobile from 'components/tabs-mobile/tabs-second-mobile';
 import { useAppContext } from 'context/app.context';
-import { useMemo } from 'react';
 import { useDimensions } from 'hooks/use-dimensions';
 
 const SingleProject = () => {

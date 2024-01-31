@@ -1,5 +1,5 @@
 import MainWrapper from 'components/layout/main-wrapper';
-import React, { useState } from 'react';
+import React, { useState , useRef , useMemo , useEffect } from 'react';
 // NOTE: components
 import Button from 'components/button';
 import WidgetConfig from './widget-configrations';
@@ -25,11 +25,8 @@ import PlusIcon from 'components/icon-component/plus-icon';
 
 import { columnsData, useProjectOptions } from './helper';
 import GenericTable from 'components/generic-table';
-import { useRef } from 'react';
 import DeleteModal from 'components/delete-modal';
 import { formattedDate } from 'utils/date-handler';
-import { useMemo } from 'react';
-import { useEffect } from 'react';
 
 import SplitPane from 'components/split-pane/split-pane';
 import ReportBug from './report-bug';

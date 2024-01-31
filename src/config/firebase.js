@@ -1,7 +1,6 @@
 import { changeWorkspace } from 'api/v1/settings/user-management';
 import { initializeApp } from 'firebase/app';
 import { getToken, getMessaging, onMessage } from 'firebase/messaging';
-import { onBackgroundMessage } from 'firebase/messaging/sw';
 import { toastNotification } from 'hooks/use-toaster';
 
 const firebaseConfig = {

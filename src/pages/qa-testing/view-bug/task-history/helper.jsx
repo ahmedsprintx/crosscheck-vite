@@ -26,7 +26,7 @@ export const columnsData = ({ isHoveringName, setIsHoveringName }) => [
             style={{
               textDecoration: 'underline',
               color: 'black',
-            }}
+            }} rel="noreferrer"
           >
             {row?.taskId?.customId || row?.taskId?.id}
           </a>

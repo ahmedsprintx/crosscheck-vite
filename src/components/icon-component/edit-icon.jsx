@@ -15,8 +15,8 @@ const EditIcon = ({ backClass }) => {
       >
         <path
           d="M7.78005 3.08001L11.42 6.71998M7.78005 3.08001L9.86003 1L13.5 4.64001L11.42 6.71998L7.78005 3.08001ZM7.78005 3.08001L0.715389 10.1446C0.577481 10.2825 0.5 10.4696 0.5 10.6646V14H3.83539C4.03043 14 4.21748 13.9226 4.3554 13.7846L11.42 6.71998L7.78005 3.08001Z"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
           className={`${style.strokeBlue} ${backClass}`}
         />
       </svg>

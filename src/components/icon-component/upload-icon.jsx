@@ -10,8 +10,8 @@ const UploadIcon = () => {
           d="M2 22V28.5C2 28.7761 2.22386 29 2.5 29H27.5C27.7761 29 28 28.7761 28 28.5V22M15 23.5V3M15 3L7.5 10.5M15 3L22 10.5"
           stroke="#11103D"
           className={style.fill2}
-          stroke-width="3"
-          stroke-linecap="round"
+          strokeWidth="3"
+          strokeLinecap="round"
         />
       </svg>
     </>

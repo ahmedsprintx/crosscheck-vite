@@ -12,11 +12,8 @@ const MobileHeader = ({ setIsOpen, matchingWorkspace }) => {
 
   return (
     <div className={style.mobileHeader}>
-      <img src={appLogo} />
-      <div
-        style={{ display: 'flex', alignItems: 'center', gap: '5px' }}
-        onClick={() => setIsOpen(true)}
-      >
+      <img src={appLogo} alt="" />
+      <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }} onClick={() => setIsOpen(true)}>
         <div className={style.imgDiv}>
           <>
             {userDetails?.profilePicture ? (

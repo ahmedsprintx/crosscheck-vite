@@ -1,11 +1,10 @@
-import React, { useRef } from 'react';
+import { useRef, useState } from 'react';
 
 import GenericTable from 'components/generic-table';
 
 import { columnsData } from './helper';
 
 import style from './history.module.scss';
-import { useState } from 'react';
 
 const TaskHistory = ({ taskHistory }) => {
   const ref = useRef();

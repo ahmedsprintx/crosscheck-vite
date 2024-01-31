@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useGetDevReport } from 'hooks/api-hooks/dashboard/dashboard.hook';
-import { useEffect } from 'react';
 
 import dots from 'assets/threeDots.svg';
 
@@ -163,7 +162,7 @@ const DevReport = ({ userDetails }) => {
             Report
           </h2>
         </div>
-        <img src={dots} />
+        <img src={dots} alt="" />
       </div>
       {_isGettingDev ? (
         <Loader className={style.customLoader} />

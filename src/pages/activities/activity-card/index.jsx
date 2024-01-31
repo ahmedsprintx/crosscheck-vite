@@ -17,9 +17,9 @@ const ActivityCard = ({ title, description, createdAt }) => {
         </div>
 
         {description &&
-          description?.split('\n').map((x) => {
+          description?.split('\n').map((x, i) => {
             return (
-              <div className={style.infoContent}>
+              <div className={style.infoContent} key={i}>
                 <p dangerouslySetInnerHTML={{ __html: x }} />
               </div>
             );

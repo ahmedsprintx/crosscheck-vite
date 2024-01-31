@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 import Permissions from 'components/permissions';
 import DelIcon from 'components/icon-component/del-icon';
@@ -36,8 +36,8 @@ const Comment = ({
       file: [],
     },
   });
-  const { register, control, watch, reset, setValue, formState, handleSubmit } = form;
-  const { mutateAsync: _editCommentHandler, isLoading: isEditing } = useEditComment();
+  const { register, control, watch, reset, setValue, handleSubmit } = form;
+  const { mutateAsync: _editCommentHandler } = useEditComment();
   const formatDate = formattedDate(comment.updatedAt, "dd MMM',' yyyy 'at' hh:mm a");
   const { toastSuccess, toastError } = useToaster();
 
@@ -79,9 +79,7 @@ const Comment = ({
   };
 
   const handleDeleteAttachment = (fileKey) => {
-    const updatedAttachment = watch('file').filter(
-      (file) => (file?.url ? file?.url : file?.fileKey) !== fileKey,
-    );
+    const updatedAttachment = watch('file').filter((file) => (file?.url ? file?.url : file?.fileKey) !== fileKey);
     const discardedAttachment = watch('file').find((file) => file.fileKey === fileKey);
 
     if (discardedAttachment) {
@@ -131,7 +129,7 @@ const Comment = ({
     <div className={style.main}>
       <div className={style.header}>
         <div className={style.dpName}>
-          <img src={comment?.createdBy?.profilePicture} className={style.profilePicture} />
+          <img alt="" src={comment?.createdBy?.profilePicture} className={style.profilePicture} />
           <span>{comment?.createdBy?.name}</span>
         </div>
 
@@ -166,14 +164,10 @@ const Comment = ({
                   return (
                     <div className={style.file} key={file?.fileKey}>
                       <FileIcon type={file.fileType} />
-                      <a href={file?.fileUrl} target="_blank">
+                      <a href={file?.fileUrl} target="_blank" rel="noreferrer">
                         {file?.fileName}
                       </a>
-                      <span
-                        onClick={() =>
-                          handleDeleteAttachment(file?.url ? file?.url : file?.fileKey)
-                        }
-                      >
+                      <span onClick={() => handleDeleteAttachment(file?.url ? file?.url : file?.fileKey)}>
                         <CrossAttachment />
                       </span>
                     </div>
@@ -181,13 +175,7 @@ const Comment = ({
                 })}
             </div>
           </div>
-          <TextField
-            register={register}
-            control={control}
-            autoFocus
-            name={'editedText'}
-            className={style.editField}
-          />
+          <TextField register={register} control={control} autoFocus name={'editedText'} className={style.editField} />
           <div className={style.editModeFooter}>
             <div className={style.editModebtns}>
               <CommentAttachment
@@ -208,11 +196,11 @@ const Comment = ({
         <div className={style.body}>
           <div className={style.attachmentContainer}>
             {comment?.file?.length > 0 &&
-              comment?.file?.map((file) => {
+              comment?.file?.map((file, i) => {
                 return (
-                  <div className={style.attachmentFile}>
+                  <div className={style.attachmentFile} key={i}>
                     <FileIcon type={file.fileType} />
-                    <a href={file?.fileUrl} target="_blank">
+                    <a href={file?.fileUrl} target="_blank" rel="noreferrer">
                       {file?.fileName}
                     </a>
                   </div>

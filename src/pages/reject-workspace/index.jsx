@@ -1,9 +1,8 @@
 import Button from 'components/button';
-import React from 'react';
+import { useEffect } from 'react';
 
 import style from './join.module.scss';
 import { useToaster } from 'hooks/use-toaster';
-import { useEffect } from 'react';
 import { useRejectInvite } from 'hooks/api-hooks/auth.hook';
 import { Link } from 'react-router-dom';
 

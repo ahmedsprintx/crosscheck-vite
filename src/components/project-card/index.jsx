@@ -26,6 +26,7 @@ const ProjectCard = ({
   index,
   setOpenDelModal,
   searchedText,
+  key,
   setOpenMenu,
   setOpenAllMembers,
   favoriteData,
@@ -121,6 +122,7 @@ const ProjectCard = ({
   return (
     <>
       <div
+        key={key}
         className={style.mainDiv}
         onContextMenu={(e) => {
           e.preventDefault();
@@ -230,8 +232,12 @@ const ProjectCard = ({
           <div className={style.imgDiv} onClick={setOpenAllMembers}>
             {data.shareWith
               .slice(0, 4)
-              .map((x) =>
-                x?.profilePicture ? <img src={x?.profilePicture} alt="" /> : <span>{_.first(x?.name)}</span>,
+              .map((x, i) =>
+                x?.profilePicture ? (
+                  <img key={i} src={x?.profilePicture} alt="" />
+                ) : (
+                  <span key={i}>{_.first(x?.name)}</span>
+                ),
               )}
             {data.shareWith.length > 4 && <p>{data.shareWith.length - 4}+</p>}
           </div>

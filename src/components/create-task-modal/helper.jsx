@@ -1,4 +1,5 @@
 import { getUsers } from 'api/v1/settings/user-management';
+import _ from 'lodash';
 import { useQuery } from 'react-query';
 
 export function useProjectOptions() {

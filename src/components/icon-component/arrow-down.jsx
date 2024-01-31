@@ -10,9 +10,9 @@ const ArrowDown = () => {
         <path
           d="M8.94531 13.2373L12.1968 9.98458L8.94531 6.73186"
           stroke="white"
-          stroke-width="1.07366"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1.07366"
+          strokeLinecap="round"
+          strokeLinejoin="round"
           className={style.fill}
         />
       </svg>

@@ -48,7 +48,7 @@ const Activities = ({ bugId }) => {
           {activities?.length ? (
             activities?.map((e, i) => {
               return (
-                <div className={style.activities}>
+                <div className={style.activities} key={i}>
                   <div
                     className={style.greyLine}
                     style={{
@@ -58,6 +58,7 @@ const Activities = ({ bugId }) => {
 
                   {e?.activityBy?.profilePicture ? (
                     <img
+                      alt=""
                       src={e?.activityBy?.profilePicture}
                       style={{
                         width: '24px',

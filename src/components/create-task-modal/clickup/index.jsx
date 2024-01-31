@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useMemo, useState , useEffect } from 'react';
 
 import Modal from 'components/modal';
 import Button from 'components/button';
@@ -13,7 +13,6 @@ import HierarchicalDropdown from 'components/hierarchy-selectbox';
 import TextField from 'components/text-field';
 import { useGetAllMembers, useGetLocation } from 'hooks/api-hooks/task/task.hook';
 import { useToaster } from 'hooks/use-toaster';
-import { useEffect } from 'react';
 import TextArea from 'components/text-area';
 import _ from 'lodash';
 import { getUsers } from 'api/v1/settings/user-management';
@@ -295,7 +294,7 @@ const ClickUpTask = ({
             errorMsg={locationError && !watch('location')?.teamId && 'Required'}
           />
 
-          {/* insert nestedSelectbox here */}
+          {}
           <div
             style={{
               display: 'flex',

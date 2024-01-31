@@ -257,7 +257,7 @@ const CreateTaskModal = ({
           </div>
         </div>
       )}{' '}
-      {/* task menu */}
+      {}
       {next === 'clickup' && (
         <ClickUpTask
           assignedTo={assignedTo}

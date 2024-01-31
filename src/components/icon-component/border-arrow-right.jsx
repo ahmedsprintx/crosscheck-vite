@@ -19,8 +19,8 @@ const BorderArrowRight = () => {
         <path
           d="M21 15.0017H11M21 15.0017L17 11.0017M21 15.0017L17 19.0017"
           stroke="black"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
           className={style.whiteStroke}
         />
       </svg>

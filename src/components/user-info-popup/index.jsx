@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import avatar from 'assets/avatar.svg';
 import MailIcon from 'components/icon-component/mail-icon';
@@ -8,7 +8,6 @@ import TickIcon from 'components/icon-component/tick';
 import style from './userinfo.module.scss';
 import ActivityIcon from 'components/icon-component/activity-icon';
 import { useToaster } from 'hooks/use-toaster';
-import { useState } from 'react';
 
 const UserInfoPopup = ({ data, isLoading }) => {
   const { toastSuccess } = useToaster();
@@ -34,7 +33,7 @@ const UserInfoPopup = ({ data, isLoading }) => {
   return (
     <div className={style.main}>
       <div className={style.profileDiv}>
-        <img src={data?.user?.profilePicture || avatar} height={60} width={60} />
+        <img src={data?.user?.profilePicture || avatar} height={60} width={60} alt="" />
         <span className={style.statusOnline}>Online</span>
       </div>
       <div>

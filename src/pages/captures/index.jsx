@@ -15,15 +15,11 @@ const Captures = () => {
 
   return (
     <div>
-      <MainWrapper
-        searchField
-        title="My Captures"
-        date={formattedDate(new Date(), 'EEEE, d MMMM yyyy')}
-      >
+      <MainWrapper searchField title="My Captures" date={formattedDate(new Date(), 'EEEE, d MMMM yyyy')}>
         <div className={style.mainClass} style={{ height: 'fit-content' }}>
           <div className={style.flexDiv}>
             <div>
-              <img src={gridIcon} className={style.imgClass} />
+              <img alt="" src={gridIcon} className={style.imgClass} />
             </div>
             <div>
               <RowIcon />
@@ -36,7 +32,7 @@ const Captures = () => {
         </div>
         <div className={style.contentGrid}>
           {capturesSample?.map((ele, index) => (
-            <div onClick={() => navigate(`/captures/${index}`)}>
+            <div onClick={() => navigate(`/captures/${index}`)} key={index}>
               <CaptureCard name={ele?.name} duration={ele?.duration} />
             </div>
           ))}

@@ -1,5 +1,4 @@
 import MainWrapper from 'components/layout/main-wrapper';
-import React from 'react';
 
 import ArrowRight from 'components/icon-component/arrow-right';
 import ArrowLeft from 'components/icon-component/arrow-left';
@@ -29,47 +28,51 @@ const Shortcuts = () => {
           <div className={style.sectionWrapper}>
             <div className={style.leftSection}>
               {shortcutsLeft?.map((ele, index) => (
-                <Permissions allowedRoles={ele.access} currentRole={userDetails?.role}>
-                  <div className={style.shortcutWrapper}>
-                    {ele?.second && (
-                      <>
-                        <div className={style.btn}>{ele.first}</div>
-                        <span>+</span>
-                      </>
-                    )}
-                    <div className={style.btn}>{ele.second}</div>
-                    {ele.third && (
-                      <>
-                        <span>+</span>
-                        <div className={style.btn}>{ele?.third}</div>
-                      </>
-                    )}
-                    <span>{ele.text}</span>
-                  </div>
-                </Permissions>
+                <div key={index}>
+                  <Permissions allowedRoles={ele.access} currentRole={userDetails?.role}>
+                    <div className={style.shortcutWrapper}>
+                      {ele?.second && (
+                        <>
+                          <div className={style.btn}>{ele.first}</div>
+                          <span>+</span>
+                        </>
+                      )}
+                      <div className={style.btn}>{ele.second}</div>
+                      {ele.third && (
+                        <>
+                          <span>+</span>
+                          <div className={style.btn}>{ele?.third}</div>
+                        </>
+                      )}
+                      <span>{ele.text}</span>
+                    </div>
+                  </Permissions>
+                </div>
               ))}
             </div>
 
             <div className={style.rightSection}>
               {shortcutsRight?.map((ele, index) => (
-                <Permissions allowedRoles={ele.access} currentRole={userDetails?.role}>
-                  <div className={style.shortcutWrapper}>
-                    <div className={style.btn}>{ele.first}</div>
-                    {ele?.second && (
-                      <>
-                        <span>+</span>
-                        <div className={style.btn}>{ele.second}</div>
-                      </>
-                    )}
-                    {ele.third && (
-                      <>
-                        <span>+</span>
-                        <div className={style.btn}>{ele?.third}</div>
-                      </>
-                    )}
-                    <span>{ele.text}</span>
-                  </div>
-                </Permissions>
+                <div key={index}>
+                  <Permissions allowedRoles={ele.access} currentRole={userDetails?.role}>
+                    <div className={style.shortcutWrapper}>
+                      <div className={style.btn}>{ele.first}</div>
+                      {ele?.second && (
+                        <>
+                          <span>+</span>
+                          <div className={style.btn}>{ele.second}</div>
+                        </>
+                      )}
+                      {ele.third && (
+                        <>
+                          <span>+</span>
+                          <div className={style.btn}>{ele?.third}</div>
+                        </>
+                      )}
+                      <span>{ele.text}</span>
+                    </div>
+                  </Permissions>
+                </div>
               ))}
             </div>
           </div>

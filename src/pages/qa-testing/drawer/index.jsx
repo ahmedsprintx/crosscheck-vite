@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import goIcon from 'assets/cross.svg';
 
@@ -55,11 +55,9 @@ const Drawer = ({
         'bugType',
         'weightage',
       ]);
-      const idealBehaviour =
-        values?.idealBehaviour?.description && JSON.parse(values?.idealBehaviour?.description);
+      const idealBehaviour = values?.idealBehaviour?.description && JSON.parse(values?.idealBehaviour?.description);
       const feedback = values?.feedback?.description && JSON.parse(values?.feedback?.description);
-      const reproduceSteps =
-        values?.reproduceSteps?.description && JSON.parse(values?.reproduceSteps?.description);
+      const reproduceSteps = values?.reproduceSteps?.description && JSON.parse(values?.reproduceSteps?.description);
 
       const projectId = values?.projectId?._id;
       const testType = values?.bugType;
@@ -198,7 +196,7 @@ const Drawer = ({
 
             <div className={style.flex}>
               <div
-                class={style.rangeContainer}
+                className={style.rangeContainer}
                 style={{
                   flex: '1',
                 }}
@@ -268,11 +266,7 @@ const Drawer = ({
                   !watch('addAnother') && setDrawerOpen(false);
                 }}
               />
-              <Button
-                text={'Save'}
-                type={'submit'}
-                disabled={_createIsLoading || _updateIsLoading}
-              />
+              <Button text={'Save'} type={'submit'} disabled={_createIsLoading || _updateIsLoading} />
             </div>
           </div>
         </form>

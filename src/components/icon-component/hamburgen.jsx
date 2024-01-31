@@ -9,9 +9,9 @@ const HamburgerIcon = () => {
         <path
           d="M1 1.5H9.27559M1 5.5H9.27559M1 9.5H9.27559"
           stroke="#11103D"
-          stroke-width="1.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
           className={style.fill2}
         />
       </svg>

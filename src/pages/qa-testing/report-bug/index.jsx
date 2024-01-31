@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 import SelectBox from 'components/select-box';
@@ -139,10 +139,8 @@ const ReportBug = ({
         ]);
 
         const feedback = values?.feedback?.description && JSON.parse(values?.feedback?.description);
-        const idealBehaviour =
-          values?.idealBehaviour?.description && JSON.parse(values?.idealBehaviour?.description);
-        const reproduceSteps =
-          values?.reproduceSteps?.description && JSON.parse(values?.reproduceSteps?.description);
+        const idealBehaviour = values?.idealBehaviour?.description && JSON.parse(values?.idealBehaviour?.description);
+        const reproduceSteps = values?.reproduceSteps?.description && JSON.parse(values?.reproduceSteps?.description);
 
         const developerId = values?.developerId?._id;
         const projectId = values.projectId?._id;
@@ -245,10 +243,7 @@ const ReportBug = ({
       {isLoading ? (
         <Loader />
       ) : (
-        <form
-          onSubmit={handleSubmit(onSubmit)}
-          style={{ height: noHeader ? '78vh' : '90vh', overflowY: 'auto' }}
-        >
+        <form onSubmit={handleSubmit(onSubmit)} style={{ height: noHeader ? '78vh' : '90vh', overflowY: 'auto' }}>
           <div className={style.bottom}>
             <div className={style.gridTwo}>
               <div>
@@ -504,9 +499,7 @@ const ReportBug = ({
           </div>
 
           <div className={style.btnDiv}>
-            {!editRecord?.id && (
-              <Checkbox register={register} name={'addAnother'} label={'Add another'} />
-            )}
+            {!editRecord?.id && <Checkbox register={register} name={'addAnother'} label={'Add another'} />}
             <Button
               text="Discard"
               type={'button'}

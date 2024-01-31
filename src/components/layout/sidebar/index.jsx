@@ -154,7 +154,7 @@ const Sidebar = ({ pathname, myWorkspaces, matchingWorkspace }) => {
                 </div>
               </div>
             )}
-            {/* / RoutesList/ */}
+            {}
             {signUpMode === 'AppAndExtension' &&
               routes?.map((ele, index) =>
                 ele?.noPath ? (
@@ -210,7 +210,7 @@ const Sidebar = ({ pathname, myWorkspaces, matchingWorkspace }) => {
               )}
           </div>
 
-          {/* Logout  */}
+          {}
           <div
             className={style.logoutDiv}
             onClick={() => {
@@ -408,8 +408,9 @@ const Sidebar = ({ pathname, myWorkspaces, matchingWorkspace }) => {
               {myWorkspaces?.length &&
                 myWorkspaces
                   ?.filter((ele) => ele?.workSpaceId !== userDetails?.lastAccessedWorkspace)
-                  ?.map((ele) => (
+                  ?.map((ele, i) => (
                     <div
+                      key={i}
                       className={style.userInfo}
                       onClick={() => {
                         changeWorkspace(ele?.workSpaceId);

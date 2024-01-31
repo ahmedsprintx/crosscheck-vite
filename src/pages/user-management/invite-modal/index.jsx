@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import { useForm } from 'react-hook-form';
 import PropTypes from 'prop-types';
 import { useInviteUser } from 'hooks/api-hooks/settings/user-management.hook';
@@ -67,7 +66,9 @@ const InviteModal = ({ setInviteUser, inviteUser, refetchInvites }) => {
           <SelectBox required control={control} name={'roleName'} label={'Role'} options={roles} />
         </div>
         <div className={style.mainBtnDiv}>
-          <p onClick={() => setInviteUser(false)}>Cancel</p>
+          <p onClick={() => setInviteUser(false)} role="presentation">
+            Cancel
+          </p>
           <Button text={'Save'} type="submit" disabled={isSubmitting} />
         </div>
       </Modal>

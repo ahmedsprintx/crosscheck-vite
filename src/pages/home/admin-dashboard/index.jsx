@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import dots from 'assets/threeDots.svg';
 
@@ -9,8 +9,6 @@ import Report from './report';
 import { useForm } from 'react-hook-form';
 import { useAppContext } from 'context/app.context';
 import Permissions from 'components/permissions';
-import { useState } from 'react';
-import { useEffect } from 'react';
 import { useGetTestRunsByFilter } from 'hooks/api-hooks/test-runs/test-runs.hook';
 import { useToaster } from 'hooks/use-toaster';
 import { isPast, parseISO } from 'date-fns';
@@ -246,7 +244,7 @@ const AdminDashboard = () => {
               <div className={style.upcomingDiv}>
                 <div className={style.upcomingHeader}>
                   <span>Overdue Test Runs</span>
-                  <img src={dots} />
+                  <img alt="" src={dots} />
                 </div>
                 <div className={style.upcomingInner}>
                   <Permissions
@@ -258,6 +256,7 @@ const AdminDashboard = () => {
                       ?.filter((x) => isPast(parseISO(x.dueDate)) && x.status !== 'Closed')
                       ?.map((item, i) => (
                         <Upcoming
+                          key={i}
                           id={item?._id}
                           testedCount={item?.testedCount}
                           testCases={item?.testCases}

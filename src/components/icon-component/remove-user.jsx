@@ -9,9 +9,9 @@ const RemoveUserIcon = () => {
         <path
           d="M30.5 30.0001L50.5 50M10.5 50L30.5 30.0001L10.5 50ZM50.5 10L30.5 30.0001L50.5 10ZM30.5 30.0001L10.5 10L30.5 30.0001Z"
           stroke="#F80101"
-          stroke-width="4"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="4"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </svg>
     </>

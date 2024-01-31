@@ -1,12 +1,12 @@
+/* eslint-disable no-comments/disallowComments */
+/*  eslint-disable react/no-unescaped-entities */
 import Button from 'components/button';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import style from './join.module.scss';
 import { useToaster } from 'hooks/use-toaster';
 import { Link } from 'react-router-dom';
-import { useEffect } from 'react';
 import { useAcceptInvite } from 'hooks/api-hooks/auth.hook';
-import { useState } from 'react';
 import Loader from 'components/loader';
 
 const JoinWorkspace = () => {

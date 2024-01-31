@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useGetQaReport } from 'hooks/api-hooks/dashboard/dashboard.hook';
 import { useToaster } from 'hooks/use-toaster';
-import { useEffect } from 'react';
 import { formattedDate } from 'utils/date-handler';
 
 import dots from 'assets/threeDots.svg';
@@ -356,7 +355,7 @@ const Report = ({ control, userDetails }) => {
                 }-${formattedDate(selectedDates?.range?.end && selectedDates?.range?.end, 'yyyy/MM/dd')}`
               : selectedDay}
           </div>
-          <img src={dots} />
+          <img alt="" src={dots} />
           {days && (
             <div className={style.menuDiv}>
               <Menu menu={menu} />

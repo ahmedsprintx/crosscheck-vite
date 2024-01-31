@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
 import CrossTag from 'assets/crossTag.svg';
 import CrossTagBlack from 'assets/crossTagBlack.svg';
@@ -116,7 +115,7 @@ const Tags = ({
           )}
 
           {cross ? (
-            <img src={CrossTagBlack} height={6} width={6} onClick={() => alert('closed')} />
+            <img alt="" src={CrossTagBlack} height={6} width={6} onClick={() => alert('closed')} />
           ) : (
             <div></div>
           )}
@@ -168,11 +167,7 @@ const Tags = ({
               {text?.length > 15 ? <p className={style.selectBoxEllipses}>{text}</p> : text}
             </div>
           )}
-          {cross ? (
-            <img src={CrossTag} height={6} width={6} onClick={() => alert('closed')} />
-          ) : (
-            <div></div>
-          )}
+          {cross ? <img alt="" src={CrossTag} height={6} width={6} onClick={() => alert('closed')} /> : <div></div>}
         </div>
       )}
 
@@ -182,9 +177,7 @@ const Tags = ({
         </div>
       )}
 
-      {droppable && isOpen && (
-        <div className={style.backdropDiv} onClick={() => setIsOpen((pre) => false)}></div>
-      )}
+      {droppable && isOpen && <div className={style.backdropDiv} onClick={() => setIsOpen((pre) => false)}></div>}
     </div>
   );
 };
